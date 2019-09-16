@@ -1,0 +1,56 @@
+{
+  "name": "aws-sdk-js-v3-workshop-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Frontend for the AWS JS SDK v3 workshop",
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "aws-sdk": "^2.528.0",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.9.0"
+  },
+  "scripts": {
+    "deploy": "aws cloudformation deploy --template-file template.yaml --stack-name ${AWS_JS_SDK_ID}-frontend --capabilities CAPABILITY_IAM",
+    "identity-pools": "aws cognito-identity list-identity-pools --max-results 20",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "clean": "aws cloudformation delete-stack --stack-name ${AWS_JS_SDK_ID}-frontend"
+  },
+  "keywords": [
+    "aws",
+    "JavaScript",
+    "TypeScript",
+    "SDK",
+    "v3",
+    "workshop",
+    "Node.js"
+  ],
+  "author": "Kamat, Trivikram",
+  "license": "MIT-0",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/reach__router": "^1.2.4",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "react-scripts": "3.1.1",
+    "typescript": "~3.5.3"
+  }
+}
