@@ -43,7 +43,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
   ![AWS Lambda function sizes in v2](./screenshots/aws-lambda-v2.png)
 
-- This happens because entire aws-sdk is bundled in the lambda in file `dynamoDB.ts`
+- This happens because entire aws-sdk is bundled in the lambda in file [`dynamoDB.ts`](./src/libs/dynamoDB.ts)
 
   ```typescript
   import AWS from "aws-sdk";
@@ -53,7 +53,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 ### Reduce bundle size by just importing dynamodb
 
 - In v2, you can reduce the bundle size by doing dead-code elimination using tree shaking with a bundler like webpack ([details](https://webpack.js.org/guides/tree-shaking/))
-- Just import the `"aws-sdk/clients/dynamodb"` in `dynamoDB.ts`, as shown in the diff below
+- Just import the `"aws-sdk/clients/dynamodb"` in [`dynamoDB.ts`](./src/libs/dynamoDB.ts), as shown in the diff below
 
   ```diff
   -import AWS from "aws-sdk";
@@ -71,7 +71,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
 - Uninstall v2 by running `yarn remove aws-sdk`
 - Install dynamodb in v3 by running `yarn add @aws-sdk/client-dynamodb-node`
-- Make the following change in `dynamoDB.ts` to import DynamoDB from v3
+- Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDB from v3
 
   ```diff
   -import DynamoDB from "aws-sdk/clients/dynamodb";
@@ -82,10 +82,10 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   ```
 
 - The function calls v3 client return promises by default, so you've to remove `.promise()` from individual functions.
-- For example, here's a diff from `create.ts`
+- For example, here's a diff for [`create.ts`](./src/create.ts)
 
   ```diff
-     try {
+   try {
   -    await dynamoDB.putItem(params).promise();
   +    await dynamoDB.putItem(params);
      return success(params.Item);
@@ -100,7 +100,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 ### Reduce bundle size even more by just importing specific commands in v3
 
 - AWS JS SDK v3 has an option to import specific commands, thus reducing bundle size further!
-- Make the following change in `dynamoDB.ts` to import DynamoDBClient from v3
+- Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDBClient from v3
 
   ```diff
   -import { DynamoDB } from "@aws-sdk/client-dynamodb-node";
@@ -110,7 +110,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   +export default new DynamoDBClient({});
   ```
 
-- Import and call just the `PutCommand` in `create.ts` for example:
+- Import and call just the `PutCommand` in [`create.ts`](./src/create.ts) for example:
 
   ```diff
   import crypto from "crypto";

@@ -5,7 +5,7 @@
 - This package contains frontend code which does put, get, delete operations using S3 browser client
 - This is a create-react-app which creates minimized bundle on running `build`
 
-[![Screen recording](https://img.youtube.com/vi/qBltinDalzU/0.jpg)](https://www.youtube.com/watch?v=qBltinDalzU)
+  [![Screen recording](https://img.youtube.com/vi/qBltinDalzU/0.jpg)](https://www.youtube.com/watch?v=qBltinDalzU)
 
 ## Set up
 
@@ -56,7 +56,7 @@ In this section, we're going to update the code to import S3 browser Client in d
     790 B      build/static/js/runtime~main.e82a7b61.js
   ```
 
-- This happens because entire aws-sdk is bundled in the app in file `s3Client.ts`
+- This happens because entire aws-sdk is bundled in the app in file [`s3Client.ts`](./src/libs/s3Client.ts)
 
   ```typescript
   import AWS from "aws-sdk";
@@ -65,7 +65,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 ### Reduce bundle size by just importing s3 client
 
 - In v2, you can reduce the bundle size by doing dead-code elimination using tree shaking with a bundler like webpack ([details](https://webpack.js.org/guides/tree-shaking/))
-- Just import the `"aws-sdk/clients/s3"` in `s3Client.ts`, as shown in the diff below:
+- Just import the `"aws-sdk/clients/s3"` in [`s3Client.ts`](./src/libs/s3Client.ts), as shown in the diff below:
 
   ```diff
   -import AWS from "aws-sdk";
@@ -94,7 +94,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 - Uninstall v2 by running `yarn remove aws-sdk`
 - Install s3 dependencies by running `yarn add @aws-sdk/client-s3-browser @aws-sdk/credential-provider-cognito-identity @aws-sdk/client-cognito-identity-browser`
-- Make the following change in `s3Client.ts`
+- Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts)
 
   ```diff
   -import AWS from "aws-sdk";
@@ -131,7 +131,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   ```
 
 - The command calls on v3 client return promises by default, so you've to remove `.promise()`.
-- For example, here's a diff for `putObject.ts`:
+- For example, here's a diff for [`putObject.ts`](./src/libs/putObject.ts):
 
   ```diff
   const putObject = async (file: File) => {
@@ -201,7 +201,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 ### Reduce bundle size further by just importing specific commands in v3
 
 - AWS JS SDK v3 has an option to import specific commands, thus reducing bundle size further!
-- Make the following change in `s3Client.ts` to import S3Client from v3
+- Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts) to import S3Client from v3
 
   ```diff
   -import { S3 } from "@aws-sdk/client-s3-browser";
@@ -217,7 +217,7 @@ In this section, we're going to update the code to import S3 browser Client in d
     credentials: fromCognitoIdentityPool({
   ```
 
-- Import and call just the `PutObjectCommand` in `putObject.ts` for example:
+- Import and call just the `PutObjectCommand` in [`putObject.ts`](./src/libs/putObject.ts) for example:
 
   ```diff
   +import { PutObjectCommand } from "@aws-sdk/client-s3-browser/commands/PutObjectCommand";
@@ -253,7 +253,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 ### Bundle size without SDK
 
 - For comparison, make the following changes to remove SDK from the bundle
-- CreateNote.tsx
+- [CreateNote.tsx](./src/content/CreateNote.tsx)
   ```diff
    import { navigate, RouteComponentProps } from "@reach/router";
    import config from "../config";
@@ -276,7 +276,7 @@ In this section, we're going to update the code to import S3 browser Client in d
       } catch (error) {
   ```
 
-- DeleteNoteButton.tsx
+- [DeleteNoteButton.tsx](./src/content/DeleteNoteButton.tsx)
   ```diff
    import config from "../config";
    import { navigate } from "@reach/router";
@@ -297,7 +297,7 @@ In this section, we're going to update the code to import S3 browser Client in d
         });
   ```
 
-- ShowNote.tsx
+- [ShowNote.tsx](./src/content/ShowNote.tsx)
   ```diff
    import config from "../config";
    import DeleteNoteButton from "./DeleteNoteButton";
