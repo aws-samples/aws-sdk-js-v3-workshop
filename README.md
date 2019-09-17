@@ -1,8 +1,11 @@
 # aws-sdk-js-v3-workshop
 
 In this workshop, we're going to:
-* Build a simple note taking application
-* Identify the benefits of using AWS JS SDK v3 over v2
+
+- Build a simple note taking application
+- Identify the benefits of using AWS JS SDK v3 over v2
+
+The note taking application is the modified version from the original Open Source MIT licensed project from [serverless-stack](https://github.com/AnomalyInnovations/serverless-stack-com)
 
 # Pre-requisites:
 
