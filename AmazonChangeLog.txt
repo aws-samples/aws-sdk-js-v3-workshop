@@ -1,7 +1,6 @@
-# High level modifications
-
 The Open Source MIT licensed project is at [serverless-stack](https://github.com/AnomalyInnovations/serverless-stack-com)
 
+High level modifications:
 - Used [SAM CLI](https://github.com/awslabs/aws-sam-cli) instead of [Serverless](https://serverless.com/)
 - Removed tests which were done using serverless-bundle
 - Switched to [yarn](https://yarnpkg.com) over [npm](https://npmjs.com)
