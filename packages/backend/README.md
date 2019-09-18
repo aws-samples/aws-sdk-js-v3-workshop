@@ -162,11 +162,18 @@ Here's how we find out correlation between lambda size and execution time:
 
 ![AWS v3 client+command entire import warm start](./screenshots/aws-sdk-js-v3-warm-start.png)
 
-## Comparison between v3 and v2 cold starts
+## Comparison between v3 and v2 lambda duration
 
-A Cloudwatch event was written to trigger both lambdas every 20 mins and the 18 values (in ms) for Duration of `AWS::Lambda::Function` were analyzed over 6 hours
+- A Cloudwatch event was written to trigger both lambdas every 20 mins and 18 values (in ms) for Duration of `AWS::Lambda::Function` were analyzed over 6 hours
 
-|                   | Average | Min  | Max  | Median | 90th percentile |
-| ----------------- | ------- | ---- | ---- | ------ | --------------- |
-| entire v2         | 1171.5  | 1013 | 1431 | 1093.5 | 1193.39         |
-| v3 command+client | 735.22  | 693  | 786  | 738    | 775.6           |
+  |                   | Average | Min  | Max  | Median | 90th percentile |
+  | ----------------- | ------- | ---- | ---- | ------ | --------------- |
+  | entire v2         | 1171.5  | 1013 | 1431 | 1093.5 | 1193.39         |
+  | v3 command+client | 735.22  | 693  | 786  | 738    | 775.6           |
+
+- Another Cloudwatch event was written to trigger both lambdas every minute and 50 values (in ms) for Duration of `AWS::Lambda::Function` were analyzed
+
+  |                   | Average | Min | Max | Median | 90th percentile |
+  | ----------------- | ------- | --- | --- | ------ | --------------- |
+  | entire v2         | 117.82  | 85  | 178 | 116    | 139             |
+  | v3 command+client | 116.22  | 83  | 176 | 115.5  | 136             |
