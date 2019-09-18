@@ -1,8 +1,9 @@
 # aws-sdk-js-v3-workshop
 
 In this workshop, we're going to:
-* Build a simple note taking application
-* Identify the benefits of using AWS JS SDK v3 over v2
+
+- Build a simple note taking application
+- Identify the benefits of using AWS JS SDK v3 over v2
 
 # Pre-requisites:
 
@@ -14,6 +15,8 @@ To set up this workshop package, first complete these tasks:
   - Verify that node is installed by running `node -v` and confirm that it shows latest `v10` (for example, `v10.16.3`)
 - Install [yarn](https://yarnpkg.com/en/docs/install)
   - We recommend using yarn for its simplicity and speed. You can still use npm cli instead of yarn
+- If you don't have an AWS account already, please [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+  - If you're an Amazon employee, please refer internal wiki for creating AWS account
 - Install [AWS CLI](https://aws.amazon.com/cli/)
   - Verify that AWS CLI is installed by running `aws` in terminal
 - Install [AWS SAM CLI and Docker](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
