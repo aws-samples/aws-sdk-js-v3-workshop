@@ -1,4 +1,6 @@
-The Open Source MIT licensed project is at [serverless-stack](https://github.com/AnomalyInnovations/serverless-stack-com)
+The Open Source MIT licensed project is at:
+- [serverless-stack-demo-api](https://github.com/AnomalyInnovations/serverless-stack-demo-api)
+- [serverless-stack-demo-client](https://github.com/AnomalyInnovations/serverless-stack-demo-client)
 
 High level modifications:
 - Used [SAM CLI](https://github.com/awslabs/aws-sam-cli) instead of [Serverless](https://serverless.com/)
