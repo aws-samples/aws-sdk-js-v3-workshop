@@ -1,0 +1,12 @@
+The Open Source MIT licensed project is at:
+- [serverless-stack-demo-api](https://github.com/AnomalyInnovations/serverless-stack-demo-api)
+- [serverless-stack-demo-client](https://github.com/AnomalyInnovations/serverless-stack-demo-client)
+
+High level modifications:
+- Used [SAM CLI](https://github.com/awslabs/aws-sam-cli) instead of [Serverless](https://serverless.com/)
+- Removed tests which were done using serverless-bundle
+- Switched to [yarn](https://yarnpkg.com) over [npm](https://npmjs.com)
+- Introduced [TypeScript](https://www.typescriptlang.org/) and [ESLint](https://eslint.org/)
+- Added [webpack](https://webpack.js.org/) to reduce bundle size
+- Updated to [React Bootstrap v1.0.0](https://react-bootstrap.github.io/) based on Bootstrap 4.3
+- Wrote React components using [Hooks](https://reactjs.org/docs/hooks-intro.html)
