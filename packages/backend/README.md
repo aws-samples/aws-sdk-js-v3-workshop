@@ -132,3 +132,32 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 - Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~18KB!
 
   ![AWS Lambda function sizes in v3 command import](./screenshots/aws-lambda-v3-command.png)
+
+# Correlation between lambda size and execution time
+
+Here's how we find out correlation between lambda size and execution time:
+
+- We get metrics by enabling Active tracing under [AWS X-Ray](https://aws.amazon.com/xray/) for ListNotes lambda.
+- The comparison is between original bundle which imports entire v2 (size ~470KB) with final one which imports specific command in v3 (size ~18KB).
+- For testing, two fresh endpoints are created using Cloudformation and we visit `<ENDPOINT>/Prod/notes` in the browser.
+- The cold start is the first hit post endpoint creation, and warm start is the second hit after ~3 seconds.
+
+## Traces for lambda which imports entire v2
+
+### Cold start
+
+![AWS v2 entire import cold start](./screenshots/aws-sdk-js-cold-start.png)
+
+### Warm start
+
+![AWS v2 entire import warm start](./screenshots/aws-sdk-js-warm-start.png)
+
+## Traces for lambda which imports specific client and command in v3
+
+### Cold start
+
+![AWS v3 client+command import cold start](./screenshots/aws-sdk-js-v3-cold-start.png)
+
+### Warm start
+
+![AWS v3 client+command entire import warm start](./screenshots/aws-sdk-js-v3-warm-start.png)
