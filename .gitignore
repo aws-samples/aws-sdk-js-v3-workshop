@@ -129,5 +129,6 @@ $RECYCLE.BIN/
 
 dist/
 build/
+react-app-env.d.ts
 .aws-sam/
 packaged.yaml
