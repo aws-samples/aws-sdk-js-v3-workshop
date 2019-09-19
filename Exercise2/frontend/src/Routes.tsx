@@ -7,7 +7,7 @@ const CreateNote = React.lazy(() => import("./content/CreateNote"));
 const ShowNote = React.lazy(() => import("./content/ShowNote"));
 const NotFound = React.lazy(() => import("./content/NotFound"));
 
-export default () => (
+const Routes = () => (
   <div className="mt-md-4 d-flex flex-column justify-content-center">
     <Suspense fallback={<PageContainer />}>
       <Router>
@@ -19,3 +19,5 @@ export default () => (
     </Suspense>
   </div>
 );
+
+export { Routes };

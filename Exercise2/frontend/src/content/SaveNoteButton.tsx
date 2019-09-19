@@ -39,4 +39,4 @@ const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
   );
 };
 
-export default SaveNoteButton;
+export { SaveNoteButton };

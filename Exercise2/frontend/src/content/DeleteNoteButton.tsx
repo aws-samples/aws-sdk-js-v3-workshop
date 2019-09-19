@@ -47,4 +47,4 @@ const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
   );
 };
 
-export default DeleteNoteButton;
+export { DeleteNoteButton };

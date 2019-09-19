@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import BlurredText from "./BlurredText";
+import { BlurredText } from "./BlurredText";
 
 const PageContainer = (props: {
   header?: React.ReactNode;

@@ -9,4 +9,4 @@ const BlurredText = (props: { text: string }) => (
   <div style={textStyle}>{props.text}</div>
 );
 
-export default BlurredText;
+export { BlurredText };

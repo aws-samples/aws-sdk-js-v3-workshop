@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Routes from "./Routes";
+import { Routes } from "./Routes";
 
 ReactDOM.render(
   <div className="container" style={{ height: "100vh" }}>
