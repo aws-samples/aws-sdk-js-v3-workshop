@@ -36,23 +36,30 @@ To set up this workshop package, complete the following tasks:
     region = us-west-2
     ```
 
+# Exercise1
+
+This exercise code uses AWS SDK JS v2 as follows:
+
+- backend performs create, delete, get, list and update operations on DynamoDB
+- frontend does put, get, delete operations using an S3 browser client
+
+The README files have instructions on how to move it to v3
+
 ## Backend
 
-Perform the following steps to create the backend API
-(the code which performs create, delete, get, list and update operations on DynamoDB):
+Perform the following steps to create the backend API:
 
-- `cd packages/backend`
-- Follow [backend README](./packages/backend/README.md)
+- `cd Exercise1/backend`
+- Follow [backend README](./Exercise1/backend/README.md)
 
-Don't forget to test your backend code before the next step.
+Remember to test your backend code before the next step.
 
 ## FrontEnd
 
-Perform the following steps to run the frontend
-(code which does put, get, delete operations using an S3 browser client):
+Perform the following steps to run the frontend:
 
-- `cd packages/frontend`
-- Follow [frontend README](./packages/frontend/README.md)
+- `cd Exercise1/frontend`
+- Follow [frontend README](./Exercise1/frontend/README.md)
 
 # License Summary
 
