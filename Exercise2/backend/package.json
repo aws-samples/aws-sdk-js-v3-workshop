@@ -1,0 +1,44 @@
+{
+  "name": "aws-sdk-js-v3-workshop-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend for the AWS JS SDK v3 workshop",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb-node": "^0.1.0-preview.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "mb": "aws s3 mb s3://$AWS_JS_SDK_ID",
+    "package": "sam package --output-template-file packaged.yaml --s3-bucket $AWS_JS_SDK_ID",
+    "deploy": "sam deploy --template-file packaged.yaml --stack-name $AWS_JS_SDK_ID --capabilities CAPABILITY_IAM",
+    "bpd": "npm run build && npm run package && npm run deploy",
+    "describe": "aws cloudformation describe-stacks --stack-name $AWS_JS_SDK_ID --query 'Stacks[].Outputs[?OutputKey==`NotesApi`][OutputValue]'",
+    "clean": "aws s3 rb s3://$AWS_JS_SDK_ID --force && aws cloudformation delete-stack --stack-name $AWS_JS_SDK_ID"
+  },
+  "keywords": [
+    "aws",
+    "JavaScript",
+    "TypeScript",
+    "SDK",
+    "v3",
+    "workshop",
+    "Node.js"
+  ],
+  "author": "Kamat, Trivikram",
+  "license": "MIT-0",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.31",
+    "@types/node": "^10.14.14",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "aws-sam-webpack-plugin": "^0.3.1",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-loader": "^3.0.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "~3.5.3",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  }
+}

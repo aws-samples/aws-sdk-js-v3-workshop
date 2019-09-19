@@ -61,6 +61,31 @@ Perform the following steps to run the frontend:
 - `cd Exercise1/frontend`
 - Follow [frontend README](./Exercise1/frontend/README.md)
 
+# Exercise2
+
+This exercise has the code which uses AWS JS SDK v3, which you would have got after finishing Exercise1:
+
+- backend performs create, delete, get, list and update operations on DynamoDB
+- frontend does put, get, delete operations using an S3 browser client
+
+The README files have suggestions on how you can use the AWS service you're familiar with in v3
+
+## Backend
+
+Perform the following steps to create the backend API:
+
+- `cd Exercise2/backend`
+- Follow [backend README](./Exercise2/backend/README.md)
+
+Remember to test your backend code before the next step.
+
+## FrontEnd
+
+Perform the following steps to run the frontend:
+
+- `cd Exercise2/frontend`
+- Follow [frontend README](./Exercise2/frontend/README.md)
+
 # License Summary
 
 This sample code is made available under the MIT license. See the LICENSE file.

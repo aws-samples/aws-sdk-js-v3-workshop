@@ -1,0 +1,61 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  AwsJsSdkV3Workshop
+
+  Frontend resources for the AWS JS SDK v3 workshop
+
+Resources:
+  S3BucketName:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: aws-js-sdk-v3-workshop-files
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins:
+              - "*"
+            AllowedMethods:
+              - POST
+              - GET
+              - PUT
+              - DELETE
+              - HEAD
+            AllowedHeaders:
+              - "*"
+  S3IdentityPool:
+    Type: AWS::Cognito::IdentityPool
+    Properties:
+      AllowUnauthenticatedIdentities: True
+      IdentityPoolName: AwsJsSdkWorkshopIdentityPool
+  S3IamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Federated:
+                - "cognito-identity.amazonaws.com"
+            Action:
+              - "sts:AssumeRoleWithWebIdentity"
+      Policies:
+        - PolicyName: S3IamRolePolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "s3:*"
+                Resource:
+                  - !Sub "arn:aws:s3:::${S3BucketName}"
+                  - !Sub "arn:aws:s3:::${S3BucketName}/*"
+  S3IdentityPoolRoleAttachment:
+    DependsOn:
+      - S3IdentityPool
+      - S3IamRole
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties:
+      IdentityPoolId: !Ref S3IdentityPool
+      Roles:
+        unauthenticated: !GetAtt S3IamRole.Arn
