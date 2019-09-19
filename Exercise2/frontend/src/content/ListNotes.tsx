@@ -3,6 +3,7 @@ import { Link, RouteComponentProps } from "@reach/router";
 import config from "../config";
 import Loading from "../components/Loading";
 import { Card, Alert, CardColumns, Button } from "react-bootstrap";
+import PageContainer from "../components/PageContainer";
 
 interface Note {
   noteId: string;
@@ -74,7 +75,7 @@ const ListNotes = (props: RouteComponentProps) => {
   );
 
   return (
-    <>
+    <PageContainer header={<div>Your Notes</div>}>
       {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
       {isLoading ? (
         <Loading />
@@ -84,7 +85,7 @@ const ListNotes = (props: RouteComponentProps) => {
           {createNewNote()}
         </div>
       )}
-    </>
+    </PageContainer>
   );
 };
 

@@ -4,6 +4,8 @@ import { navigate, RouteComponentProps } from "@reach/router";
 import config from "../config";
 import ButtonSpinner from "../components/ButtonSpinner";
 import putObject from "../libs/putObject";
+import PageContainer from "../components/PageContainer";
+import HomeButton from "../components/HomeButton";
 
 const CreateNote = (props: RouteComponentProps) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,36 +42,38 @@ const CreateNote = (props: RouteComponentProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
-      <Form.Group controlId="content">
-        <Form.Label>Note Content</Form.Label>
-        <Form.Control
-          as="textarea"
-          placeholder="Enter Note content"
-          onChange={e => {
-            const content = e.currentTarget.value;
-            if (content) {
-              setNoteContent(content);
-            }
-          }}
-        />
-      </Form.Group>
-      <Form.Group controlId="file">
-        <Form.Label>Attachment</Form.Label>
-        <Form.Control
-          // @ts-ignore
-          onChange={e => {
-            setFile(e.target.files[0]);
-          }}
-          type="file"
-        />
-      </Form.Group>
-      <Button type="submit" disabled={!noteContent || isLoading} block>
-        {isLoading ? <ButtonSpinner /> : ""}
-        {isLoading ? "Creating..." : "Create"}
-      </Button>
-    </form>
+    <PageContainer header={<HomeButton />}>
+      <form onSubmit={handleSubmit}>
+        {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
+        <Form.Group controlId="content">
+          <Form.Label>Note Content</Form.Label>
+          <Form.Control
+            as="textarea"
+            placeholder="Enter Note content"
+            onChange={e => {
+              const content = e.currentTarget.value;
+              if (content) {
+                setNoteContent(content);
+              }
+            }}
+          />
+        </Form.Group>
+        <Form.Group controlId="file">
+          <Form.Label>Attachment</Form.Label>
+          <Form.Control
+            // @ts-ignore
+            onChange={e => {
+              setFile(e.target.files[0]);
+            }}
+            type="file"
+          />
+        </Form.Group>
+        <Button type="submit" disabled={!noteContent || isLoading} block>
+          {isLoading ? <ButtonSpinner /> : ""}
+          {isLoading ? "Creating..." : "Create"}
+        </Button>
+      </form>
+    </PageContainer>
   );
 };
 

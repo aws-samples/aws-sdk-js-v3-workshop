@@ -6,6 +6,8 @@ import config from "../config";
 import DeleteNoteButton from "./DeleteNoteButton";
 import SaveNoteButton from "./SaveNoteButton";
 import getObjectUrl from "../libs/getObjectUrl";
+import PageContainer from "../components/PageContainer";
+import HomeButton from "../components/HomeButton";
 
 const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
   const { noteId } = props;
@@ -38,7 +40,7 @@ const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
   }, [noteId]);
 
   return (
-    <>
+    <PageContainer header={<HomeButton />}>
       {isLoading ? (
         <Loading />
       ) : (
@@ -73,7 +75,7 @@ const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
           <DeleteNoteButton noteId={noteId || ""} attachment={attachment} />
         </form>
       )}
-    </>
+    </PageContainer>
   );
 };
 
