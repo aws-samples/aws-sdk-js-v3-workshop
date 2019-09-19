@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps, navigate } from "@reach/router";
 import { Form, Card } from "react-bootstrap";
-import config from "../config";
+import { config } from "../config";
 import DeleteNoteButton from "./DeleteNoteButton";
 import SaveNoteButton from "./SaveNoteButton";
 import { getObjectUrl } from "../libs";

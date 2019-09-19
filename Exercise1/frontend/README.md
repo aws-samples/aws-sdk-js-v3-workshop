@@ -71,7 +71,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   -import AWS from "aws-sdk";
   +import AWS from "aws-sdk/global";
   +import s3 from "aws-sdk/clients/s3";
-   import config from "../config";
+   import { config } from "../config";
 
   -const s3Client = new AWS.S3({
   +const s3Client = new s3({
@@ -101,7 +101,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   +import { S3 } from "@aws-sdk/client-s3-browser";
   +import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity";
   +import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser/CognitoIdentityClient";
-   import config from "../config";
+   import { config } from "../config";
 
   -const s3Client = new AWS.S3({
   +// Customization pending https://github.com/aws/aws-sdk-js-v3/issues/185
@@ -158,7 +158,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   +import { S3RequestPresigner } from "@aws-sdk/s3-request-presigner";
   +import { formatUrl } from "@aws-sdk/util-format-url";
    import s3Client from "./s3Client";
-   import config from "../config";
+   import { config } from "../config";
 
   -const getObjectUrl = async (fileName: string) =>
   -  s3Client.getSignedUrlPromise("getObject", {
@@ -222,7 +222,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   ```diff
   +import { PutObjectCommand } from "@aws-sdk/client-s3-browser/commands/PutObjectCommand";
    import s3Client from "./s3Client";
-   import config from "../config";
+   import { config } from "../config";
 
    const putObject = async (file: File) => {
     const Key = `${Date.now()}-${file.name}`;
@@ -257,7 +257,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
   ```diff
    import { navigate, RouteComponentProps } from "@reach/router";
-   import config from "../config";
+   import { config } from "../config";
    import ButtonSpinner from "../components/ButtonSpinner";
   -import putObject from "../libs/putObject";
 
@@ -280,7 +280,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 - [DeleteNoteButton.tsx](./src/content/DeleteNoteButton.tsx)
 
   ```diff
-   import config from "../config";
+   import { config } from "../config";
    import { navigate } from "@reach/router";
    import ButtonSpinner from "../components/ButtonSpinner";
   -import deleteObject from "../libs/deleteObject";
@@ -302,7 +302,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 - [ShowNote.tsx](./src/content/ShowNote.tsx)
 
   ```diff
-   import config from "../config";
+   import { config } from "../config";
    import DeleteNoteButton from "./DeleteNoteButton";
    import SaveNoteButton from "./SaveNoteButton";
   -import getObjectUrl from "../libs/getObjectUrl";

@@ -1,5 +1,5 @@
 import AWS from "aws-sdk";
-import config from "../config";
+import { config } from "../config";
 
 const s3Client = new AWS.S3({
   region: "us-west-2",

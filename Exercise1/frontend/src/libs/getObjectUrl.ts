@@ -1,5 +1,5 @@
 import { s3Client } from "./s3Client";
-import config from "../config";
+import { config } from "../config";
 
 const getObjectUrl = async (fileName: string) =>
   s3Client.getSignedUrlPromise("getObject", {
