@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Router } from "@reach/router";
-import PageContainer from "./components/PageContainer";
+import { PageContainer } from "./components";
 
 const ListNotes = React.lazy(() => import("./content/ListNotes"));
 const CreateNote = React.lazy(() => import("./content/CreateNote"));

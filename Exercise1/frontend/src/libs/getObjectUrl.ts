@@ -1,4 +1,4 @@
-import s3Client from "./s3Client";
+import { s3Client } from "./s3Client";
 import config from "../config";
 
 const getObjectUrl = async (fileName: string) =>
@@ -7,4 +7,4 @@ const getObjectUrl = async (fileName: string) =>
     Bucket: config.s3Bucket
   });
 
-export default getObjectUrl;
+export { getObjectUrl };

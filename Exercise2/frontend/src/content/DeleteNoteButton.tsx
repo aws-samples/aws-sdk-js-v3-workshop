@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button, Alert } from "react-bootstrap";
 import config from "../config";
 import { navigate } from "@reach/router";
-import ButtonSpinner from "../components/ButtonSpinner";
-import deleteObject from "../libs/deleteObject";
+import { deleteObject } from "../libs";
+import { ButtonSpinner } from "../components";
 
 const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
   const { noteId, attachment } = props;

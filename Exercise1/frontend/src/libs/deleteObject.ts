@@ -1,4 +1,4 @@
-import s3Client from "./s3Client";
+import { s3Client } from "./s3Client";
 import config from "../config";
 
 const deleteObject = async (fileName: string) =>
@@ -9,4 +9,4 @@ const deleteObject = async (fileName: string) =>
     })
     .promise();
 
-export default deleteObject;
+export { deleteObject };

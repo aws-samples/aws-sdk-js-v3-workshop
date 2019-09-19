@@ -185,7 +185,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   +  return formatUrl(url);
   +};
   +
-   export default getObjectUrl;
+   export { getObjectUrl };
   ```
 
 - Run `yarn build` to generate bundle, and it's size will reduce to ~107KB!

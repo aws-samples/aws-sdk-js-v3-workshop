@@ -1,17 +1,9 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Card } from "react-bootstrap";
-import HomeButton from "../components/HomeButton";
+import { HomeButton, PageContainer } from "../components";
 
 const NotFound = (props: RouteComponentProps) => (
-  <Card>
-    <Card.Header>
-      <HomeButton />
-    </Card.Header>
-    <Card.Body className="d-flex justify-content-center">
-      404 Page Not Found
-    </Card.Body>
-  </Card>
+  <PageContainer header={<HomeButton />}>404 Page Not Found</PageContainer>
 );
 
-export default NotFound;
+export { NotFound };

@@ -2,10 +2,8 @@ import React, { useState, FormEvent } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { navigate, RouteComponentProps } from "@reach/router";
 import config from "../config";
-import ButtonSpinner from "../components/ButtonSpinner";
-import putObject from "../libs/putObject";
-import PageContainer from "../components/PageContainer";
-import HomeButton from "../components/HomeButton";
+import { putObject } from "../libs";
+import { HomeButton, ButtonSpinner, PageContainer } from "../components";
 
 const CreateNote = (props: RouteComponentProps) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -77,4 +75,4 @@ const CreateNote = (props: RouteComponentProps) => {
   );
 };
 
-export default CreateNote;
+export { CreateNote };

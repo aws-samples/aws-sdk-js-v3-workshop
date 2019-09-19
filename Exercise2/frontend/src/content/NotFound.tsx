@@ -1,7 +1,6 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
-import HomeButton from "../components/HomeButton";
-import PageContainer from "../components/PageContainer";
+import { HomeButton, PageContainer } from "../components";
 
 const NotFound = (props: RouteComponentProps) => (
   <PageContainer header={<HomeButton />}>404 Page Not Found</PageContainer>

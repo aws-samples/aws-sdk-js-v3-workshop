@@ -1,4 +1,4 @@
-import s3Client from "./s3Client";
+import { s3Client } from "./s3Client";
 import config from "../config";
 
 const putObject = async (file: File) => {
@@ -14,4 +14,4 @@ const putObject = async (file: File) => {
   return Key;
 };
 
-export default putObject;
+export { putObject };

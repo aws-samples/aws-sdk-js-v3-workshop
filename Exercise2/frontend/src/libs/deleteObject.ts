@@ -1,5 +1,5 @@
 import { DeleteObjectCommand } from "@aws-sdk/client-s3-browser/commands/DeleteObjectCommand";
-import s3Client from "./s3Client";
+import { s3Client } from "./s3Client";
 import config from "../config";
 
 const deleteObject = async (fileName: string) =>
@@ -10,4 +10,4 @@ const deleteObject = async (fileName: string) =>
     })
   );
 
-export default deleteObject;
+export { deleteObject };

@@ -2,7 +2,7 @@ import { createRequest } from "@aws-sdk/util-create-request";
 import { GetObjectCommand } from "@aws-sdk/client-s3-browser/commands/GetObjectCommand";
 import { S3RequestPresigner } from "@aws-sdk/s3-request-presigner";
 import { formatUrl } from "@aws-sdk/util-format-url";
-import s3Client from "./s3Client";
+import { s3Client } from "./s3Client";
 import config from "../config";
 
 const getObjectUrl = async (fileName: string) => {
@@ -26,4 +26,4 @@ const getObjectUrl = async (fileName: string) => {
   return formatUrl(url);
 };
 
-export default getObjectUrl;
+export { getObjectUrl };

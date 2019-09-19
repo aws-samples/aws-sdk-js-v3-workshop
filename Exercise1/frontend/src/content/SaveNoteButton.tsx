@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Alert } from "react-bootstrap";
 import config from "../config";
 import { navigate } from "@reach/router";
-import ButtonSpinner from "../components/ButtonSpinner";
+import { ButtonSpinner } from "../components";
 
 const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
   const [isSaving, setIsSaving] = useState(false);
@@ -39,4 +39,4 @@ const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
   );
 };
 
-export default SaveNoteButton;
+export { SaveNoteButton };

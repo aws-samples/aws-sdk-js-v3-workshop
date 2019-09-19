@@ -1,7 +1,7 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 
-export default () => (
+const ButtonSpinner = () => (
   <Spinner
     as="span"
     animation="border"
@@ -11,3 +11,5 @@ export default () => (
     className="mr-1"
   />
 );
+
+export { ButtonSpinner };

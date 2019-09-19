@@ -13,4 +13,4 @@ const s3Client = new AWS.S3({
   )
 });
 
-export default s3Client;
+export { s3Client };

@@ -11,4 +11,4 @@ const PageContainer = (props: {
   </Card>
 );
 
-export default PageContainer;
+export { PageContainer };

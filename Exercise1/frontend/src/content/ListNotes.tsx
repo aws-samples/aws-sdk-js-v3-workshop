@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
 import config from "../config";
-import Loading from "../components/Loading";
 import { Card, Alert, CardColumns, Button } from "react-bootstrap";
-import PageContainer from "../components/PageContainer";
-
+import { Loading, PageContainer } from "../components";
 interface Note {
   noteId: string;
   createdAt: string;
@@ -89,4 +87,4 @@ const ListNotes = (props: RouteComponentProps) => {
   );
 };
 
-export default ListNotes;
+export { ListNotes };

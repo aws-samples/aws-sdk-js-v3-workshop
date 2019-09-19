@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps, navigate } from "@reach/router";
 import { Form, Card } from "react-bootstrap";
-import Loading from "../components/Loading";
 import config from "../config";
 import DeleteNoteButton from "./DeleteNoteButton";
 import SaveNoteButton from "./SaveNoteButton";
-import getObjectUrl from "../libs/getObjectUrl";
-import PageContainer from "../components/PageContainer";
-import HomeButton from "../components/HomeButton";
+import { getObjectUrl } from "../libs";
+import { HomeButton, Loading, PageContainer } from "../components";
 
 const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
   const { noteId } = props;
