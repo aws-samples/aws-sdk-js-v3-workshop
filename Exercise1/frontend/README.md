@@ -250,80 +250,69 @@ In this section, we're going to update the code to import S3 browser Client in d
     790 B                 build/static/js/runtime~main.e82a7b61.js
   ```
 
-## Bundle size without SDK
+## Separate chunks using code splitting with React.lazy
 
-- For comparison, make the following changes to remove SDK from the bundle
-- [CreateNote.tsx](./src/content/CreateNote.tsx)
+- We now import client and specific commands in v3, and can make use of code splitting with React.lazy
+- React.lazy currently doesn't support named exports ([docs](https://reactjs.org/docs/code-splitting.html#named-exports)). So, we'll have to do default export on components being lazily loaded.
 
-  ```diff
-   import { navigate, RouteComponentProps } from "@reach/router";
-   import { config } from "../config";
-   import ButtonSpinner from "../components/ButtonSpinner";
-  -import putObject from "../libs/putObject";
-
-   const CreateNote = (props: RouteComponentProps) => {
-    const [isLoading, setIsLoading] = useState(false);
-  @@ -26,10 +25,9 @@ const CreateNote = (props: RouteComponentProps) => {
-      const createNoteURL = `${config.GatewayURL}/notes`;
-
-      try {
-  -      const attachment = file ? await putObject(file) : undefined;
-        await fetch(createNoteURL, {
-          method: "POST",
-  -        body: JSON.stringify({ attachment, content: noteContent })
-  +        body: JSON.stringify({ content: noteContent })
-        });
-        navigate("/");
-      } catch (error) {
-  ```
-
-- [DeleteNoteButton.tsx](./src/content/DeleteNoteButton.tsx)
+  - For example, make the following change in [CreateNote.tsx](./src/content/CreateNote.tsx)
 
   ```diff
-   import { config } from "../config";
-   import { navigate } from "@reach/router";
-   import ButtonSpinner from "../components/ButtonSpinner";
-  -import deleteObject from "../libs/deleteObject";
+    );
+  };
 
-   const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
-    const { noteId, attachment } = props;
-  @@ -17,9 +16,6 @@ const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
-      const deleteNoteURL = `${config.GatewayURL}/notes/${noteId}`;
-
-      try {
-  -      if (attachment) {
-  -        await deleteObject(attachment);
-  -      }
-        await fetch(deleteNoteURL, {
-          method: "DELETE"
-        });
+  -export { CreateNote };
+  +export default CreateNote;
   ```
 
-- [ShowNote.tsx](./src/content/ShowNote.tsx)
+- Then lazily import components in [Routes.tsx](./src/Routes.tsx), and render them inside a Suspense component
 
   ```diff
-   import { config } from "../config";
-   import DeleteNoteButton from "./DeleteNoteButton";
-   import SaveNoteButton from "./SaveNoteButton";
-  -import getObjectUrl from "../libs/getObjectUrl";
+  -import React from "react";
+  +import React, { lazy, Suspense } from "react";
+   import { Router } from "@reach/router";
+  -import { ListNotes, CreateNote, ShowNote, NotFound } from "./content";
+  +
+  +const ListNotes = lazy(() => import("./content/ListNotes"));
+  +const CreateNote = lazy(() => import("./content/CreateNote"));
+  +const ShowNote = lazy(() => import("./content/ShowNote"));
+  +const NotFound = lazy(() => import("./content/NotFound"));
 
-   const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
-    const { noteId } = props;
-  @@ -25,7 +24,6 @@ const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
-          setNoteContent(data.content.S as string);
-          if (data.attachment) {
-            setAttachment(data.attachment.S);
-  -          setAttachmentURL(await getObjectUrl(data.attachment.S));
-          }
-        } catch (error) {
+   const Routes = () => (
+  -  <Router className="mt-md-4 d-flex flex-column justify-content-center">
+  -    <ListNotes path="/" />
+  -    <CreateNote path="/note/new" />
+  -    <ShowNote path="/notes/:noteId" />
+  -    <NotFound default />
+  -  </Router>
+  +  <div className="mt-md-4 d-flex flex-column justify-content-center">
+  +    <Suspense fallback={<div>Loading...</div>}>
+  +      <Router>
+  +        <ListNotes path="/" />
+  +        <CreateNote path="/note/new" />
+  +        <ShowNote path="/notes/:noteId" />
+  +        <NotFound default />
+  +      </Router>
+  +    </Suspense>
+  +  </div>
+   );
+
+   export { Routes };
   ```
 
-- Run `yarn build` to generate bundle, and notice that the size is ~53KB
+- Run `yarn build` to generate bundle, and it's going to be split into multiple chunks of even smaller sizes!
 
   ```console
   File sizes after gzip:
 
-    52.87 KB  build/static/js/2.5d40fcf7.chunk.js
-    2.5 KB    build/static/js/main.2c3db684.chunk.js
-    790 B     build/static/js/runtime~main.e82a7b61.js
+    45.72 KB  build/static/js/4.76a075be.chunk.js
+    35.33 KB  build/static/js/1.9ecab0dd.chunk.js
+    6.41 KB   build/static/js/0.214c92a2.chunk.js
+    5.78 KB   build/static/js/5.d006f9d4.chunk.js
+    2.56 KB   build/static/js/6.9bdcbc25.chunk.js
+    2.21 KB   build/static/js/7.e5abe528.chunk.js
+    1.25 KB   build/static/js/runtime~main.74dd0176.js
+    1.08 KB   build/static/js/8.5a7642bb.chunk.js
+    719 B     build/static/js/main.5cb3a9cd.chunk.js
+    307 B     build/static/js/9.4bd2580a.chunk.js
   ```
