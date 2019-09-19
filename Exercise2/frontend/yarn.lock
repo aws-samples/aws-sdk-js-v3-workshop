@@ -263,9 +263,9 @@
     tslib "^1.8.0"
 
 "@aws-sdk/md5-js@^0.1.0-preview.4":
-  version "0.1.0-preview.5"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/md5-js/-/md5-js-0.1.0-preview.5.tgz#8a74ce82dd1b423b9cfdbd7da8dca34787502cf2"
-  integrity sha512-h9ymiLZee2fDxxL4CjhGbJ8i0oOQGApxzZ7v+r0LHe0oA+94W27z86yZBFUxFFyNVMB/8pNWI53IC1JguaVaSw==
+  version "0.1.0-preview.6"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/md5-js/-/md5-js-0.1.0-preview.6.tgz#0b0e83d47396ec8811147fa87de2ff78583f849a"
+  integrity sha512-32uYdgpHyhAflo8lBJTz2vV58TPNisyPY1yU8Z9n6EDNnaw6gnzldhpX5mtx8zkaQHCeSYcCwha1XQeeD1vbkA==
   dependencies:
     "@aws-sdk/types" "^0.1.0-preview.5"
     "@aws-sdk/util-utf8-browser" "^0.1.0-preview.3"
@@ -504,10 +504,10 @@
     "@aws-sdk/util-hex-encoding" "^0.1.0-preview.1"
     tslib "^1.8.0"
 
-"@aws-sdk/signature-v4@^0.1.0-preview.5", "@aws-sdk/signature-v4@^0.1.0-preview.6":
-  version "0.1.0-preview.6"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-0.1.0-preview.6.tgz#7f552891504586aa2409819dbd9a08bcd8379ad3"
-  integrity sha512-NcScMdSDARNbKt3ApjL5iQ7qQXBAIlfnPB7/EDC9CkSVxMzyUSy7NWD/5lWKEt6brcfBiTvxivMaStLxxAYI2g==
+"@aws-sdk/signature-v4@^0.1.0-preview.5", "@aws-sdk/signature-v4@^0.1.0-preview.7":
+  version "0.1.0-preview.7"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-0.1.0-preview.7.tgz#0c7c77e83b3178125742c53416f69ff86ab0855c"
+  integrity sha512-lVi1dJKEjKhNv88Ouo3UaZIintSHcaWGozI4JDwjGjaSsAg1WkkRS72Te6ur1+owJ0oHTcaXwzfQRjgX/qqTjA==
   dependencies:
     "@aws-sdk/is-array-buffer" "^0.1.0-preview.3"
     "@aws-sdk/protocol-timestamp" "^0.1.0-preview.5"
@@ -525,11 +525,11 @@
     tslib "^1.8.0"
 
 "@aws-sdk/signing-middleware@^0.1.0-preview.5":
-  version "0.1.0-preview.6"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/signing-middleware/-/signing-middleware-0.1.0-preview.6.tgz#05e157f7b5050020728377c798b2b35a6dd269cf"
-  integrity sha512-3BwJQR7GzJC0i/9kpZ1TV1BpCj/hsNqWx3ZQNCPAwm8HZbsB3UmmOmU68+dTdQAVI5C1aZE1/qPzmmNVXuU2sg==
+  version "0.1.0-preview.7"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signing-middleware/-/signing-middleware-0.1.0-preview.7.tgz#55f3b5c4703fe7cd5999adbbd6629497588225fb"
+  integrity sha512-tmQcI3tdVMdxdOR8o17fHEyMRGepe8tEL+TPnvnD7TX0c8tkxZ+bHxRV9KU+s0DW+b2rWe7l+E1ytgS1tY04UA==
   dependencies:
-    "@aws-sdk/signature-v4" "^0.1.0-preview.6"
+    "@aws-sdk/signature-v4" "^0.1.0-preview.7"
     "@aws-sdk/types" "^0.1.0-preview.5"
     tslib "^1.8.0"
 

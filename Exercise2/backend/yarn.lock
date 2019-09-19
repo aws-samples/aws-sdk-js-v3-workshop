@@ -87,9 +87,9 @@
     tslib "^1.8.0"
 
 "@aws-sdk/credential-provider-node@^0.1.0-preview.3":
-  version "0.1.0-preview.6"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-node/-/credential-provider-node-0.1.0-preview.6.tgz#07cc073a6138922b815b0ee5728458cd880237c9"
-  integrity sha512-Ov0aEfnn7HVze9qP1RRT0ghIQHPGGMOolecl8+7KTevh1h/u8F54sn2r6lwUmLVo/OUYynUpox5J4tDxvpo7kQ==
+  version "0.1.0-preview.7"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-node/-/credential-provider-node-0.1.0-preview.7.tgz#2d81d4278f44d43358d5ca20d5638c49825deba7"
+  integrity sha512-Fjnr8SyfUhWlREOnzpRS/Wk5loqf0L3z1fOP6aCDmViPlAfDzCF83F0EkIqeBqTgVhCu40wysCs31nTrV8pWiw==
   dependencies:
     "@aws-sdk/credential-provider-env" "^0.1.0-preview.6"
     "@aws-sdk/credential-provider-imds" "^0.1.0-preview.5"
@@ -294,10 +294,10 @@
   dependencies:
     tslib "^1.8.0"
 
-"@aws-sdk/signature-v4@^0.1.0-preview.3", "@aws-sdk/signature-v4@^0.1.0-preview.6":
-  version "0.1.0-preview.6"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-0.1.0-preview.6.tgz#7f552891504586aa2409819dbd9a08bcd8379ad3"
-  integrity sha512-NcScMdSDARNbKt3ApjL5iQ7qQXBAIlfnPB7/EDC9CkSVxMzyUSy7NWD/5lWKEt6brcfBiTvxivMaStLxxAYI2g==
+"@aws-sdk/signature-v4@^0.1.0-preview.3", "@aws-sdk/signature-v4@^0.1.0-preview.7":
+  version "0.1.0-preview.7"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-0.1.0-preview.7.tgz#0c7c77e83b3178125742c53416f69ff86ab0855c"
+  integrity sha512-lVi1dJKEjKhNv88Ouo3UaZIintSHcaWGozI4JDwjGjaSsAg1WkkRS72Te6ur1+owJ0oHTcaXwzfQRjgX/qqTjA==
   dependencies:
     "@aws-sdk/is-array-buffer" "^0.1.0-preview.3"
     "@aws-sdk/protocol-timestamp" "^0.1.0-preview.5"
@@ -306,18 +306,18 @@
     tslib "^1.8.0"
 
 "@aws-sdk/signing-middleware@^0.1.0-preview.3":
-  version "0.1.0-preview.6"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/signing-middleware/-/signing-middleware-0.1.0-preview.6.tgz#05e157f7b5050020728377c798b2b35a6dd269cf"
-  integrity sha512-3BwJQR7GzJC0i/9kpZ1TV1BpCj/hsNqWx3ZQNCPAwm8HZbsB3UmmOmU68+dTdQAVI5C1aZE1/qPzmmNVXuU2sg==
+  version "0.1.0-preview.7"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signing-middleware/-/signing-middleware-0.1.0-preview.7.tgz#55f3b5c4703fe7cd5999adbbd6629497588225fb"
+  integrity sha512-tmQcI3tdVMdxdOR8o17fHEyMRGepe8tEL+TPnvnD7TX0c8tkxZ+bHxRV9KU+s0DW+b2rWe7l+E1ytgS1tY04UA==
   dependencies:
-    "@aws-sdk/signature-v4" "^0.1.0-preview.6"
+    "@aws-sdk/signature-v4" "^0.1.0-preview.7"
     "@aws-sdk/types" "^0.1.0-preview.5"
     tslib "^1.8.0"
 
 "@aws-sdk/stream-collector-node@^0.1.0-preview.2":
-  version "0.1.0-preview.5"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/stream-collector-node/-/stream-collector-node-0.1.0-preview.5.tgz#246984dc0c58348da0d701eb4ebfb36f2afd761a"
-  integrity sha512-Xz3L2JfldpopVL1fMknM8hvU7hRrokkAGv8JnCQikvugQOQiYuCucSfB5xAAzxaeZdPf74fRMNhPpWAItzmvIQ==
+  version "0.1.0-preview.6"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/stream-collector-node/-/stream-collector-node-0.1.0-preview.6.tgz#c3e3a14e3d622ae6133670cdb85ab122843c38ad"
+  integrity sha512-cmQfUMrBlm/vPXc9FpDyvI2n9MRgendGlQj9iSyR/DxmcNrf/yJoedSbfj7KzyfwFXmD2RB43rTgMoeXkYzpVQ==
   dependencies:
     "@aws-sdk/types" "^0.1.0-preview.5"
     tslib "^1.8.0"
@@ -328,9 +328,9 @@
   integrity sha512-U5YNVOtAOsilZrszHWr+fdAwXgOccbVbnXG9gq1nIOOVv89zn3SAj7x/E5QrbcAhKPtJedXvk17i6DCcJlPxhg==
 
 "@aws-sdk/url-parser-node@^0.1.0-preview.2":
-  version "0.1.0-preview.5"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/url-parser-node/-/url-parser-node-0.1.0-preview.5.tgz#6417e6f4cb1507492c7849c4d611d19721e6e7f9"
-  integrity sha512-RRIb3b+biQGdI2Lg0+epplVeddu/+ME+6GdNoUoNi1UFqhrwOeighY6jIQFjFD2bXPXaKuVi9T8BGup2bbHjaA==
+  version "0.1.0-preview.6"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/url-parser-node/-/url-parser-node-0.1.0-preview.6.tgz#d91fd6207841d713d85ed2bc519b6bce764c3bed"
+  integrity sha512-82d4bNcOUbHkrjX+dRvWnAsxoU5Ff+rstZHY2JWz2AgLXz+dlvurvmTewoPEb6ANmq3zQSqmHHXGzPFbjFt9SQ==
   dependencies:
     "@aws-sdk/querystring-parser" "^0.1.0-preview.5"
     "@aws-sdk/types" "^0.1.0-preview.5"
@@ -390,9 +390,9 @@
     tslib "^1.8.0"
 
 "@aws-sdk/util-user-agent-node@^0.1.0-preview.3":
-  version "0.1.0-preview.6"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-node/-/util-user-agent-node-0.1.0-preview.6.tgz#aa569023590e0a64407672cae07cb485c47bda50"
-  integrity sha512-dsqtd9jiIo2nO5wCcqpiXW7jFKaM8cJRRxjjrfqvnGvdVbkwAJYIenYSJX3UCThRoPs9mtuVWLZ18V5+CfN+zg==
+  version "0.1.0-preview.7"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-node/-/util-user-agent-node-0.1.0-preview.7.tgz#8818fe70b4e5d27907c258fbd5d75af081998274"
+  integrity sha512-28mZIA6BFB3vSmmbsfarTzixFBebthOQMcfUp7jfDVOgSCyhrB7JgYkKc6u/pupVM+ppvOaZxcSs5cDsqI5KwQ==
   dependencies:
     "@aws-sdk/types" "^0.1.0-preview.5"
     tslib "^1.8.0"
