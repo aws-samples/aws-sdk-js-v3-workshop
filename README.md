@@ -25,13 +25,13 @@ To set up this workshop package, complete the following tasks:
 - Install the [AWS SAM CLI and Docker](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
   - Verify that the AWS SAM CLI is installed by running `sam` in a terminal window
 - Set up [AWS Shared Credential File](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
-  - Your `~/.aws/credentials` should look like the following:
+  - Your `~/.aws/credentials` (`%UserProfile%\.aws\credentials` on Windows) should look like the following:
     ```
     [default]
     aws_access_key_id = <ACCESS_KEY>
     aws_secret_access_key = <SECRET_ACCESS_KEY>
     ```
-  - Your `~/.aws/config` should look like the following:
+  - Your `~/.aws/config` (`%UserProfile%\.aws\config` on Windows) should look like the following:
     ```
     [default]
     region = us-west-2
