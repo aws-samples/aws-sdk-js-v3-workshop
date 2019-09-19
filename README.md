@@ -15,8 +15,9 @@ To set up this workshop package, complete the following tasks:
   1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update)
   1. Install node v10.0.0 by running `nvm install 10` and `nvm use 10` in a terminal window
   1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v10`, such as `v10.16.3`)
-- (Optional) Install [yarn](https://yarnpkg.com/en/docs/install)
-  - We recommend using **yarn** for its simplicity and speed, although you can still use npm's cli instead of yarn
+- Install [yarn](https://yarnpkg.com/en/docs/install)
+  - We recommend using **yarn** for its simplicity and speed. Although you can still use npm's cli instead of yarn,
+    we do not provide alternative instructions for using npm' cli instead of yarn in this workshop
 - If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
   - If you're an Amazon employee, see the internal wiki for creating an AWS account
 - Install the [AWS CLI](https://aws.amazon.com/cli/)
