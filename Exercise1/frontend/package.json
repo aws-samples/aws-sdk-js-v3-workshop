@@ -28,7 +28,7 @@
     "Node.js"
   ],
   "author": "Kamat, Trivikram",
-  "license": "MIT-0",
+  "license": "MIT",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -25,7 +25,7 @@
     "Node.js"
   ],
   "author": "Kamat, Trivikram",
-  "license": "MIT-0",
+  "license": "MIT",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.31",
     "@types/node": "^10.14.14",
