@@ -46,5 +46,8 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
 
 Edit existing APIs or create new ones to use AWS Services you're familiar with in the frontend. For example:
 
-- ServiceName1 can be used for something
-- ServiceName2 can be used for something else
+- [Amazon Cognito](https://aws.amazon.com/cognito/) can be used for sign-up, sign-in and access control
+- [Amazon Polly](https://aws.amazon.com/polly/) can be used for reading content of notes
+- Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation
+- Remove dependency on AWS CLI/SAM CLI by writing Cloudformation commands in JS SDK v3 instead
+- Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images

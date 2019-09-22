@@ -38,5 +38,6 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
 
 Edit existing APIs or create new ones to use AWS Services you're familiar with in the backend. For example:
 
-- ServiceName1 can be used for something
-- ServiceName2 can be used for something else
+- Allow user to set reminder by using Amazon [SES](https://aws.amazon.com/ses/)/[SNS](https://aws.amazon.com/sns/)/[SQS](https://aws.amazon.com/sqs/)
+  - This can be done by storing new attribute (say remindAt) in DynamoDB
+- Remove dependency on AWS CLI/SAM CLI by writing Cloudformation commands in JS SDK v3 instead
