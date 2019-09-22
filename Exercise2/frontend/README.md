@@ -51,3 +51,7 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 - Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation
 - Remove dependency on AWS CLI/SAM CLI by writing Cloudformation commands in JS SDK v3 instead
 - Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images
+
+# Documentation
+
+For this workshop exercise, we've generated documentation [here](https://trivikr.github.io/aws-sdk-js-v3/)

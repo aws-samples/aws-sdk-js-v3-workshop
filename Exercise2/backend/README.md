@@ -41,3 +41,7 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 - Allow user to set reminder by using Amazon [SES](https://aws.amazon.com/ses/)/[SNS](https://aws.amazon.com/sns/)/[SQS](https://aws.amazon.com/sqs/)
   - This can be done by storing new attribute (say remindAt) in DynamoDB
 - Remove dependency on AWS CLI/SAM CLI by writing Cloudformation commands in JS SDK v3 instead
+
+# Documentation
+
+For this workshop exercise, we've generated documentation [here](https://trivikr.github.io/aws-sdk-js-v3/)
