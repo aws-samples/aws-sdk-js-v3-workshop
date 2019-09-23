@@ -1,7 +1,5 @@
 # DynamodDB client in v2 vs v3
 
-![DynamodDB client in v2 vs v3](http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/images/nodeicon.png)
-
 - This package contains backend code which performs create, delete, get, list and update operations on DynamoDB
 - It uses webpack to build single minimized bundle for each operation, and SAM CLI to package and deploy those bundles
 
@@ -41,7 +39,13 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 - Login to [AWS Lambda Console](https://console.aws.amazon.com/lambda/home)
 - The size of each lambda functions will be ~470KB
 
-  ![AWS Lambda function sizes in v2](./screenshots/aws-lambda-v2.png)
+<details><summary>Click to view image</summary>
+<p>
+
+![AWS Lambda function sizes in v2](./screenshots/aws-lambda-v2.png)
+
+</p>
+</details>
 
 - This happens because entire aws-sdk is bundled in the lambda in file [`dynamoDB.ts`](./src/libs/dynamoDB.ts)
 
@@ -65,7 +69,13 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
 - Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~76KB!
 
-  ![AWS Lambda function sizes in v2 with dynamodb import](./screenshots/aws-lambda-v2-dynamodb.png)
+<details><summary>Click to view image</summary>
+<p>
+
+![AWS Lambda function sizes in v2 with dynamodb import](./screenshots/aws-lambda-v2-dynamodb.png)
+
+</p>
+</details>
 
 ## Reduce bundle size further by using client from v3
 
@@ -95,7 +105,13 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
 - Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~26KB!
 
-  ![AWS Lambda function sizes in v3](./screenshots/aws-lambda-v3.png)
+<details><summary>Click to view image</summary>
+<p>
+
+![AWS Lambda function sizes in v3](./screenshots/aws-lambda-v3.png)
+
+</p>
+</details>
 
 ## Reduce bundle size even more by just importing specific commands in v3
 
@@ -131,7 +147,13 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
 - Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~18KB!
 
-  ![AWS Lambda function sizes in v3 command import](./screenshots/aws-lambda-v3-command.png)
+<details><summary>Click to view image</summary>
+<p>
+
+![AWS Lambda function sizes in v3 command import](./screenshots/aws-lambda-v3-command.png)
+
+</p>
+</details>
 
 # Correlation between lambda size and execution time
 
@@ -146,21 +168,45 @@ Here's how we find out correlation between lambda size and execution time:
 
 ### Cold start
 
+<details><summary>Click to view image</summary>
+<p>
+
 ![AWS v2 entire import cold start](./screenshots/aws-sdk-js-cold-start.png)
+
+</p>
+</details>
 
 ### Warm start
 
+<details><summary>Click to view image</summary>
+<p>
+
 ![AWS v2 entire import warm start](./screenshots/aws-sdk-js-warm-start.png)
+
+</p>
+</details>
 
 ## Traces for lambda which imports specific client and command in v3
 
 ### Cold start
 
+<details><summary>Click to view image</summary>
+<p>
+
 ![AWS v3 client+command import cold start](./screenshots/aws-sdk-js-v3-cold-start.png)
+
+</p>
+</details>
 
 ### Warm start
 
+<details><summary>Click to view image</summary>
+<p>
+
 ![AWS v3 client+command entire import warm start](./screenshots/aws-sdk-js-v3-warm-start.png)
+
+</p>
+</details>
 
 ## Comparison between v3 and v2 lambda duration
 
