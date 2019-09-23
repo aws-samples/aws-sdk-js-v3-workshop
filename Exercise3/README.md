@@ -28,8 +28,19 @@ ResourceNotFoundException: Requested resource not found
     at XXX/node_modules/aws-sdk/lib/state_machine.js:26:10
     at Request.<anonymous> (XXX/node_modules/aws-sdk/lib/request.js:38:9)
     at Request.<anonymous> (XXX/node_modules/aws-sdk/lib/request.js:685:12)
+    at AcceptorStateMachine.runTo (XXX/node_modules/aws-sdk/lib/state_machine.js:14:12)
+    at XXX/node_modules/aws-sdk/lib/state_machine.js:26:10
+    at Request.<anonymous> (XXX/node_modules/aws-sdk/lib/request.js:38:9)
+    at Request.<anonymous> (XXX/node_modules/aws-sdk/lib/request.js:685:12)
+    at AcceptorStateMachine.runTo (XXX/node_modules/aws-sdk/lib/state_machine.js:14:12)
+    at XXX/node_modules/aws-sdk/lib/state_machine.js:26:10
+    at Request.<anonymous> (XXX/node_modules/aws-sdk/lib/request.js:38:9)
+    at Request.<anonymous> (XXX/node_modules/aws-sdk/lib/request.js:685:12)
     at Request.callListeners (XXX/node_modules/aws-sdk/lib/sequential_executor.js:116:18)
 ```
+
+Sometimes `Request.transition` exists multiple times as the SDK state machine stuck at some 
+state and makes stack trace unreadable.
 
 However in V3 lets call a similar operation:
 
@@ -61,3 +72,4 @@ ResourceNotFoundException: Requested resource not found
     at process._tickCallback (internal/process/next_tick.js:68:7)
 ```
 
+The V3 SDK uses middleware, you won't see annoying repeated `Request.transition`.
