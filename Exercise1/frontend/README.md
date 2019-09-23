@@ -1,17 +1,27 @@
 # S3 browser client in v2 vs v3
 
-![S3 browser client in v2 vs v3](http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/images/browsericon.png)
-
 - This package contains frontend code which does put, get, delete operations using S3 browser client
 - This is a create-react-app which creates minimized bundle on running `build`
 
   [![Screen recording](https://img.youtube.com/vi/qBltinDalzU/0.jpg)](https://www.youtube.com/watch?v=qBltinDalzU)
 
-# Set up
+## Table of Contents
+
+- [Set up](#set-up)
+  - [Steps to run frontend locally](#steps-to-run-frontend-locally)
+  - [Clean resources](#clean-resources)
+- [Activities](#activities)
+  - [Examine initial bundle size of the app](#examine-initial-bundle-size-of-the-app)
+  - [Reduce bundle size by just importing s3](#reduce-bundle-size-by-just-importing-s3)
+  - [Reduce bundle size further by using client from v3](#reduce-bundle-size-further-by-using-client-from-v3)
+  - [Reduce bundle size further by just importing specific commands in v3](#reduce-bundle-size-further-by-just-importing-specific-commands-in-v3)
+  - [Separate chunks using code splitting with React.lazy](#separate-chunks-using-code-splitting-with-reactlazy)
+
+## Set up
 
 Ensure that you've followed pre-requisites from main [README](../../README.md), and created [backend](../backend/README.md)
 
-## Steps to run frontend locally
+### Steps to run frontend locally
 
 - `yarn`
 - Ensure that environment variable `AWS_JS_SDK_ID` has the value saved from backend README
@@ -36,15 +46,15 @@ Ensure that you've followed pre-requisites from main [README](../../README.md), 
   - Just edit and save the files in `packages/frontend/src`, and the browser page will auto-refresh!
 - `yarn build` to create optimized production build (to get file sizes)
 
-## Clean resources
+### Clean resources
 
 - `yarn clean` to delete resources
 
-# Activities
+## Activities
 
 In this section, we're going to update the code to import S3 browser Client in different ways and compare the bundle sizes of the resulting app.
 
-## Examine initial bundle size of the app
+### Examine initial bundle size of the app
 
 - `yarn build` to generate bundle size
 
@@ -62,7 +72,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   import AWS from "aws-sdk";
   ```
 
-## Reduce bundle size by just importing s3 client
+### Reduce bundle size by just importing s3
 
 - In v2, you can reduce the bundle size by doing dead-code elimination using tree shaking with a bundler like webpack ([details](https://webpack.js.org/guides/tree-shaking/))
 - Just import the `"aws-sdk/clients/s3"` in [`s3Client.ts`](./src/libs/s3Client.ts), as shown in the diff below:
@@ -90,7 +100,7 @@ In this section, we're going to update the code to import S3 browser Client in d
     790 B                   build/static/js/runtime~main.e82a7b61.js
   ```
 
-## Reduce bundle size further by using client from v3
+### Reduce bundle size further by using client from v3
 
 - Uninstall v2 by running `yarn remove aws-sdk`
 - Install s3 dependencies by running `yarn add @aws-sdk/client-s3-browser @aws-sdk/credential-provider-cognito-identity @aws-sdk/client-cognito-identity-browser`
@@ -198,7 +208,7 @@ In this section, we're going to update the code to import S3 browser Client in d
     790 B                  build/static/js/runtime~main.e82a7b61.js
   ```
 
-## Reduce bundle size further by just importing specific commands in v3
+### Reduce bundle size further by just importing specific commands in v3
 
 - AWS JS SDK v3 has an option to import specific commands, thus reducing bundle size further!
 - Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts) to import S3Client from v3
@@ -250,7 +260,7 @@ In this section, we're going to update the code to import S3 browser Client in d
     790 B                 build/static/js/runtime~main.e82a7b61.js
   ```
 
-## Separate chunks using code splitting with React.lazy
+### Separate chunks using code splitting with React.lazy
 
 - We now import client and specific commands in v3, and can make use of code splitting with React.lazy
 - React.lazy currently doesn't support named exports ([docs](https://reactjs.org/docs/code-splitting.html#named-exports)). So, we'll have to do default export on components being lazily loaded.

@@ -1,13 +1,19 @@
 # S3 browser client in v2 vs v3
 
-![S3 browser client in v2 vs v3](http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/images/browsericon.png)
-
 - This package contains frontend code which does put, get, delete operations using S3 browser client
 - This is a create-react-app which creates minimized bundle on running `build`
 
   [![Screen recording](https://img.youtube.com/vi/qBltinDalzU/0.jpg)](https://www.youtube.com/watch?v=qBltinDalzU)
 
-# Set up
+## Table of Contents
+
+- [Set up](#set-up)
+  - [Steps to run frontend locally](#steps-to-run-frontend-locally)
+  - [Clean resources](#clean-resources)
+- [Activities](#activities)
+- [Documentation](#documentation)
+
+## Set up
 
 Ensure that you've followed pre-requisites from main [README](../../README.md), and created [backend](../backend/README.md)
 You do not have to follow these pre-requisites if you plan to override AWS resources from Exercise1:
@@ -22,7 +28,7 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
   - The step `yarn deploy` will fail, if the S3 BucketName is not unique
 - `yarn deploy` to create/update CloudFormation resources
 
-## Steps to run frontend locally
+### Steps to run frontend locally
 
 - `yarn`
 - Edit [`src/config.ts`](./src/config.ts)
@@ -38,11 +44,11 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
   - Just edit and save the files in `packages/frontend/src`, and the browser page will auto-refresh!
 - `yarn build` to create optimized production build (to get file sizes)
 
-## Clean resources
+### Clean resources
 
 - `yarn clean` to delete resources
 
-# Activities
+## Activities
 
 Edit existing APIs or create new ones to use AWS Services you're familiar with in the frontend. For example:
 
@@ -54,6 +60,6 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 - Remove dependency on AWS CLI/SAM CLI by writing Cloudformation commands in JS SDK v3 instead
 - Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images
 
-# Documentation
+## Documentation
 
 For this workshop exercise, we've generated documentation [here](https://trivikr.github.io/aws-sdk-js-v3/)

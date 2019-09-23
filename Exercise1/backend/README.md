@@ -3,11 +3,27 @@
 - This package contains backend code which performs create, delete, get, list and update operations on DynamoDB
 - It uses webpack to build single minimized bundle for each operation, and SAM CLI to package and deploy those bundles
 
-# Set up
+## Table of Contents
+
+- [Set up](#set-up)
+  - [Create backend API](#create-backend-api)
+  - [Test backend API](#test-backend-api)
+  - [Clean resources](#clean-resources)
+- [Activities](#activities)
+  - [Examine initial bundle size of lambda functions](#examine-initial-bundle-size-of-lambda-functions)
+  - [Reduce bundle size by just importing dynamodb](#reduce-bundle-size-by-just-importing-dynamodb)
+  - [Reduce bundle size further by using client from v3](#reduce-bundle-size-further-by-using-client-from-v3)
+  - [Reduce bundle size even more by just importing specific commands in v3](#reduce-bundle-size-even-more-by-just-importing-specific-commands-in-v3)
+- [Correlation between lambda size and execution time](#correlation-between-lambda-size-and-execution-time)
+  - [Traces for lambda which imports entire v2](#traces-for-lambda-which-imports-entire-v2)
+  - [Traces for lambda which imports specific client and command in v3](#traces-for-lambda-which-imports-specific-client-and-command-in-v3)
+  - [Comparison between v3 and v2 lambda duration](#comparison-between-v3-and-v2-lambda-duration)
+
+## Set up
 
 Ensure that you've followed pre-requisites from main [README](../../README.md)
 
-## Create backend API
+### Create backend API
 
 - Run `export AWS_JS_SDK_ID=<unique>-aws-js-sdk-v3-workshop`
   - the value in `<unique>` could be your name, for example
@@ -20,21 +36,21 @@ Ensure that you've followed pre-requisites from main [README](../../README.md)
 - `yarn deploy` to [deploy](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html) your application (this takes time)
 - `yarn bpd` to run build, package and deploy! (during development)
 
-## Test backend API
+### Test backend API
 
 - `yarn describe` to get API Gateway endpoint
 - Visit the endpoint `<ENDPOINT>/Prod/notes` in the browser
 - The contents of DynamoDB table in [template.yml](./template.yaml#L22) would be returned as JSON
 
-## Clean resources
+### Clean resources
 
 - `yarn clean` to delete resources
 
-# Activities
+## Activities
 
 In this section, we're going to update the code to import DynamoDB Client in different ways and compare the bundle sizes of the resulting lambda functions.
 
-## Examine initial bundle size of lambda functions
+### Examine initial bundle size of lambda functions
 
 - Login to [AWS Lambda Console](https://console.aws.amazon.com/lambda/home)
 - The size of each lambda functions will be ~470KB
@@ -54,7 +70,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   export default new AWS.DynamoDB();
   ```
 
-## Reduce bundle size by just importing dynamodb
+### Reduce bundle size by just importing dynamodb
 
 - In v2, you can reduce the bundle size by doing dead-code elimination using tree shaking with a bundler like webpack ([details](https://webpack.js.org/guides/tree-shaking/))
 - Just import the `"aws-sdk/clients/dynamodb"` in [`dynamoDB.ts`](./src/libs/dynamoDB.ts), as shown in the diff below
@@ -77,7 +93,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   </p>
   </details>
 
-## Reduce bundle size further by using client from v3
+### Reduce bundle size further by using client from v3
 
 - Uninstall v2 by running `yarn remove aws-sdk`
 - Install dynamodb in v3 by running `yarn add @aws-sdk/client-dynamodb-node`
@@ -113,7 +129,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   </p>
   </details>
 
-## Reduce bundle size even more by just importing specific commands in v3
+### Reduce bundle size even more by just importing specific commands in v3
 
 - AWS JS SDK v3 has an option to import specific commands, thus reducing bundle size further!
 - Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDBClient from v3
@@ -155,7 +171,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   </p>
   </details>
 
-# Correlation between lambda size and execution time
+## Correlation between lambda size and execution time
 
 Here's how we find out correlation between lambda size and execution time:
 
@@ -164,9 +180,9 @@ Here's how we find out correlation between lambda size and execution time:
 - For testing, two fresh endpoints are created using Cloudformation and we visit `<ENDPOINT>/Prod/notes` in the browser.
 - The cold start is the first hit post endpoint creation, and warm start is the second hit after ~3 seconds.
 
-## Traces for lambda which imports entire v2
+### Traces for lambda which imports entire v2
 
-### Cold start
+#### Cold start
 
   <details><summary>Click to view image</summary>
   <p>
@@ -176,7 +192,7 @@ Here's how we find out correlation between lambda size and execution time:
   </p>
   </details>
 
-### Warm start
+#### Warm start
 
   <details><summary>Click to view image</summary>
   <p>
@@ -186,9 +202,9 @@ Here's how we find out correlation between lambda size and execution time:
   </p>
   </details>
 
-## Traces for lambda which imports specific client and command in v3
+### Traces for lambda which imports specific client and command in v3
 
-### Cold start
+#### Cold start
 
   <details><summary>Click to view image</summary>
   <p>
@@ -198,7 +214,7 @@ Here's how we find out correlation between lambda size and execution time:
   </p>
   </details>
 
-### Warm start
+#### Warm start
 
   <details><summary>Click to view image</summary>
   <p>
@@ -208,7 +224,7 @@ Here's how we find out correlation between lambda size and execution time:
   </p>
   </details>
 
-## Comparison between v3 and v2 lambda duration
+### Comparison between v3 and v2 lambda duration
 
 - A Cloudwatch event was written to trigger both lambdas every 20 mins and 18 values (in ms) for Duration of `AWS::Lambda::Function` were analyzed over 6 hours
 
