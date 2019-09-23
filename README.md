@@ -7,7 +7,19 @@ In this workshop, we're going to:
 
 The note taking application is the modified version from the original Open Source MIT licensed project shared in the tutorials on [serverless-stack](http://serverless-stack.com).
 
-# Pre-requisites:
+## Table of Contents
+
+- [Pre-requisites](#pre-requisites)
+- [Exercise1](#exercise1)
+  - [Backend](#backend)
+  - [FrontEnd](#frontend)
+- [Exercise2](#exercise2)
+  - [Backend](#backend-1)
+  - [FrontEnd](#frontend-1)
+- [Contributing](#contributing)
+- [License Summary](#license-summary)
+
+## Pre-requisites
 
 To set up this workshop package, complete the following tasks:
 
@@ -37,7 +49,7 @@ To set up this workshop package, complete the following tasks:
     region = us-west-2
     ```
 
-# Exercise1
+## Exercise1
 
 This exercise code uses AWS SDK JS v2 as follows:
 
@@ -46,7 +58,7 @@ This exercise code uses AWS SDK JS v2 as follows:
 
 The README files have instructions on how to move it to v3
 
-## Backend
+### Backend
 
 Perform the following steps to create the backend API:
 
@@ -55,14 +67,14 @@ Perform the following steps to create the backend API:
 
 Remember to test your backend code before the next step.
 
-## FrontEnd
+### FrontEnd
 
 Perform the following steps to run the frontend:
 
 - `cd Exercise1/frontend`
 - Follow [frontend README](./Exercise1/frontend/README.md)
 
-# Exercise2
+## Exercise2
 
 This exercise has the code which uses AWS JS SDK v3, which you would have got after finishing Exercise1:
 
@@ -71,7 +83,7 @@ This exercise has the code which uses AWS JS SDK v3, which you would have got af
 
 The README files have suggestions on how you can use the AWS service you're familiar with in v3
 
-## Backend
+### Backend
 
 Perform the following steps to create the backend API:
 
@@ -80,17 +92,17 @@ Perform the following steps to create the backend API:
 
 Remember to test your backend code before the next step.
 
-## FrontEnd
+### FrontEnd
 
 Perform the following steps to run the frontend:
 
 - `cd Exercise2/frontend`
 - Follow [frontend README](./Exercise2/frontend/README.md)
 
-# Contributing
+## Contributing
 
 Contributions are more than welcome. Please read the [code of conduct](CODE_OF_CONDUCT.md) and the [contributing guidelines](CONTRIBUTING.md).
 
-# License Summary
+## License Summary
 
 This sample code is made available under the MIT license. See the LICENSE file.
