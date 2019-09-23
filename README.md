@@ -99,6 +99,14 @@ Perform the following steps to run the frontend:
 - `cd Exercise2/frontend`
 - Follow [frontend README](./Exercise2/frontend/README.md)
 
+# Exercise3
+
+Inspect the differences of stack trace if call `DynamoDB.putItem` with invalid resources
+in V2 and V3 SDK.
+
+[README](./Exercise3/README.md)
+
+# License Summary
 ## Contributing
 
 Contributions are more than welcome. Please read the [code of conduct](CODE_OF_CONDUCT.md) and the [contributing guidelines](CONTRIBUTING.md).
