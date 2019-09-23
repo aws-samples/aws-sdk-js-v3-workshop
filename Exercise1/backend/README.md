@@ -97,7 +97,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 ### Reduce bundle size further by using client from v3
 
 - Uninstall v2 by running `yarn remove aws-sdk`
-- Install dynamodb in v3 by running `yarn add @aws-sdk/client-dynamodb-node`.  As of 9/23/2019, you should use @aws-sdk/client-dynamodb-node@preview.
+- Install dynamodb in v3 by running `yarn add @aws-sdk/client-dynamodb-node@preview`.
 - Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDB from v3
 
   ```diff
