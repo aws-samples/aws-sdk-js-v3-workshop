@@ -41,6 +41,7 @@ Ensure that you've followed pre-requisites from main [README](../../README.md)
 - `yarn describe` to get API Gateway endpoint
 - Visit the endpoint `<ENDPOINT>/Prod/notes` in the browser
 - The contents of DynamoDB table in [template.yml](./template.yaml#L22) would be returned as JSON
+- If you don't see anything, that's because your table is likely empty!  Add data manually or wait until you run the frontend.
 
 ### Clean resources
 
