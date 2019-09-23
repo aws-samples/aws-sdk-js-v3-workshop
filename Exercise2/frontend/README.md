@@ -1,4 +1,4 @@
-# S3 browser client in v2 vs v3
+# S3 browser client in v3
 
 - This package contains frontend code which does put, get, delete operations using S3 browser client
 - This is a create-react-app which creates minimized bundle on running `build`
