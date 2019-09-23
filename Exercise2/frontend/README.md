@@ -48,6 +48,8 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 
 - [Amazon Cognito](https://aws.amazon.com/cognito/) can be used for sign-up, sign-in and access control
 - [Amazon Polly](https://aws.amazon.com/polly/) can be used for reading content of notes
+- [Amazon Transcribe](https://aws.amazon.com/transcribe/) can be used to allow adding notes via speech
+  - You can refer example code from [amazon-transcribe-websocket-static](https://github.com/aws-samples/amazon-transcribe-websocket-static)
 - Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation
 - Remove dependency on AWS CLI/SAM CLI by writing Cloudformation commands in JS SDK v3 instead
 - Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images
