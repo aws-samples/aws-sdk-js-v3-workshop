@@ -113,6 +113,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
   ```diff
    try {
+  +    // @ts-ignore
   -    await dynamoDB.putItem(params).promise();
   +    await dynamoDB.putItem(params);
      return success(params.Item);
