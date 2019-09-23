@@ -3,7 +3,13 @@
 - This package contains frontend code which does put, get, delete operations using S3 browser client
 - This is a create-react-app which creates minimized bundle on running `build`
 
+  <details><summary>Click to view screen recording</summary>
+  <p>
+
   [![Screen recording](https://img.youtube.com/vi/qBltinDalzU/0.jpg)](https://www.youtube.com/watch?v=qBltinDalzU)
+
+  </p>
+  </details>
 
 ## Table of Contents
 
