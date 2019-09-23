@@ -87,6 +87,10 @@ Perform the following steps to run the frontend:
 - `cd Exercise2/frontend`
 - Follow [frontend README](./Exercise2/frontend/README.md)
 
+# Contributing
+
+Contributions are more than welcome. Please read the [code of conduct](CODE_OF_CONDUCT.md) and the [contributing guidelines](CONTRIBUTING.md).
+
 # License Summary
 
 This sample code is made available under the MIT license. See the LICENSE file.
