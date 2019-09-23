@@ -43,10 +43,6 @@ Ensure that you've followed pre-requisites from main [README](../../README.md)
 - The contents of DynamoDB table in [template.yml](./template.yaml#L22) would be returned as JSON
 - If you don't see anything, that's because your table is likely empty!  Add data manually or wait until you run the frontend.
 
-### Clean resources
-
-- `yarn clean` to delete resources
-
 ## Activities
 
 In this section, we're going to update the code to import DynamoDB Client in different ways and compare the bundle sizes of the resulting lambda functions.
@@ -172,6 +168,11 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
   </p>
   </details>
+  
+  
+## Clean resources
+
+- `yarn clean` to delete resources
 
 ## Correlation between lambda size and execution time
 
