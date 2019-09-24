@@ -56,7 +56,7 @@ This exercise code uses AWS SDK JS v2 as follows:
 - backend performs create, delete, get, list and update operations on DynamoDB
 - frontend does put, get, delete operations using an S3 browser client
 
-The README files have instructions on how to move it to v3
+The README files have instructions on how to move both to v3. The backend and frontend can be worked on indepedently as long as the APIs don't change.
 
 ### Backend
 
@@ -107,6 +107,7 @@ in V2 and V3 SDK.
 [README](./Exercise3/README.md)
 
 # License Summary
+
 ## Contributing
 
 Contributions are more than welcome. Please read the [code of conduct](CODE_OF_CONDUCT.md) and the [contributing guidelines](CONTRIBUTING.md).
