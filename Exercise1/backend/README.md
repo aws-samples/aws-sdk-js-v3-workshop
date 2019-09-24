@@ -41,7 +41,12 @@ Ensure that you've followed pre-requisites from main [README](../../README.md)
 - `yarn describe` to get API Gateway endpoint
 - Visit the endpoint `<ENDPOINT>/Prod/notes` in the browser
 - The contents of DynamoDB table in [template.yml](./template.yaml#L22) would be returned as JSON
-- If you don't see anything, that's because your table is likely empty!  Add data manually or wait until you run the frontend.
+- If you don't see anything, that's because your table is likely empty! Add data manually or wait until you run the frontend.
+
+### Clean resources
+
+- Note: Clean resources after you're done with all activities below, and you want to delete your cloudformation stack.
+- `yarn clean` to delete resources
 
 ## Activities
 
@@ -168,11 +173,6 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
   </p>
   </details>
-  
-  
-## Clean resources
-
-- `yarn clean` to delete resources
 
 ## Correlation between lambda size and execution time
 

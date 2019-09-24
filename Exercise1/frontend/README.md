@@ -52,6 +52,11 @@ Ensure that you've followed pre-requisites from main [README](../../README.md), 
   - Just edit and save the files in `packages/frontend/src`, and the browser page will auto-refresh!
 - `yarn build` to create optimized production build (to get file sizes)
 
+### Clean resources
+
+- Note: Clean resources after you're done with all activities below, and you want to delete your cloudformation stack.
+- `yarn clean` to delete resources
+
 ## Activities
 
 In this section, we're going to update the code to import S3 browser Client in different ways and compare the bundle sizes of the resulting app.
@@ -328,7 +333,3 @@ In this section, we're going to update the code to import S3 browser Client in d
     719 B     build/static/js/main.5cb3a9cd.chunk.js
     307 B     build/static/js/9.4bd2580a.chunk.js
   ```
-
-## Clean resources
-
-- `yarn clean` to delete resources

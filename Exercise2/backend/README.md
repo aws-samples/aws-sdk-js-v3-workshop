@@ -39,6 +39,7 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
 
 ### Clean resources
 
+- Note: Clean resources after you're done with all activities below, and you want to delete your cloudformation stack.
 - `yarn clean` to delete resources
 
 ## Activities
