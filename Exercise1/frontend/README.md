@@ -109,8 +109,10 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 ### Reduce bundle size further by using client from v3
 
-- Uninstall v2 by running `yarn remove aws-sdk`
-- Install s3 dependencies by running `yarn add @aws-sdk/client-s3-browser@preview @aws-sdk/credential-provider-cognito-identity@preview @aws-sdk/client-cognito-identity-browser@preview`
+- Uninstall v2 by running the following command:
+  - `yarn remove aws-sdk`
+- Install s3 dependencies by running the following command:
+  - `yarn add @aws-sdk/client-s3-browser@preview @aws-sdk/credential-provider-cognito-identity@preview @aws-sdk client-cognito-identity-browser@preview`
 - Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts)
 
   ```diff
@@ -166,7 +168,8 @@ In this section, we're going to update the code to import S3 browser Client in d
   };
   ```
 
-- To create and presign getObject URLs, you'll have to `yarn add @aws-sdk/util-create-request@preview @aws-sdk/s3-request-presigner @aws-crypto/sha256-browser@preview @aws-sdk/util-format-url@preview`
+- To create and presign getObject URLs, you'll have to add more dependencies by running the following command:
+  - `yarn add @aws-sdk/util-create-request@preview @aws-sdk/s3-request-presigner @aws-crypto/sha256-browser@preview @aws-sdk/util-format-url@preview`
 - Make the following change in `getObjectURL.ts`
 
   ```diff
