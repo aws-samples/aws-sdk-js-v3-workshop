@@ -259,7 +259,10 @@ In this section, we're going to update the code to import S3 browser Client in d
     return Key;
    };
   ```
+  
+- Edit [`deleteObject.ts`](./src/libs/deleteObject.ts) and [`getObjectUrl.ts`](./src/libs/getObjectUrl.ts) using the changes your made to [`putObject.ts`](./src/libs/putObject.ts) as a template.
 
+ 
 - Run `yarn build` to generate bundle, and it's size will reduce to ~90KB!
 
   ```console
