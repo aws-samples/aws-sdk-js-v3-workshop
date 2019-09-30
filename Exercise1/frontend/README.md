@@ -259,7 +259,25 @@ In this section, we're going to update the code to import S3 browser Client in d
     return Key;
    };
   ```
+- Import and call just the `DeleteObjectCommand` in [`deleteObject.ts`](./src/libs/deleteObject.ts) for example:
 
+  ```diff
+  +import { DeleteObjectCommand } from "@aws-sdk/client-s3-browser/commands/DeleteObjectCommand";
+   import s3Client from "./s3Client";
+   import { config } from "../config";
+
+  - const deleteObject = async (file: File) => {
+  -  await s3Client
+  -    .deleteObject({
+  + const deleteObject = async (fileName: string) =>
+  +  await s3Client.send(
+  +    new DeleteObjectCommand({
+        Key: fileName,
+        Bucket: config.s3Bucket
+  -    });
+  +    }));
+
+  ```
 - Run `yarn build` to generate bundle, and it's size will reduce to ~90KB!
 
   ```console
