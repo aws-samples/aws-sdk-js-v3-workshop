@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import dynamoDBClient from "./libs/dynamoDB";
-import { PutItemCommand } from "@aws-sdk/client-dynamodb-node/commands/PutItemCommand";
+import { PutItemCommand } from "@aws-sdk/client-dynamodb-node";
 import { success, failure } from "./libs/response";
 
 export async function main(event) {

@@ -1,6 +1,6 @@
 import dynamoDBClient from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
-import { DeleteItemCommand } from "@aws-sdk/client-dynamodb-node/commands/DeleteItemCommand";
+import { DeleteItemCommand } from "@aws-sdk/client-dynamodb-node";
 
 export async function main(event) {
   const params = {
