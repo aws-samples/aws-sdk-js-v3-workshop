@@ -141,7 +141,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
   ```diff
   -import { DynamoDB } from "@aws-sdk/client-dynamodb-node";
-  +import { DynamoDBClient } from "@aws-sdk/client-dynamodb-node/DynamoDBClient";
+  +import { DynamoDBClient } from "@aws-sdk/client-dynamodb-node";
 
   -export default new DynamoDB({});
   +export default new DynamoDBClient({});
@@ -153,7 +153,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   import crypto from "crypto";
   -import dynamoDB from "./libs/dynamoDB";
   +import dynamoDBClient from "./libs/dynamoDB";
-  +import { PutItemCommand } from "@aws-sdk/client-dynamodb-node/commands/PutItemCommand";
+  +import { PutItemCommand } from "@aws-sdk/client-dynamodb-node";
   import { success, failure } from "./libs/response";
   ```
 

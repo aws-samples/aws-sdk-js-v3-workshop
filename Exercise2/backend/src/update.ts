@@ -1,6 +1,6 @@
 import dynamoDBClient from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
-import { UpdateItemCommand } from "@aws-sdk/client-dynamodb-node/commands/UpdateItemCommand";
+import { UpdateItemCommand } from "@aws-sdk/client-dynamodb-node";
 
 export async function main(event) {
   const data = JSON.parse(event.body);

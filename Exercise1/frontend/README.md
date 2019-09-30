@@ -119,7 +119,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   -import AWS from "aws-sdk";
   +import { S3 } from "@aws-sdk/client-s3-browser";
   +import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity";
-  +import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser/CognitoIdentityClient";
+  +import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser";
    import { config } from "../config";
 
   -const s3Client = new AWS.S3({
@@ -174,7 +174,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
   ```diff
   +import { createRequest } from "@aws-sdk/util-create-request";
-  +import { GetObjectCommand } from "@aws-sdk/client-s3-browser/commands/GetObjectCommand";
+  +import { GetObjectCommand } from "@aws-sdk/client-s3-browser";
   +import { S3RequestPresigner } from "@aws-sdk/s3-request-presigner";
   +import { formatUrl } from "@aws-sdk/util-format-url";
    import s3Client from "./s3Client";
@@ -225,9 +225,9 @@ In this section, we're going to update the code to import S3 browser Client in d
 
   ```diff
   -import { S3 } from "@aws-sdk/client-s3-browser";
-  +import { S3Client } from "@aws-sdk/client-s3-browser/S3Client";
+  +import { S3Client } from "@aws-sdk/client-s3-browser";
    import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity";
-   import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser/CognitoIdentityClient";
+   import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser";
   ```
 
   ```diff
@@ -240,7 +240,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 - Import and call just the `PutObjectCommand` in [`putObject.ts`](./src/libs/putObject.ts) for example:
 
   ```diff
-  +import { PutObjectCommand } from "@aws-sdk/client-s3-browser/commands/PutObjectCommand";
+  +import { PutObjectCommand } from "@aws-sdk/client-s3-browser";
    import s3Client from "./s3Client";
    import { config } from "../config";
 
