@@ -5,4 +5,4 @@ update_configs:
     directory: "/Exercise1/frontend/"
     directory: "/Exercise2/backend/"
     directory: "/Exercise2/frontend/"
-    update_schedule: "weekly"
+    update_schedule: "monthly"
