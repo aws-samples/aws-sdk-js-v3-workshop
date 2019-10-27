@@ -2,7 +2,16 @@ version: 1
 update_configs:
   - package_manager: "javascript"
     directory: "/Exercise1/backend/"
+    update_schedule: "monthly"
+
+  - package_manager: "javascript"
     directory: "/Exercise1/frontend/"
+    update_schedule: "monthly"
+
+  - package_manager: "javascript"
     directory: "/Exercise2/backend/"
-    directory: "/Exercise2/frontend/"
+    update_schedule: "monthly"
+
+  - package_manager: "javascript"
+    directory: "/Exercise1/frontend/"
     update_schedule: "monthly"
