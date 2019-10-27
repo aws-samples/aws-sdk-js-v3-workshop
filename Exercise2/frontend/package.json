@@ -14,7 +14,7 @@
     "@reach/router": "^1.2.1",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.11.0"
   },
   "scripts": {
     "deploy": "aws cloudformation deploy --template-file template.yaml --stack-name ${AWS_JS_SDK_ID}-frontend --capabilities CAPABILITY_IAM",
