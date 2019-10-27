@@ -13,5 +13,5 @@ update_configs:
     update_schedule: "monthly"
 
   - package_manager: "javascript"
-    directory: "/Exercise1/frontend/"
+    directory: "/Exercise2/frontend/"
     update_schedule: "monthly"
