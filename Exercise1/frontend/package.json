@@ -5,7 +5,7 @@
   "description": "Frontend for the AWS JS SDK v3 workshop",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "aws-sdk": "^2.528.0",
+    "aws-sdk": "^2.556.0",
     "react": "^16.10.1",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.10.1"
