@@ -1,8 +1,9 @@
 import dynamoDBClient from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
 import { UpdateItemCommand } from "@aws-sdk/client-dynamodb-node";
+import { APIGatewayProxyEvent } from "aws-lambda";
 
-export async function main(event) {
+export async function main(event: APIGatewayProxyEvent) {
   const data = JSON.parse(event.body);
   const params = {
     TableName: process.env.tableName,

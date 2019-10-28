@@ -2,8 +2,9 @@ import crypto from "crypto";
 import dynamoDBClient from "./libs/dynamoDB";
 import { PutItemCommand } from "@aws-sdk/client-dynamodb-node";
 import { success, failure } from "./libs/response";
+import { APIGatewayProxyEvent } from "aws-lambda";
 
-export async function main(event) {
+export async function main(event: APIGatewayProxyEvent) {
   const data = JSON.parse(event.body);
   const params = {
     TableName: process.env.tableName,

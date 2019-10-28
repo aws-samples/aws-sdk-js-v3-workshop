@@ -27,6 +27,7 @@
   "author": "Kamat, Trivikram",
   "license": "MIT",
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.34",
     "@types/node": "^10.14.14",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",

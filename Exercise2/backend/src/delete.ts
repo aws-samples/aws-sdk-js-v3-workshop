@@ -1,8 +1,9 @@
 import dynamoDBClient from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
 import { DeleteItemCommand } from "@aws-sdk/client-dynamodb-node";
+import { APIGatewayProxyEvent } from "aws-lambda";
 
-export async function main(event) {
+export async function main(event: APIGatewayProxyEvent) {
   const params = {
     TableName: process.env.tableName,
     // 'Key' defines the partition key and sort key of the item to be removed
