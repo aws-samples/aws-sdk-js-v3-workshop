@@ -1,11 +1,11 @@
 {
-  "name": "aws-sdk-js-v3-workshop-frontend",
+  "name": "aws-sdk-js-v3-workshop-exercise1-frontend",
   "version": "0.1.0",
   "private": true,
   "description": "Frontend for the AWS JS SDK v3 workshop",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "aws-sdk": "^2.556.0",
+    "aws-sdk": "^2.596.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0"
@@ -45,9 +45,9 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.4",
-    "@types/reach__router": "^1.2.4",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^12.12.22",
+    "@types/reach__router": "^1.2.6",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "react-scripts": "3.3.0",

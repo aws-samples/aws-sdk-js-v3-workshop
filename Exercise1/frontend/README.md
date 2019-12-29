@@ -29,7 +29,6 @@ Ensure that you've followed pre-requisites from main [README](../../README.md), 
 
 ### Steps to run frontend locally
 
-- `yarn`
 - Ensure that environment variable `AWS_JS_SDK_ID` has the value saved from backend README
   - You can print the value by running `echo $AWS_JS_SDK_ID`
   - If it's not defined, please set it by running `export AWS_JS_SDK_ID=<unique>-aws-js-sdk-v3-workshop`
@@ -259,11 +258,10 @@ In this section, we're going to update the code to import S3 browser Client in d
     return Key;
    };
   ```
-  
+
 - Edit [`deleteObject.ts`](./src/libs/deleteObject.ts) and [`getObjectUrl.ts`](./src/libs/getObjectUrl.ts) using the changes your made to [`putObject.ts`](./src/libs/putObject.ts) as a template.
 
- 
-- Run `yarn build` to generate bundle, and it's size will reduce to ~90KB!
+* Run `yarn build` to generate bundle, and it's size will reduce to ~90KB!
 
   ```console
   File sizes after gzip:

@@ -1,5 +1,5 @@
 {
-  "name": "aws-sdk-js-v3-workshop-backend",
+  "name": "aws-sdk-js-v3-workshop-exercise2-backend",
   "version": "1.0.0",
   "private": true,
   "description": "Backend for the AWS JS SDK v3 workshop",
@@ -27,9 +27,9 @@
   "author": "Kamat, Trivikram",
   "license": "MIT",
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.34",
-    "@types/node": "^10.14.14",
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@types/aws-lambda": "^8.10.39",
+    "@types/node": "^12.12.22",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
     "aws-sam-webpack-plugin": "^0.5.1",
     "css-loader": "^3.2.0",

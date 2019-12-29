@@ -29,7 +29,6 @@ Ensure that you've followed pre-requisites from main [README](../../README.md)
   - the value in `<unique>` could be your name, for example
   - this value in `AWS_JS_SDK_ID` will be used for your S3 bucket and Cloud formation stack
 - [Optional] Rename TableName in [template.yaml](./template.yaml#L22) if table already exists in DynamoDB
-- `yarn`
 - `yarn mb` to make S3 bucket
 - `yarn build` to build the package (runs ESLint and TypeScript)
 - `yarn package` to [package](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-package.html) your application
