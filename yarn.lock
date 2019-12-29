@@ -2991,7 +2991,7 @@ aws-sam-webpack-plugin@^0.5.1:
     js-yaml "^3.13.1"
     yaml-cfn "^0.2.3"
 
-aws-sdk@^2.556.0:
+aws-sdk@^2.596.0:
   version "2.596.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.596.0.tgz#1a4af0609e174a50ffb8ed8981981e6d77a614fb"
   integrity sha512-Bp+gyqhLw8tK4sgM1v1PDSw26H1mSXs6yhQInmGzDKqXJor6UyUb9JskFv0zC/bA84XizlshN1BBIgINqk6pNg==
