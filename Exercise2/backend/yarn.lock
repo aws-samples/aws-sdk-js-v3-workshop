@@ -811,13 +811,13 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-sam-webpack-plugin@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/aws-sam-webpack-plugin/-/aws-sam-webpack-plugin-0.3.1.tgz#22efe6bb0746a9cec7cd893fb41b1de93de9485a"
-  integrity sha512-97nTOnUzXIz83HXwM8dfxrrhm+s+Q3C+L3KOuk0PP8ZKQP0fNqMp07QVoBIfxyCO2hRfIoJCM7Lba+HH+G7neQ==
+aws-sam-webpack-plugin@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/aws-sam-webpack-plugin/-/aws-sam-webpack-plugin-0.5.1.tgz#4b50db0c1cda1153b2aa8f532ba67311ef39c650"
+  integrity sha512-/umOB4Wch/3WIxn2XRmP79lECLOR7KtX9DRVkVFRtdcADUGRNE3pbty7UppQBpapggattw1eqq3OKbPlpA6mdw==
   dependencies:
     js-yaml "^3.13.1"
-    yaml-cfn "^0.2.2"
+    yaml-cfn "^0.2.3"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -4107,10 +4107,10 @@ yallist@^3.0.0, yallist@^3.0.2, yallist@^3.0.3:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.0.3.tgz#b4b049e314be545e3ce802236d6cd22cd91c3de9"
   integrity sha512-S+Zk8DEWE6oKpV+vI3qWkaK+jSbIK86pCwe2IF/xwIpQ8jEuxpw9NyaGjmp9+BoJv5FV2piqCDcoCtStppiq2A==
 
-yaml-cfn@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/yaml-cfn/-/yaml-cfn-0.2.2.tgz#bdd0f2340ff48a3ce4fb1aadce8d23a97f9e1493"
-  integrity sha512-TwPBRIa8Zde25Rl3KHyOlNjHGdJaXRdlS6iSVFDSFp2/ixz/+kHUd3o1/b4vAv1isodH+IUjem3f+AvQYPvNtQ==
+yaml-cfn@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/yaml-cfn/-/yaml-cfn-0.2.3.tgz#2f528d79a971970bf74e8386408eb324fe330f6d"
+  integrity sha512-cCeX3mGhQdQJR1gdq2hJloXMh+Fkeq86Q0hyPs7UjBhaXwHYJJ+S+CbW+Fkm1FHXGhtUhcavnA+RM9ulLn6lOg==
   dependencies:
     js-yaml "^3.10.0"
 
