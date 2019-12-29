@@ -25,7 +25,6 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
 
 ### Create backend API
 
-- `yarn`
 - `yarn build` to build the package (runs ESLint and TypeScript)
 - `yarn package` to [package](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-package.html) your application
 - `yarn deploy` to [deploy](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html) your application (this takes time)

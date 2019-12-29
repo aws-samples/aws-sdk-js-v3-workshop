@@ -36,7 +36,6 @@ You do not have to follow these pre-requisites if you plan to override AWS resou
 
 ### Steps to run frontend locally
 
-- `yarn`
 - Edit [`src/config.ts`](./src/config.ts)
   - Add `<ENDPOINT>/Prod` for your `GatewayURL`
     - You would have received `<ENDPOINT>` from running `yarn describe` in packages/backend
