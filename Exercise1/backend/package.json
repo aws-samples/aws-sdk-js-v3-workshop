@@ -1,5 +1,5 @@
 {
-  "name": "aws-sdk-js-v3-workshop-backend",
+  "name": "aws-sdk-js-v3-workshop-exercise1-backend",
   "version": "1.0.0",
   "private": true,
   "description": "Backend for the AWS JS SDK v3 workshop",
