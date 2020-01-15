@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Backend for the AWS JS SDK v3 workshop",
-  "dependencies": {
-    "@aws-sdk/client-dynamodb-node": "^0.1.0-preview.2"
-  },
+  "dependencies": {},
   "scripts": {
     "build": "webpack",
     "mb": "aws s3 mb s3://$AWS_JS_SDK_ID",
