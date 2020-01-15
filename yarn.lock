@@ -38,6 +38,14 @@
   dependencies:
     tslib "^1.9.3"
 
+"@aws-sdk/abort-controller@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/abort-controller/-/abort-controller-1.0.0-alpha.2.tgz#cadc7608dd8f20eee2534590eef2d1bdfde14a79"
+  integrity sha512-f6MOmq7xFES9Z3JU4k9Eil8XB6Xg7XkomHWI//lcosbILmkj2skxjpK3+Xo25FbJws301tQdOnD6JoO+10obXg==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/apply-body-checksum-middleware@^0.1.0-preview.4":
   version "0.1.0-preview.8"
   resolved "https://registry.yarnpkg.com/@aws-sdk/apply-body-checksum-middleware/-/apply-body-checksum-middleware-0.1.0-preview.8.tgz#19a37c810c7f5f00cb5f4d194ad167b5b5b0aa81"
@@ -89,6 +97,43 @@
     "@aws-sdk/util-body-length-browser" "^0.1.0-preview.1"
     "@aws-sdk/util-user-agent-browser" "^0.1.0-preview.2"
     "@aws-sdk/util-utf8-browser" "^0.1.0-preview.1"
+    tslib "^1.8.0"
+
+"@aws-sdk/client-dynamodb@^1.0.0-alpha.6":
+  version "1.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-dynamodb/-/client-dynamodb-1.0.0-alpha.6.tgz#2bb4dbad9f9d78d9e3e087845976645c4d5fe121"
+  integrity sha512-pMxy/gUg7MUS1NxtuqtlJbTCDY3GLBBbAHdkmLso+FAjthMHpQbGyMuJFc6L2eogkLI/GUP8JcUKfZJ7jvS/VA==
+  dependencies:
+    "@aws-crypto/sha256-browser" "^0.1.0-preview.1"
+    "@aws-sdk/config-resolver" "^1.0.0-alpha.4"
+    "@aws-sdk/credential-provider-node" "^1.0.0-alpha.2"
+    "@aws-sdk/fetch-http-handler" "^1.0.0-alpha.3"
+    "@aws-sdk/hash-node" "^1.0.0-alpha.2"
+    "@aws-sdk/invalid-dependency" "^1.0.0-alpha.2"
+    "@aws-sdk/middleware-content-length" "^1.0.0-alpha.3"
+    "@aws-sdk/middleware-host-header" "^1.0.0-alpha.3"
+    "@aws-sdk/middleware-retry" "^1.0.0-alpha.3"
+    "@aws-sdk/middleware-serde" "^1.0.0-alpha.2"
+    "@aws-sdk/middleware-signing" "^1.0.0-alpha.4"
+    "@aws-sdk/middleware-stack" "^1.0.0-alpha.2"
+    "@aws-sdk/middleware-user-agent" "^1.0.0-alpha.3"
+    "@aws-sdk/node-http-handler" "^1.0.0-alpha.3"
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/region-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/smithy-client" "^1.0.0-alpha.2"
+    "@aws-sdk/stream-collector-browser" "^1.0.0-alpha.2"
+    "@aws-sdk/stream-collector-node" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    "@aws-sdk/url-parser-browser" "^1.0.0-alpha.2"
+    "@aws-sdk/url-parser-node" "^1.0.0-alpha.2"
+    "@aws-sdk/util-base64-browser" "^1.0.0-alpha.2"
+    "@aws-sdk/util-base64-node" "^1.0.0-alpha.2"
+    "@aws-sdk/util-body-length-browser" "^1.0.0-alpha.2"
+    "@aws-sdk/util-body-length-node" "^1.0.0-alpha.2"
+    "@aws-sdk/util-user-agent-browser" "^1.0.0-alpha.3"
+    "@aws-sdk/util-user-agent-node" "^1.0.0-alpha.3"
+    "@aws-sdk/util-utf8-browser" "^1.0.0-alpha.2"
+    "@aws-sdk/util-utf8-node" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/client-s3-browser@^0.1.0-preview.2":
@@ -143,6 +188,15 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/config-resolver@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/config-resolver/-/config-resolver-1.0.0-alpha.4.tgz#d80070744b157270591f851dfb30dad2ac4d6355"
+  integrity sha512-UGZ87h+UCzC6SwadbGOJS4wCv/LOxHEC9uIc/FfIjhed5DJcc6vDpANw+yLoq89BP0SKbpMavPLA4zkLVdXj4g==
+  dependencies:
+    "@aws-sdk/signature-v4" "^1.0.0-alpha.4"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/core-handler@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/core-handler/-/core-handler-0.1.0-preview.1.tgz#139527b570ca0ae66a0c79a2a41fb685ded61064"
@@ -170,6 +224,59 @@
     "@aws-sdk/types" "^0.1.0-preview.1"
     tslib "^1.8.0"
 
+"@aws-sdk/credential-provider-env@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-env/-/credential-provider-env-1.0.0-alpha.2.tgz#206c1eccfccec0112d73e83d9be8ceae2669398e"
+  integrity sha512-6ux0bIp7yEjt9OLyy6O0k3HN1rZjthnQmvS6ryyIM6vCTGT37s7ys5BPqTdbg3U87F0enLMsZCkxdKM97eyTxA==
+  dependencies:
+    "@aws-sdk/property-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/protocol-timestamp" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/credential-provider-imds@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-imds/-/credential-provider-imds-1.0.0-alpha.2.tgz#9212b8d44d3c73fb2c5877d21516e622cd7af90b"
+  integrity sha512-p0ApBjQ4eUSN0WEl2yPPO2P6zR99sAw/uz9SZ5Lc80lhOtQ2t6wZ66eydCxcaHmwR1xZV4L8CRsPi+LyZwOPgw==
+  dependencies:
+    "@aws-sdk/property-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/credential-provider-ini@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-ini/-/credential-provider-ini-1.0.0-alpha.2.tgz#8d344451a537b0c0332d0c89ecf98767561c8409"
+  integrity sha512-qzuZdiL177W3jjLMrpOz1ilobemGKKq4HpBcxtc0OhctwkLBSCO/drDwwhjfJucBGJcQP+OnubdcM+MBxaPgJg==
+  dependencies:
+    "@aws-sdk/property-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/shared-ini-file-loader" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/credential-provider-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-node/-/credential-provider-node-1.0.0-alpha.2.tgz#01f5cfbc9450f815c35e966f1597228add5110a8"
+  integrity sha512-8HNFtzt2OWlUmM5H9ec8+InN8GQpTmNP7ejWwFtCgkWVqfwWkgVs0gNg2zWuJFfAg+b+WLqHQGq+Xd8Vcy9H/g==
+  dependencies:
+    "@aws-sdk/credential-provider-env" "^1.0.0-alpha.2"
+    "@aws-sdk/credential-provider-imds" "^1.0.0-alpha.2"
+    "@aws-sdk/credential-provider-ini" "^1.0.0-alpha.2"
+    "@aws-sdk/credential-provider-process" "^1.0.0-alpha.2"
+    "@aws-sdk/property-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/credential-provider-process@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-process/-/credential-provider-process-1.0.0-alpha.2.tgz#6395a033d390e70bd9cc8cf9f99096632773859a"
+  integrity sha512-106a1jjVoj4jdBlAkL06xRPk6gmJqGKF9IqGff81xs/DiIz9qjrEZKFFQwJwYRuOwpJQpI6xIeYx77nRu8/6cA==
+  dependencies:
+    "@aws-sdk/credential-provider-ini" "^1.0.0-alpha.2"
+    "@aws-sdk/property-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/shared-ini-file-loader" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/fetch-http-handler@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/fetch-http-handler/-/fetch-http-handler-0.1.0-preview.1.tgz#9af957bf206422cb2d767cecedf3709ad16aa679"
@@ -188,6 +295,16 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/fetch-http-handler@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/fetch-http-handler/-/fetch-http-handler-1.0.0-alpha.3.tgz#387c50824931543c83856eb02496b9807cdc2984"
+  integrity sha512-uYWktJQvA8vzY0DVnepGJgrVhtXwKwwaOv4dl4vqBWI4Ou9b2rSluN/A6xQRi056r5FD11T4805oNXhIw1VcTg==
+  dependencies:
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/querystring-builder" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/hash-blob-browser@^0.1.0-preview.5":
   version "0.1.0-preview.9"
   resolved "https://registry.yarnpkg.com/@aws-sdk/hash-blob-browser/-/hash-blob-browser-0.1.0-preview.9.tgz#70011645fb16e373c9167fb7f057b140abf44be3"
@@ -195,6 +312,22 @@
   dependencies:
     "@aws-sdk/chunked-blob-reader" "^0.1.0-preview.3"
     "@aws-sdk/types" "^0.1.0-preview.7"
+    tslib "^1.8.0"
+
+"@aws-sdk/hash-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/hash-node/-/hash-node-1.0.0-alpha.2.tgz#a2d20d05de7ca22bf332e75177adb94c910fb077"
+  integrity sha512-dRotBDMsez8025XpC3f0b02wtoy+MdIN/BTLEsQrBdIUP85VmT8Jk6oJ1zrAGY7hm4GAZD78Lm13HLbkB3+17Q==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    "@aws-sdk/util-buffer-from" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/invalid-dependency@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/invalid-dependency/-/invalid-dependency-1.0.0-alpha.2.tgz#b0c5fd864b551fcb5d99c3957357831468edce23"
+  integrity sha512-vfTAwg538PAY5UCZ8dIwRT0k6DEdo3THnpgciiwnxMOsVpeK+Nq3t1PN3F0Sn61KOfKp8+oPk4JA6sbqtml0lg==
+  dependencies:
     tslib "^1.8.0"
 
 "@aws-sdk/is-array-buffer@^0.1.0-preview.1":
@@ -208,6 +341,13 @@
   version "0.1.0-preview.3"
   resolved "https://registry.yarnpkg.com/@aws-sdk/is-array-buffer/-/is-array-buffer-0.1.0-preview.3.tgz#3d4e0297f437dfaa00b25a000d526c02ccd2af6d"
   integrity sha512-8SM7kBGkwH6JCKA6K1w4Jrj+EABFOPQkbPvwaf6BILYiUMUbgJvjOPjNQE2MrvRxJz50WAcZDHnlwhstuwIRnw==
+  dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/is-array-buffer@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/is-array-buffer/-/is-array-buffer-1.0.0-alpha.2.tgz#5434984954726210b0f770bbecfc62b214029e44"
+  integrity sha512-QXi/w4lCpIFg2LrbzM4CNT8OaftTDJqTXeZi09FL65il6NQ46jhNn8vsDQaVCw6K0fXR0VJZ09YcProT4B6IeA==
   dependencies:
     tslib "^1.8.0"
 
@@ -287,6 +427,15 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/middleware-content-length@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-content-length/-/middleware-content-length-1.0.0-alpha.3.tgz#f38adc78be2e2be3be52d4969f26d4bc73e427e7"
+  integrity sha512-ISfJkE+MTK83ntGZkuwCkwArWwxdz5b5hNkjIIu9C7SFV2ZpfrOBRw+ZnioCDo1Vv2mP3wusO55VVvYbkIQ2Zg==
+  dependencies:
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/middleware-header-default@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-header-default/-/middleware-header-default-0.1.0-preview.1.tgz#7dc2a59f985ab6b3a3c1f388d3c228220d0ee878"
@@ -301,6 +450,32 @@
   integrity sha512-hf7+YMiPnyzRKzmcZZ5v2NKkC6CKgo8nnckJ1A1OlvWYGq3hLMF1gKDMzdkEFjWJmDWv6AVNyHjw5qe4AV8LVA==
   dependencies:
     "@aws-sdk/types" "^0.1.0-preview.7"
+    tslib "^1.8.0"
+
+"@aws-sdk/middleware-host-header@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-host-header/-/middleware-host-header-1.0.0-alpha.3.tgz#bfcec9e1ab65dfcd12b5efd281b752c3cf441e4a"
+  integrity sha512-nzy4aSSHg2vtC/qsRKZ7Y3CUKxLIVduAOqGq0hYL6zWoyCDcoMdSwTKYjR8XmW5tPBeEwsm2oEfutbm+tv2mvg==
+  dependencies:
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/middleware-retry@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-retry/-/middleware-retry-1.0.0-alpha.3.tgz#e8dc678db970106019bbb5ae9f4c5d6c22aefb29"
+  integrity sha512-TU/9bv27H418uMvQR1KddFhyBO7D+R5i4uR9UV+qjSz1jch2y3u6Nmot6ISsWCGdIT+wxhRXsV8BJml16lL+3w==
+  dependencies:
+    "@aws-sdk/service-error-classification" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/middleware-serde@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-serde/-/middleware-serde-1.0.0-alpha.2.tgz#7e0984833a66931779d0935a9423aace10678a95"
+  integrity sha512-Pkv67GrtXgqoeX+XWAd/G/T1YAhcunVwWh9zD1+nIeWNyrI7wGzrWRbhYCgvCsL+qf9kxyd6fV5jGu6dBlfLXg==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/middleware-serializer@^0.1.0-preview.1":
@@ -319,6 +494,16 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/middleware-signing@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-signing/-/middleware-signing-1.0.0-alpha.4.tgz#97ad364434af219a225ee33b837b9093c64d6782"
+  integrity sha512-PlqJc/mQ9nMzipGjddiJ1fGcgVwzM9dKqVaSg/Me/+XpFASjHpUIf00DGWC3W/7dynRCFd+57KMBnvlz+grC+A==
+  dependencies:
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/signature-v4" "^1.0.0-alpha.4"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/middleware-stack@^0.1.0-preview.2":
   version "0.1.0-preview.2"
   resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-stack/-/middleware-stack-0.1.0-preview.2.tgz#f570e8f5e065a41285518d126a04d59728eb9a76"
@@ -335,12 +520,57 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/middleware-stack@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-stack/-/middleware-stack-1.0.0-alpha.2.tgz#772aad64fb7f0725cbaff1967a3a1f518078ad15"
+  integrity sha512-meLHoDz0RlDIn1dC4eWgSmkr69ZyFua+QcSaWQG5IhzyG1x8zW2k49uYSaeUXS14mv8W+vHMQYCZLgrtFoUyNA==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/middleware-user-agent@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-user-agent/-/middleware-user-agent-1.0.0-alpha.3.tgz#0e2f120454f5a07aed688d5205a53fb76b6c216d"
+  integrity sha512-wtFcOf3QadfA0tc9rvjL9YIzlg90brjpqEmGWF1/k7cpWwHXiYbVN35I+FhrumGpTBpl8QqWzYnGttKGeBd4oA==
+  dependencies:
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/node-http-handler@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/node-http-handler/-/node-http-handler-1.0.0-alpha.3.tgz#b03a9e1f6c47759161ef7e8c32a4fd0c7e63704d"
+  integrity sha512-VdeUPdi48CJRxZG5Q+sC2ErutPrnA3R2sUFRImxEeqRlQeyy7BkS+NvmN7TyxFVX85NgPpl+WWOO0LE1PLVs7A==
+  dependencies:
+    "@aws-sdk/abort-controller" "^1.0.0-alpha.2"
+    "@aws-sdk/protocol-http" "^1.0.0-alpha.3"
+    "@aws-sdk/querystring-builder" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/property-provider@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/property-provider/-/property-provider-0.1.0-preview.1.tgz#2be71a5b1449ced5917307325274f39ed75c2fa6"
   integrity sha512-vEN4rqhOqw9XHaFNtwSG+Zqw8r8DGeqhDICqdwZk+NJKyP1+01UpZCMhCJw62kWmQwqfYqMYKVx7yENeDwT2ew==
   dependencies:
     "@aws-sdk/types" "^0.1.0-preview.1"
+    tslib "^1.8.0"
+
+"@aws-sdk/property-provider@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/property-provider/-/property-provider-1.0.0-alpha.2.tgz#ad1fd38cfd8ce6bb860045b3ab1ab9e32280be9e"
+  integrity sha512-z/jVTlZz1k7TaK6nei4oRXv0/AL8hz13+lP6XLZJ3Ljiv5v/kIhPVZolytUEBzHAu+58d44y5JhdPWkiPs9JAA==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/protocol-http@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/protocol-http/-/protocol-http-1.0.0-alpha.3.tgz#552702d87e60aa09939bbcd467c3fb1912495cd6"
+  integrity sha512-+r1h57HOEsO6/PLZrpHwzV3U4JganGfTETsPZbJZ1pkg/sKJ8xeHta0W1LwuDtgiwUwSN3P4cbh1gEHCMv5efw==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    "@aws-sdk/util-uri-escape" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/protocol-json-rpc@^0.1.0-preview.2":
@@ -384,6 +614,14 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/protocol-timestamp@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/protocol-timestamp/-/protocol-timestamp-1.0.0-alpha.2.tgz#10a54cf647cc9c4d5c8de5268befdc060587c910"
+  integrity sha512-RMvn1M+b1cirX45EQy+TbDT71/CaMtRdZXqlIM9buXAJoWMDbHr/mVZb/6FMdujGwIctPX1RT375vdPVFlu37g==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/query-error-unmarshaller@^0.1.0-preview.5":
   version "0.1.0-preview.8"
   resolved "https://registry.yarnpkg.com/@aws-sdk/query-error-unmarshaller/-/query-error-unmarshaller-0.1.0-preview.8.tgz#bcee4a3adda59b63e21eee220f13b1be7ddb8549"
@@ -412,6 +650,15 @@
     "@aws-sdk/util-uri-escape" "^0.1.0-preview.3"
     tslib "^1.8.0"
 
+"@aws-sdk/querystring-builder@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/querystring-builder/-/querystring-builder-1.0.0-alpha.2.tgz#8ba59c57ff2a09f3ade12025ae55cc0c6583c1a3"
+  integrity sha512-UzKLbCcYZs+csaQ/C/BKbSf8G3m+WHkfQpYlSEBPnqBKZrbWMzCT1fZ0N/mR573g9dYGVEg08UIyrtawyVDejQ==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    "@aws-sdk/util-uri-escape" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/querystring-parser@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/querystring-parser/-/querystring-parser-0.1.0-preview.1.tgz#128e7f0f52798d628f58b82c10c2fd3df66b540d"
@@ -426,6 +673,24 @@
   integrity sha512-r72E/wZYrhTXTK950Ld/L2Loso/HDqExQkIuCn1Pu8Rx0+uC3Y8fQTx+JZd5M5kOniCpGKdHWGc7y/bH/tjH4A==
   dependencies:
     "@aws-sdk/types" "^0.1.0-preview.7"
+    tslib "^1.8.0"
+
+"@aws-sdk/querystring-parser@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/querystring-parser/-/querystring-parser-1.0.0-alpha.2.tgz#cebd9f0b5869cfb4cb6d2d9afd6ba73332645bfd"
+  integrity sha512-QdahFldlVOr6bptZpAadyyXHU3kZ9DfBFj+rCp127EvmwX9ipNT1aClAN0e3gT39UgTfNOPWQL8lORZrmFHoOQ==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/region-provider@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/region-provider/-/region-provider-1.0.0-alpha.2.tgz#2dc934327d6895d334bdd6d886932a345ac5f171"
+  integrity sha512-KWGU8kbHPUFUvz03bM56eX3qimt8/8Twlet0HdYOw4ZMOaSZouNSqICUoW10zaNJbB2OP0h7p6O5Sj0pa+7D7A==
+  dependencies:
+    "@aws-sdk/property-provider" "^1.0.0-alpha.2"
+    "@aws-sdk/shared-ini-file-loader" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/response-metadata-extractor@^0.1.0-preview.2":
@@ -493,6 +758,18 @@
   resolved "https://registry.yarnpkg.com/@aws-sdk/service-error-classification/-/service-error-classification-0.1.0-preview.3.tgz#6e3720f361f637d0dbcff09f487997fa2ce3018d"
   integrity sha512-3TXwADJL+HGOWyqdwx+pOdwr8L8LGbdxwHR0D05PP3skY+TP34F3ye2DJlyCll4S9vYzf9GlSbwJWviN9Sujrw==
 
+"@aws-sdk/service-error-classification@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/service-error-classification/-/service-error-classification-1.0.0-alpha.2.tgz#12884cd28698f0aa4b68114d84ad931afd3b1c49"
+  integrity sha512-yuMLMN4N0dC2dioa3hTG5DYdhV9lrnd2QGZCEf+Pd1Xdtn8JvqPSNAHG2jUxeLlL/CQiYJ/J84jOjTxEEzAcCg==
+
+"@aws-sdk/shared-ini-file-loader@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/shared-ini-file-loader/-/shared-ini-file-loader-1.0.0-alpha.2.tgz#f23f4fa1a61c19d102396d7ca8996266b82e3a4f"
+  integrity sha512-uduef441VzFoOK6pVDR0UxRajYZQuRs00T4C9LZOlTJ1140Hl0UN5/bOhC4F5nAE3wigzILMj0/FYNPT6NCw1Q==
+  dependencies:
+    tslib "^1.8.0"
+
 "@aws-sdk/signature-v4@^0.1.0-preview.10", "@aws-sdk/signature-v4@^0.1.0-preview.5":
   version "0.1.0-preview.10"
   resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-0.1.0-preview.10.tgz#d0a7275c28e1473550a0159d221eb697bdb8a98f"
@@ -515,6 +792,17 @@
     "@aws-sdk/util-hex-encoding" "^0.1.0-preview.1"
     tslib "^1.8.0"
 
+"@aws-sdk/signature-v4@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-1.0.0-alpha.4.tgz#44eddb517dfc0b4d9d6f68493f96a130fb250bd2"
+  integrity sha512-sTrQWhYeyJj7lVRgEMvae4gh9DWBMDiReeVk8z40r54EqpholNckEp226SM2Yxj23Zffc/Ou6ny8wzwPv9Mu8w==
+  dependencies:
+    "@aws-sdk/is-array-buffer" "^1.0.0-alpha.2"
+    "@aws-sdk/protocol-timestamp" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    "@aws-sdk/util-hex-encoding" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/signing-middleware@^0.1.0-preview.2":
   version "0.1.0-preview.2"
   resolved "https://registry.yarnpkg.com/@aws-sdk/signing-middleware/-/signing-middleware-0.1.0-preview.2.tgz#c249b157d721c9e3593c00773dd9c552905b317c"
@@ -531,6 +819,15 @@
   dependencies:
     "@aws-sdk/signature-v4" "^0.1.0-preview.10"
     "@aws-sdk/types" "^0.1.0-preview.7"
+    tslib "^1.8.0"
+
+"@aws-sdk/smithy-client@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/smithy-client/-/smithy-client-1.0.0-alpha.2.tgz#ac6bed90759740558e9ff207a7f5e5a7a3add173"
+  integrity sha512-tIWeWNK4H24TJedBFhy+oCvzrsl6UvOKUoIChjiVTgZ7t63IkLKXU+4jxhojQVeGZkQEEqa6K5/5MbdkshQeKA==
+  dependencies:
+    "@aws-sdk/middleware-stack" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/ssec-middleware@^0.1.0-preview.4":
@@ -557,6 +854,22 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/stream-collector-browser@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/stream-collector-browser/-/stream-collector-browser-1.0.0-alpha.2.tgz#bbf7cc036bb1ef9575a6b9e8b5a08a4d406fd4a0"
+  integrity sha512-YBegxJzoykaqb59bPBU18RetxK20P3Dz7lYcTvKVle5xxBjkq+FI0jChSx5cN5fV/d/UTEkjMG5H5ptp7fDFmA==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/stream-collector-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/stream-collector-node/-/stream-collector-node-1.0.0-alpha.2.tgz#7b74371388f05133cedf2c8ff263e1777e73b85f"
+  integrity sha512-LN8sKskKGappvGWvjXZPUGbEhpA+cucfTJ8EjBF8PeICxkQfMuTOaU6dnZVEI+1j0wd1UTg/e/QaW6vtnnq2kw==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/types@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-0.1.0-preview.1.tgz#6119574f873ec9a8ee2e5c1fbfb3ddcc9059c2f3"
@@ -566,6 +879,11 @@
   version "0.1.0-preview.7"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-0.1.0-preview.7.tgz#2c3e8b911c9236e8f48d8ffb3c9df449a067df58"
   integrity sha512-gpyU8N9XEs8diE4uW9B6/hjKDrB/c4a1GF4ICwkaGYpXrbJy9QLrEU8Hk4rC6P1l++YYyJKMl7RjMmTyBtNOzw==
+
+"@aws-sdk/types@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-1.0.0-alpha.2.tgz#0d2895ed9ba7dfaf0a4bbaf47f477ff49c5eada0"
+  integrity sha512-IiRAkOfrRy4Ck1YlQ39oMxrZnbmiMUZGLmfFCC7WY3BrYy6kp+kZUwxcPUtjK4ZtlDHEPd6XiJeo2MQ68kkXSA==
 
 "@aws-sdk/url-parser-browser@^0.1.0-preview.1":
   version "0.1.0-preview.1"
@@ -585,6 +903,24 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/url-parser-browser@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/url-parser-browser/-/url-parser-browser-1.0.0-alpha.2.tgz#ff258f2a3af00f4f7b1b24cfdb99a25ab2f781cc"
+  integrity sha512-wxwWEdzNj4oPjti3soeuhvu0ELqOkdFEsQv7dZd4PaMXWpnD7c1TX2f6bQicGJxwzIfnB3+vK3R5uCU4u5B7aQ==
+  dependencies:
+    "@aws-sdk/querystring-parser" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/url-parser-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/url-parser-node/-/url-parser-node-1.0.0-alpha.2.tgz#f5330430437ba88198eaf0105eaab221691d099d"
+  integrity sha512-GSFLb+wCcHMX8ebb+vL9LlkCcrhOyPeEj5IhlEQfLQnZ9n7Sl7G3wYizcptWtxARNHJXoAKwcMpOZHVSDi1Exw==
+  dependencies:
+    "@aws-sdk/querystring-parser" "^1.0.0-alpha.2"
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/util-base64-browser@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-base64-browser/-/util-base64-browser-0.1.0-preview.1.tgz#95455d5ab0b58479c67540c110626392f139c34f"
@@ -599,6 +935,21 @@
   dependencies:
     tslib "^1.8.0"
 
+"@aws-sdk/util-base64-browser@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-base64-browser/-/util-base64-browser-1.0.0-alpha.2.tgz#2d53b23b96feacfe03ebf33f92296a5461e54c86"
+  integrity sha512-b+DMgBjaErjF/XweTz0M2c2qi5h0CLeNrNZjA9fY7l6pfRYG1DA+WOjPLOu3A8I1ZaMDHYk6nPA3nDJPk/d29w==
+  dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/util-base64-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-base64-node/-/util-base64-node-1.0.0-alpha.2.tgz#49aeae132e8826599c0b83362eb2a25029a28fd2"
+  integrity sha512-pLM3vTBKRT1cYt4aIvDcSe+FKVHLdoumsOYxbiT51kxXg/eHp2LdDW+xK5Lp4MephUiXRG2FZs5VUomSIOna0Q==
+  dependencies:
+    "@aws-sdk/util-buffer-from" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/util-body-length-browser@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-body-length-browser/-/util-body-length-browser-0.1.0-preview.1.tgz#9d5126e0a63796f494b286f76ad6b6b2aba22eb7"
@@ -611,6 +962,28 @@
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-body-length-browser/-/util-body-length-browser-0.1.0-preview.3.tgz#10a8653ca94d61d0333f1697958ddc8e4e4a901f"
   integrity sha512-vgESasjK299D8nNVx/DQx0My6Watz6xnGXtuoNbboEn81D4FLRpjcHydFoii1QXLeTYDZd9jLv+p9aozxIRLgQ==
   dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/util-body-length-browser@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-body-length-browser/-/util-body-length-browser-1.0.0-alpha.2.tgz#005a1e6e61b5b6148e7288638f9db8b418c0b989"
+  integrity sha512-xIYWEeAPDsL5G8g1guPuwqZOqn/Zfi4+lu2+pf+vZBcgaC9dzsByTSz21GJOEoajZorV4b4phcsCswM10801kQ==
+  dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/util-body-length-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-body-length-node/-/util-body-length-node-1.0.0-alpha.2.tgz#2536808288485d97ede3906077fe079dd73cf39d"
+  integrity sha512-bApDyFpeWHzMOwz51MiT7imuIX/wJjxw06N8e3jMMWW8L1Z06tKFWg3u6HbMyYi13e7gBI//ZzoE8Enc9ritMw==
+  dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/util-buffer-from@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-buffer-from/-/util-buffer-from-1.0.0-alpha.2.tgz#7185af5e7d3e7998078e4b973cd9b6de74c2707c"
+  integrity sha512-akddbV+cqrvMhZPhFzbBKc/bcZ2pnBTE1AsORsEzRcwdZ7agbgOI5LPw4kZKvwdc3zFyelYKrZUwoLe/6tb7dg==
+  dependencies:
+    "@aws-sdk/is-array-buffer" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/util-create-request@^0.1.0-preview.2":
@@ -669,6 +1042,13 @@
   dependencies:
     tslib "^1.8.0"
 
+"@aws-sdk/util-hex-encoding@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-hex-encoding/-/util-hex-encoding-1.0.0-alpha.2.tgz#f715e090ded81722e0d91ff286980beee9d46a6f"
+  integrity sha512-ZWNab7C5qUVD/CIHjRB1a5WPrhBuGYmV5z0J2DFbcuktyZ59iWEkk+k2t5X9RYbmkI3F8r/spvK7igl4I1BL9g==
+  dependencies:
+    tslib "^1.8.0"
+
 "@aws-sdk/util-locate-window@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-locate-window/-/util-locate-window-0.1.0-preview.1.tgz#7863359c64f194f289580843de416b7f66122244"
@@ -690,6 +1070,13 @@
   dependencies:
     tslib "^1.8.0"
 
+"@aws-sdk/util-uri-escape@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-uri-escape/-/util-uri-escape-1.0.0-alpha.2.tgz#83b46b66127abdf544d65a3b14bfb5523d4c742d"
+  integrity sha512-9Y/LkFpyY2M1dPTPpWilTN3ofClLl07R+AVOem72EAbXQZiebTLWopJOJxDMlWgrfNEsRrOQKrnfKCBE+U80PQ==
+  dependencies:
+    tslib "^1.8.0"
+
 "@aws-sdk/util-user-agent-browser@^0.1.0-preview.2":
   version "0.1.0-preview.2"
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-browser/-/util-user-agent-browser-0.1.0-preview.2.tgz#5bc7cdb3c20892fdd5c46eeddef54ad6c149e1f5"
@@ -706,6 +1093,22 @@
     "@aws-sdk/types" "^0.1.0-preview.7"
     tslib "^1.8.0"
 
+"@aws-sdk/util-user-agent-browser@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-browser/-/util-user-agent-browser-1.0.0-alpha.3.tgz#57e357e492ccbd3d5b0493743cb9972d71b5bc11"
+  integrity sha512-5fLBCz7ZEXM9hM/IOppeGcZW9+buqPmLWro9nwvnBYE5FWgsodLTousi+q9lF8BHiI/8UvQ+/iyS0HlqOudRIg==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
+"@aws-sdk/util-user-agent-node@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-node/-/util-user-agent-node-1.0.0-alpha.3.tgz#606dcb91bdff9e9add9f3bbd4c68e16aa90b4808"
+  integrity sha512-wz+UEGpvJ0VhbBZ8TRQqli5qJg93p4YHCxQ47G3vHHbe4R8GHG91h+M9HcstKTvBbwIs47zUwQxPWxQpZvVxDA==
+  dependencies:
+    "@aws-sdk/types" "^1.0.0-alpha.2"
+    tslib "^1.8.0"
+
 "@aws-sdk/util-utf8-browser@^0.1.0-preview.1":
   version "0.1.0-preview.1"
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-utf8-browser/-/util-utf8-browser-0.1.0-preview.1.tgz#21142dfea0b143f8d73e0aabcbcafd76df1691f0"
@@ -718,6 +1121,21 @@
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-utf8-browser/-/util-utf8-browser-0.1.0-preview.3.tgz#ee0f829a63f35d1bab23467c3e1e67f451e04816"
   integrity sha512-l97pohYxDjrew/cLgItvPo4HIrH3Se4PsEwZ2tgNhpA2+p9iWJFPy2Lppngx1sk5s6QhGF3x1g4G/0dGYIObgQ==
   dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/util-utf8-browser@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-utf8-browser/-/util-utf8-browser-1.0.0-alpha.2.tgz#b727d33ea1ea61ec85d5e141bfcae780f70c159d"
+  integrity sha512-/WhCITyFIkRfM8bGffgUOhnzCodJlVg1Jaq9Dr6whcDEkrvx6uDTsLnABAFn579uCnPeLrivJIE755PgUSHWiQ==
+  dependencies:
+    tslib "^1.8.0"
+
+"@aws-sdk/util-utf8-node@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-utf8-node/-/util-utf8-node-1.0.0-alpha.2.tgz#378615850ea3ab0cb17bae88ff3dc793206f44a8"
+  integrity sha512-Lc+/mJiPcVEV0DJfMBnmqGuktlCX2tz/W7odUDMgCtBVNp97z5xK6aYcMSOQuCQofEGZzSaFHYqwBZLXGdFEJg==
+  dependencies:
+    "@aws-sdk/util-buffer-from" "^1.0.0-alpha.2"
     tslib "^1.8.0"
 
 "@aws-sdk/xml-body-builder@^0.1.0-preview.4":
