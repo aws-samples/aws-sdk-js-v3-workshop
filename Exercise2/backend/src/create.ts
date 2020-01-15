@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import dynamoDBClient from "./libs/dynamoDB";
-import { PutItemCommand } from "@aws-sdk/client-dynamodb-node";
+import { PutItemCommand } from "@aws-sdk/client-dynamodb";
 import { success, failure } from "./libs/response";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
