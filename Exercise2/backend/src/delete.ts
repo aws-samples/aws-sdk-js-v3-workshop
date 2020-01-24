@@ -1,6 +1,6 @@
 import dynamoDBClient from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
-import { DeleteItemCommand } from "@aws-sdk/client-dynamodb-node";
+import { DeleteItemCommand } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
 export async function main(event: APIGatewayProxyEvent) {

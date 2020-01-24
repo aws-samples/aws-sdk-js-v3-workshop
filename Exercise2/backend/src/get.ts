@@ -1,6 +1,6 @@
 import dynamoDBClient from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
-import { GetItemCommand } from "@aws-sdk/client-dynamodb-node";
+import { GetItemCommand } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
 export async function main(event: APIGatewayProxyEvent) {
