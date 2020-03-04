@@ -31,7 +31,7 @@
     "@types/node": "^12.12.24",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
-    "aws-sam-webpack-plugin": "^0.5.1",
+    "aws-sam-webpack-plugin": "^0.6.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.2.0",
