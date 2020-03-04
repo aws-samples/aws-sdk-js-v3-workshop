@@ -37,7 +37,7 @@
     "eslint-config-prettier": "^6.2.0",
     "eslint-loader": "^3.0.0",
     "ts-loader": "^6.0.4",
-    "typescript": "~3.7.4",
+    "typescript": "~3.8.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.9"
   }
