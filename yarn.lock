@@ -3122,10 +3122,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.23"
     postcss-value-parser "^4.0.2"
 
-aws-sam-webpack-plugin@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/aws-sam-webpack-plugin/-/aws-sam-webpack-plugin-0.5.1.tgz#4b50db0c1cda1153b2aa8f532ba67311ef39c650"
-  integrity sha512-/umOB4Wch/3WIxn2XRmP79lECLOR7KtX9DRVkVFRtdcADUGRNE3pbty7UppQBpapggattw1eqq3OKbPlpA6mdw==
+aws-sam-webpack-plugin@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/aws-sam-webpack-plugin/-/aws-sam-webpack-plugin-0.6.0.tgz#f373c504c05f8fc7864700fdbd4d388fa71dc610"
+  integrity sha512-G28eJAnofMasTJsgCxuRcsPwk2Ncna41xKVtmhDCUblHTOKsPxkfW2Pp6CC15oX6cvtgwog5HG6Evg8sPs+A6w==
   dependencies:
     js-yaml "^3.13.1"
     yaml-cfn "^0.2.3"
