@@ -3,10 +3,8 @@ import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-id
 import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser";
 import { config } from "../config";
 
-// Customization pending https://github.com/aws/aws-sdk-js-v3/issues/185
 const cognitoIdentityClient = new CognitoIdentityClient({
   region: "us-west-2",
-  credentials: () => Promise.resolve({} as any),
   signer: {} as any
 });
 cognitoIdentityClient.middlewareStack.remove("SIGNATURE");
