@@ -5,7 +5,7 @@
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -p tsconfig.build.json"
   },
   "dependencies": {
     "aws-sdk": "^2.646.0"

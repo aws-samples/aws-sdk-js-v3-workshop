@@ -13,8 +13,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "strictPropertyInitialization": true,
-    "rootDir": "src",
-    "outDir": "dist"
-  }
+    "strictPropertyInitialization": true
+  },
+  "exclude": ["node_modules", "dist"]
 }

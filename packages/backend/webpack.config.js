@@ -32,7 +32,14 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loader: "ts-loader",
+        use: [
+          {
+            loader: "ts-loader",
+            options: {
+              configFile: "tsconfig.build.json",
+            },
+          },
+        ],
       },
     ],
   },

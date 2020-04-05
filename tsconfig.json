@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.build.json",
+
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "@aws-sdk-workshop/*": ["*/src"]
+    }
+  }
+}
