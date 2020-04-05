@@ -18,6 +18,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       new apigw.LambdaIntegration(
         new NotesApi(this, "listNotes", {
           table,
+          grantActions: ["dynamodb:Scan"],
         }).handler
       )
     );
@@ -26,6 +27,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       new apigw.LambdaIntegration(
         new NotesApi(this, "createNote", {
           table,
+          grantActions: ["dynamodb:PutItem"],
         }).handler
       )
     );
@@ -36,6 +38,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       new apigw.LambdaIntegration(
         new NotesApi(this, "getNote", {
           table,
+          grantActions: ["dynamodb:GetItem"],
         }).handler
       )
     );
@@ -44,6 +47,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       new apigw.LambdaIntegration(
         new NotesApi(this, "updateNote", {
           table,
+          grantActions: ["dynamodb:UpdateItem"],
         }).handler
       )
     );
@@ -52,6 +56,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       new apigw.LambdaIntegration(
         new NotesApi(this, "deleteNote", {
           table,
+          grantActions: ["dynamodb:DeleteItem"],
         }).handler
       )
     );
