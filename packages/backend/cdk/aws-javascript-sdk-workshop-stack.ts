@@ -11,7 +11,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       partitionKey: { name: "noteId", type: dynamodb.AttributeType.STRING },
     });
 
-    const api = new apigw.RestApi(this, "BundleTestStackEndpoint", {});
+    const api = new apigw.RestApi(this, "AwsJavaScriptSdkWorkshopEndpoint", {});
     const notes = api.root.addResource("notes");
     notes.addMethod(
       "GET",
