@@ -2039,13 +2039,6 @@ aws-cdk@1.31.0:
     yaml "^1.8.3"
     yargs "^15.3.1"
 
-aws-event-mocks@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/aws-event-mocks/-/aws-event-mocks-0.0.0.tgz#8f4166eceb5a3618164fa6af3e942f45e6124858"
-  integrity sha512-nwELS3qM4bCjN7hsyaDX9gtLONF9kK5j4RPcDuHkaRzrPOS26lMbG0BUI1QQS2b4bMNTA3o4GB+yrvZ3ZGEwiQ==
-  dependencies:
-    lodash "^4.13.1"
-
 aws-sdk@^2.639.0, aws-sdk@^2.644.0:
   version "2.653.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.653.0.tgz#53fa0b8cd5c05fb2244df262f2a01de526376543"
@@ -4891,7 +4884,7 @@ lodash.union@^4.6.0:
   resolved "https://registry.yarnpkg.com/lodash.union/-/lodash.union-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
   integrity sha1-SLtQiECfFvGCFmZkHETdGqrjzYg=
 
-lodash@^4.13.1, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
+lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
