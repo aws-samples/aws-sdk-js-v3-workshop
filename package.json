@@ -4,6 +4,17 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.1.2",
+    "prettier": "2.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,md}": "prettier --write"
   }
 }
