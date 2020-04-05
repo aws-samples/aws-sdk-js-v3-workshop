@@ -1,0 +1,17 @@
+{
+  "name": "@aws-sdk-workshop/v3",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^1.0.0-beta.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "sideEffects": false
+}
