@@ -3,7 +3,7 @@ import * as dynamodb from "@aws-cdk/aws-dynamodb";
 import * as apigw from "@aws-cdk/aws-apigateway";
 import { ApiConstruct } from "./api-construct";
 
-export class BundleTestStack extends cdk.Stack {
+export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
