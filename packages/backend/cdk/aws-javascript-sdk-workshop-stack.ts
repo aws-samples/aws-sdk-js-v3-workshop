@@ -1,7 +1,7 @@
 import * as cdk from "@aws-cdk/core";
 import * as dynamodb from "@aws-cdk/aws-dynamodb";
 import * as apigw from "@aws-cdk/aws-apigateway";
-import { ApiConstruct } from "./api-construct";
+import { NotesApi } from "./notes-api";
 
 export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -16,7 +16,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
     notes.addMethod(
       "GET",
       new apigw.LambdaIntegration(
-        new ApiConstruct(this, "listNotes", {
+        new NotesApi(this, "listNotes", {
           table,
         }).handler
       )
@@ -24,7 +24,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
     notes.addMethod(
       "POST",
       new apigw.LambdaIntegration(
-        new ApiConstruct(this, "createNote", {
+        new NotesApi(this, "createNote", {
           table,
         }).handler
       )
@@ -34,7 +34,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
     note.addMethod(
       "GET",
       new apigw.LambdaIntegration(
-        new ApiConstruct(this, "getNote", {
+        new NotesApi(this, "getNote", {
           table,
         }).handler
       )
@@ -42,7 +42,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
     note.addMethod(
       "PUT",
       new apigw.LambdaIntegration(
-        new ApiConstruct(this, "updateNote", {
+        new NotesApi(this, "updateNote", {
           table,
         }).handler
       )
@@ -50,7 +50,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
     note.addMethod(
       "DELETE",
       new apigw.LambdaIntegration(
-        new ApiConstruct(this, "deleteNote", {
+        new NotesApi(this, "deleteNote", {
           table,
         }).handler
       )

@@ -2,16 +2,16 @@ import * as cdk from "@aws-cdk/core";
 import * as lambda from "@aws-cdk/aws-lambda";
 import { Table } from "@aws-cdk/aws-dynamodb";
 
-export interface ApiConstructProps {
+export interface NotesApiProps {
   /** the dynamodb table to be passed to lambda function **/
   table: Table;
 }
 
-export class ApiConstruct extends cdk.Construct {
+export class NotesApi extends cdk.Construct {
   /** allows accessing the counter function */
   public readonly handler: lambda.Function;
 
-  constructor(scope: cdk.Construct, id: string, props: ApiConstructProps) {
+  constructor(scope: cdk.Construct, id: string, props: NotesApiProps) {
     super(scope, id);
 
     const { table } = props;
