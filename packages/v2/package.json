@@ -1,0 +1,17 @@
+{
+  "name": "@aws-sdk-workshop/v2",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.646.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "sideEffects": false
+}

@@ -1,6 +1,5 @@
-import dynamoDBClient from "./libs/dynamoDB";
+import { getItem } from "@aws-sdk-workshop/v2";
 import { success, failure } from "./libs/response";
-import { GetItemCommand } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
 const handler = async (event: APIGatewayProxyEvent) => {
@@ -14,8 +13,7 @@ const handler = async (event: APIGatewayProxyEvent) => {
   };
 
   try {
-    // @ts-ignore
-    const result = await dynamoDBClient.send(new GetItemCommand(params));
+    const result = await getItem(params);
     if (result.Item) {
       // Return the retrieved item
       return success(result.Item);

@@ -1,6 +1,5 @@
 import crypto from "crypto";
-import dynamoDBClient from "./libs/dynamoDB";
-import { PutItemCommand } from "@aws-sdk/client-dynamodb";
+import { putItem } from "@aws-sdk-workshop/v2";
 import { success, failure } from "./libs/response";
 import { APIGatewayEvent } from "aws-lambda";
 
@@ -27,7 +26,7 @@ const handler = async (event: APIGatewayEvent) => {
   }
 
   try {
-    await dynamoDBClient.send(new PutItemCommand(params));
+    await putItem(params);
     return success(params.Item);
   } catch (e) {
     return failure({ status: false });

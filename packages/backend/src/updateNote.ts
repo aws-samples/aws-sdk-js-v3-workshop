@@ -1,6 +1,5 @@
-import dynamoDBClient from "./libs/dynamoDB";
+import { updateItem } from "@aws-sdk-workshop/v2";
 import { success, failure } from "./libs/response";
-import { UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
 const handler = async (event: APIGatewayProxyEvent) => {
@@ -27,8 +26,7 @@ const handler = async (event: APIGatewayProxyEvent) => {
   };
 
   try {
-    // @ts-ignore
-    await dynamoDBClient.send(new UpdateItemCommand(params));
+    await updateItem(params);
     return success({ status: true });
   } catch (e) {
     return failure({ status: false });

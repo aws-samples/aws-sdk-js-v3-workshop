@@ -1,6 +1,5 @@
-import dynamoDBClient from "./libs/dynamoDB";
+import { deleteItem } from "@aws-sdk-workshop/v2";
 import { success, failure } from "./libs/response";
-import { DeleteItemCommand } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
 const handler = async (event: APIGatewayProxyEvent) => {
@@ -16,8 +15,7 @@ const handler = async (event: APIGatewayProxyEvent) => {
   };
 
   try {
-    // @ts-ignore
-    await dynamoDBClient.send(new DeleteItemCommand(params));
+    await deleteItem(params);
     return success({ status: true });
   } catch (e) {
     return failure({ status: false });
