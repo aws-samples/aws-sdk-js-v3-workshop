@@ -1,15 +1,15 @@
 /* eslint-disable */
 const glob = require("glob");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const entryArray = glob.sync("./src/*.ts");
+// Bug https://github.com/webpack/webpack/issues/4453
+const entryArray = glob
+  .sync("./src/*.ts")
+  .map((item) => item.replace("./src/", "").replace(".ts", ""));
 
-module.exports = {
-  entry: entryArray.reduce((acc, item) => {
-    const name = item.replace("./src/", "").replace(".ts", "");
-    acc[name] = item;
-    return acc;
-  }, {}),
+module.exports = entryArray.map((name) => ({
+  entry: {
+    [name]: `./src/${name}.ts`,
+  },
 
   output: {
     filename: "[name].js",
@@ -40,9 +40,8 @@ module.exports = {
             },
           },
         ],
+        exclude: /node_modules/,
       },
     ],
   },
-
-  plugins: [new CleanWebpackPlugin()],
-};
+}));
