@@ -4,7 +4,8 @@
   "main": "./dist",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "clean": "rm -rf dist",
+    "build": "yarn clean && webpack",
     "test": "jest"
   },
   "devDependencies": {
