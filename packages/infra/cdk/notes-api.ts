@@ -20,10 +20,10 @@ export class NotesApi extends cdk.Construct {
 
     this.handler = new lambda.Function(this, "Handler", {
       runtime: lambda.Runtime.NODEJS_12_X,
-      handler: `${id}.handler`,
+      handler: "app.handler",
       // ToDo: find a better way to pass lambda code
       code: lambda.Code.fromAsset(
-        "../../node_modules/@aws-sdk-workshop/backend/dist"
+        `../../node_modules/@aws-sdk-workshop/backend/dist/${id}`
       ),
       environment: {
         NOTES_TABLE_NAME: table.tableName,

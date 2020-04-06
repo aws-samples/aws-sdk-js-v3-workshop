@@ -12,7 +12,7 @@ module.exports = entryArray.map((name) => ({
   },
 
   output: {
-    filename: "[name].js",
+    filename: "[name]/app.js",
     libraryTarget: "commonjs",
   },
 
