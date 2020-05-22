@@ -1,7 +1,7 @@
 {
   "name": "@aws-sdk-workshop/backend",
   "version": "1.0.0",
-  "main": "./dist",
+  "main": "dist",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
