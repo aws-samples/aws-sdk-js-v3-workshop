@@ -3,14 +3,14 @@
 const glob = require("glob");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const entryArray = glob.sync("./src/*.ts");
+const entry = glob.sync("./src/*.ts").reduce((acc, item) => {
+  const name = item.replace("./src/", "").replace(".ts", "");
+  acc[name] = item;
+  return acc;
+}, {});
 
 module.exports = {
-  entry: entryArray.reduce((acc, item) => {
-    const name = item.replace("./src/", "").replace(".ts", "");
-    acc[name] = item;
-    return acc;
-  }, {}),
+  entry,
 
   output: {
     filename: "[name].js",

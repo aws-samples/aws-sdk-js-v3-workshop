@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "cdk": "cd infra && cdk",
-    "build:backend": "(cd backend && yarn build)",
-    "build:frontend": "(cd frontend && yarn build)"
+    "build:backend": "cd backend && yarn build",
+    "build:frontend": "cd frontend && yarn build"
   }
 }
