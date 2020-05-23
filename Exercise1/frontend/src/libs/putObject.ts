@@ -8,7 +8,6 @@ const putObject = async (file: File) => {
       Key,
       Body: file,
       Bucket: S3_BUCKET,
-      ACL: "public-read",
     })
     .promise();
   return Key;
