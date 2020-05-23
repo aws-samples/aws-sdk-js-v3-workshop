@@ -11,7 +11,8 @@
     "react-dom": "^16.12.0"
   },
   "scripts": {
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "start": "react-scripts start"
   },
   "keywords": [
     "aws",
