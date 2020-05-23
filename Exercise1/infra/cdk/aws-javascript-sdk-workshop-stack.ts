@@ -11,7 +11,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       partitionKey: { name: "noteId", type: dynamodb.AttributeType.STRING },
     });
 
-    const api = new apigw.RestApi(this, "AwsJavaScriptSdkWorkshopEndpoint", {});
+    const api = new apigw.RestApi(this, "AwsJavaScriptSdkWorkshopEndpoint");
     const notes = api.root.addResource("notes");
     notes.addMethod(
       "GET",
@@ -32,7 +32,11 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       )
     );
 
-    const note = notes.addResource("{id}");
+    const note = notes.addResource("{id}", {
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigw.Cors.ALL_ORIGINS,
+      },
+    });
     note.addMethod(
       "GET",
       new apigw.LambdaIntegration(
