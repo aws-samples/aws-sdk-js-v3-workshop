@@ -70,7 +70,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
     const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "error.html",
-      publicReadAccess: true,
+      // publicReadAccess: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
     });
     new s3deploy.BucketDeployment(this, "DeployWebsite", {
