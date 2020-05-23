@@ -9,9 +9,9 @@ import { HomeButton, Loading, PageContainer } from "../components";
 const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
   const { noteId } = props;
   const [isLoading, setIsLoading] = useState(true);
-  const [noteContent, setNoteContent] = useState();
-  const [attachment, setAttachment] = useState();
-  const [attachmentURL, setAttachmentURL] = useState();
+  const [noteContent, setNoteContent] = useState("");
+  const [attachment, setAttachment] = useState("");
+  const [attachmentURL, setAttachmentURL] = useState("");
 
   useEffect(() => {
     const fetchNote = async (noteId: string) => {
@@ -47,7 +47,7 @@ const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
             <Form.Control
               as="textarea"
               defaultValue={noteContent}
-              onChange={e => {
+              onChange={(e) => {
                 const content = e.currentTarget.value;
                 if (content) {
                   setNoteContent(content);

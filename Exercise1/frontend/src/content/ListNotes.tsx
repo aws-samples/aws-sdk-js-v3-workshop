@@ -12,7 +12,7 @@ interface Note {
 
 const ListNotes = (props: RouteComponentProps) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [errorMsg, setErrorMsg] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const ListNotes = (props: RouteComponentProps) => {
               noteId: note.noteId.S as string,
               createdAt: note.createdAt.N as string,
               content: note.content.S as string,
-              attachment: note.attachment ? true : false
+              attachment: note.attachment ? true : false,
             });
             return notes;
           }, [])
@@ -44,7 +44,7 @@ const ListNotes = (props: RouteComponentProps) => {
   }, []);
 
   const renderNotes = (notes: Note[]) =>
-    notes.map(note => (
+    notes.map((note) => (
       <Link key={note.noteId} to={`/notes/${note.noteId}`}>
         <Card>
           <Card.Body>

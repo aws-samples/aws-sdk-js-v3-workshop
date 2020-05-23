@@ -11,12 +11,7 @@
     "react-dom": "^16.12.0"
   },
   "scripts": {
-    "deploy": "aws cloudformation deploy --template-file template.yaml --stack-name ${AWS_JS_SDK_ID}-frontend --capabilities CAPABILITY_IAM",
-    "identity-pools": "aws cognito-identity list-identity-pools --max-results 20",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "clean": "aws cloudformation delete-stack --stack-name ${AWS_JS_SDK_ID}-frontend"
+    "build": "react-scripts build"
   },
   "keywords": [
     "aws",
