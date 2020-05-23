@@ -22,6 +22,7 @@ const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
       });
       navigate("/");
     } catch (error) {
+      console.log(error);
       setErrorMsg(`${error.toString()} - ${updateNoteURL} - ${noteContent}`);
     } finally {
       setIsSaving(false);
