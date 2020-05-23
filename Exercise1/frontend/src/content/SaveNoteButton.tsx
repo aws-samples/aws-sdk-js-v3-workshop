@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Alert } from "react-bootstrap";
-import { config } from "../config";
+import { GATEWAY_URL } from "../config.json";
 import { navigate } from "@reach/router";
 import { ButtonSpinner } from "../components";
 
@@ -13,7 +13,7 @@ const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
     setIsSaving(true);
 
     const { noteId, noteContent } = props;
-    const updateNoteURL = `${config.GatewayURL}/notes/${noteId}`;
+    const updateNoteURL = `${GATEWAY_URL}/notes/${noteId}`;
 
     try {
       await fetch(updateNoteURL, {
