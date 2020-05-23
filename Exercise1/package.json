@@ -1,11 +1,8 @@
 {
   "private": true,
-  "workspaces": [
-    "infra",
-    "backend",
-    "frontend"
-  ],
-  "devDependencies": {
-    "lerna": "^3.20.2"
+  "scripts": {
+    "cdk": "cdk",
+    "build:backend": "(cd backend && yarn build)",
+    "build:frontend": "(cd frontend && yarn build)"
   }
 }
