@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps, navigate } from "@reach/router";
 import { Form, Card } from "react-bootstrap";
-import { config } from "../config";
+import { GATEWAY_URL } from "../config.json";
 import { DeleteNoteButton, SaveNoteButton } from "./";
 import { getObjectUrl } from "../libs";
 import { HomeButton, Loading, PageContainer } from "../components";
@@ -16,7 +16,7 @@ const ShowNote = (props: RouteComponentProps<{ noteId: string }>) => {
   useEffect(() => {
     const fetchNote = async (noteId: string) => {
       setIsLoading(true);
-      const fetchURL = `${config.GatewayURL}/notes/${noteId}`;
+      const fetchURL = `${GATEWAY_URL}/notes/${noteId}`;
 
       try {
         const response = await fetch(fetchURL);

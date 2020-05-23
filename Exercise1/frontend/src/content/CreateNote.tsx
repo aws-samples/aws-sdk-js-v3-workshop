@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { navigate, RouteComponentProps } from "@reach/router";
-import { config } from "../config";
+import { GATEWAY_URL, MAX_FILE_SIZE } from "../config.json";
 import { putObject } from "../libs";
 import { HomeButton, ButtonSpinner, PageContainer } from "../components";
 
@@ -15,16 +15,14 @@ const CreateNote = (props: RouteComponentProps) => {
     event.preventDefault();
 
     // @ts-ignore Object is possibly 'undefined'
-    if (file && file.size > config.MaxFileSize) {
-      setErrorMsg(
-        `File can't be bigger than ${config.MaxFileSize / 1000000} MB`
-      );
+    if (file && file.size > MAX_FILE_SIZE) {
+      setErrorMsg(`File can't be bigger than ${MAX_FILE_SIZE / 1000000} MB`);
       return;
     }
 
     setIsLoading(true);
 
-    const createNoteURL = `${config.GatewayURL}/notes`;
+    const createNoteURL = `${GATEWAY_URL}/notes`;
 
     try {
       // @ts-ignore Argument of type 'undefined' is not assignable to parameter of type 'File'
