@@ -8,7 +8,7 @@ import { ButtonSpinner } from "../components";
 const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
   const { noteId, attachment } = props;
   const [isDeleting, setIsDeleting] = useState(false);
-  const [errorMsg, setErrorMsg] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleDelete = async (event: any) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
         await deleteObject(attachment);
       }
       await fetch(deleteNoteURL, {
-        method: "DELETE"
+        method: "DELETE",
       });
       navigate("/");
     } catch (error) {

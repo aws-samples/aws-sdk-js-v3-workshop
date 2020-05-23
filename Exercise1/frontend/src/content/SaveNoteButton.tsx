@@ -6,7 +6,7 @@ import { ButtonSpinner } from "../components";
 
 const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
   const [isSaving, setIsSaving] = useState(false);
-  const [errorMsg, setErrorMsg] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSave = async (event: any) => {
     event.preventDefault();
@@ -18,7 +18,7 @@ const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
     try {
       await fetch(updateNoteURL, {
         method: "PUT",
-        body: JSON.stringify({ content: noteContent })
+        body: JSON.stringify({ content: noteContent }),
       });
       navigate("/");
     } catch (error) {

@@ -7,13 +7,14 @@ import { HomeButton, ButtonSpinner, PageContainer } from "../components";
 
 const CreateNote = (props: RouteComponentProps) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState();
+  const [errorMsg, setErrorMsg] = useState("");
   const [noteContent, setNoteContent] = useState("");
   const [file, setFile] = useState();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // @ts-ignore Object is possibly 'undefined'
     if (file && file.size > config.MaxFileSize) {
       setErrorMsg(
         `File can't be bigger than ${config.MaxFileSize / 1000000} MB`
@@ -26,10 +27,11 @@ const CreateNote = (props: RouteComponentProps) => {
     const createNoteURL = `${config.GatewayURL}/notes`;
 
     try {
+      // @ts-ignore Argument of type 'undefined' is not assignable to parameter of type 'File'
       const attachment = file ? await putObject(file) : undefined;
       await fetch(createNoteURL, {
         method: "POST",
-        body: JSON.stringify({ attachment, content: noteContent })
+        body: JSON.stringify({ attachment, content: noteContent }),
       });
       navigate("/");
     } catch (error) {
@@ -48,7 +50,7 @@ const CreateNote = (props: RouteComponentProps) => {
           <Form.Control
             as="textarea"
             placeholder="Enter Note content"
-            onChange={e => {
+            onChange={(e) => {
               const content = e.currentTarget.value;
               if (content) {
                 setNoteContent(content);
@@ -59,8 +61,8 @@ const CreateNote = (props: RouteComponentProps) => {
         <Form.Group controlId="file">
           <Form.Label>Attachment</Form.Label>
           <Form.Control
-            // @ts-ignore
-            onChange={e => {
+            onChange={(e) => {
+              // @ts-ignore Property 'files' does not exist on type
               setFile(e.target.files[0]);
             }}
             type="file"
