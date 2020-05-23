@@ -4,7 +4,7 @@ import { success, failure } from "./libs/response";
 // eslint-disable-next-line no-unused-vars
 import { APIGatewayEvent } from "aws-lambda";
 
-export async function main(event: APIGatewayEvent) {
+export const handler = async (event: APIGatewayEvent) => {
   const data = JSON.parse(event.body || "{}");
   const params = {
     TableName: process.env.NOTES_TABLE_NAME || "",
@@ -34,4 +34,4 @@ export async function main(event: APIGatewayEvent) {
     console.log(e);
     return failure({ status: false });
   }
-}
+};
