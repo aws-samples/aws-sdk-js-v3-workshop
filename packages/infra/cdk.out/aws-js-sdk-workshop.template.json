@@ -1,0 +1,1811 @@
+{
+  "Resources": {
+    "notesAF81B09D": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "noteId",
+            "KeyType": "HASH"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "noteId",
+            "AttributeType": "S"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/notes/Resource"
+      }
+    },
+    "endpointE7B9679B": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "endpoint"
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Resource"
+      }
+    },
+    "endpointCloudWatchRole52213BC3": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/CloudWatchRole/Resource"
+      }
+    },
+    "endpointAccount6DA1D142": {
+      "Type": "AWS::ApiGateway::Account",
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
+            "endpointCloudWatchRole52213BC3",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "endpointE7B9679B"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Account"
+      }
+    },
+    "endpointDeployment457D977D66c87b84445d3a20ad93fd7670a16636": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "Description": "Automatically created by the RestApi construct"
+      },
+      "DependsOn": [
+        "endpointnotesidDELETEAD0C5CAD",
+        "endpointnotesidGETDA67C376",
+        "endpointnotesidOPTIONS6939D830",
+        "endpointnotesidPUTA29F9F3F",
+        "endpointnotesid284FFD82",
+        "endpointnotesGETFA0BD3D8",
+        "endpointnotesPOST22F9725C",
+        "endpointnotesF7F33EB6"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Deployment/Resource"
+      }
+    },
+    "endpointDeploymentStageprod2CD5F9C4": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "DeploymentId": {
+          "Ref": "endpointDeployment457D977D66c87b84445d3a20ad93fd7670a16636"
+        },
+        "StageName": "prod"
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/DeploymentStage.prod/Resource"
+      }
+    },
+    "endpointnotesF7F33EB6": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "endpointE7B9679B",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "notes",
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/Resource"
+      }
+    },
+    "endpointnotesGETApiPermissionawsjssdkworkshopendpoint2B5E516AGETnotes692801DD": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "listNoteshandlerDC187D34",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/",
+              {
+                "Ref": "endpointDeploymentStageprod2CD5F9C4"
+              },
+              "/GET/notes"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/GET/ApiPermission.awsjssdkworkshopendpoint2B5E516A.GET..notes"
+      }
+    },
+    "endpointnotesGETApiPermissionTestawsjssdkworkshopendpoint2B5E516AGETnotes2AF7DA71": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "listNoteshandlerDC187D34",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/test-invoke-stage/GET/notes"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/GET/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.GET..notes"
+      }
+    },
+    "endpointnotesGETFA0BD3D8": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Ref": "endpointnotesF7F33EB6"
+        },
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "listNoteshandlerDC187D34",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/GET/Resource"
+      }
+    },
+    "endpointnotesPOSTApiPermissionawsjssdkworkshopendpoint2B5E516APOSTnotes356FD16B": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "createNotehandlerBA768AA5",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/",
+              {
+                "Ref": "endpointDeploymentStageprod2CD5F9C4"
+              },
+              "/POST/notes"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/POST/ApiPermission.awsjssdkworkshopendpoint2B5E516A.POST..notes"
+      }
+    },
+    "endpointnotesPOSTApiPermissionTestawsjssdkworkshopendpoint2B5E516APOSTnotes5A97D7C1": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "createNotehandlerBA768AA5",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/test-invoke-stage/POST/notes"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/POST/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.POST..notes"
+      }
+    },
+    "endpointnotesPOST22F9725C": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "endpointnotesF7F33EB6"
+        },
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "createNotehandlerBA768AA5",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/POST/Resource"
+      }
+    },
+    "endpointnotesid284FFD82": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "endpointnotesF7F33EB6"
+        },
+        "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/Resource"
+      }
+    },
+    "endpointnotesidOPTIONS6939D830": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "endpointnotesid284FFD82"
+        },
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationResponses": [
+            {
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+              },
+              "StatusCode": "204"
+            }
+          ],
+          "RequestTemplates": {
+            "application/json": "{ statusCode: 200 }"
+          },
+          "Type": "MOCK"
+        },
+        "MethodResponses": [
+          {
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Methods": true
+            },
+            "StatusCode": "204"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/OPTIONS/Resource"
+      }
+    },
+    "endpointnotesidGETApiPermissionawsjssdkworkshopendpoint2B5E516AGETnotesidBBD93E2C": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "getNotehandler167C5FCF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/",
+              {
+                "Ref": "endpointDeploymentStageprod2CD5F9C4"
+              },
+              "/GET/notes/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/GET/ApiPermission.awsjssdkworkshopendpoint2B5E516A.GET..notes.{id}"
+      }
+    },
+    "endpointnotesidGETApiPermissionTestawsjssdkworkshopendpoint2B5E516AGETnotesidBFB15D2D": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "getNotehandler167C5FCF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/test-invoke-stage/GET/notes/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/GET/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.GET..notes.{id}"
+      }
+    },
+    "endpointnotesidGETDA67C376": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Ref": "endpointnotesid284FFD82"
+        },
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "getNotehandler167C5FCF",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/GET/Resource"
+      }
+    },
+    "endpointnotesidPUTApiPermissionawsjssdkworkshopendpoint2B5E516APUTnotesidA3CB6144": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "updateNotehandler6A5A41DF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/",
+              {
+                "Ref": "endpointDeploymentStageprod2CD5F9C4"
+              },
+              "/PUT/notes/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/PUT/ApiPermission.awsjssdkworkshopendpoint2B5E516A.PUT..notes.{id}"
+      }
+    },
+    "endpointnotesidPUTApiPermissionTestawsjssdkworkshopendpoint2B5E516APUTnotesid5869E259": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "updateNotehandler6A5A41DF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/test-invoke-stage/PUT/notes/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/PUT/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.PUT..notes.{id}"
+      }
+    },
+    "endpointnotesidPUTA29F9F3F": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "ResourceId": {
+          "Ref": "endpointnotesid284FFD82"
+        },
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "updateNotehandler6A5A41DF",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/PUT/Resource"
+      }
+    },
+    "endpointnotesidDELETEApiPermissionawsjssdkworkshopendpoint2B5E516ADELETEnotesidC20FE85E": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "deleteNotehandlerC903D399",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/",
+              {
+                "Ref": "endpointDeploymentStageprod2CD5F9C4"
+              },
+              "/DELETE/notes/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/DELETE/ApiPermission.awsjssdkworkshopendpoint2B5E516A.DELETE..notes.{id}"
+      }
+    },
+    "endpointnotesidDELETEApiPermissionTestawsjssdkworkshopendpoint2B5E516ADELETEnotesidC5BCC756": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "deleteNotehandlerC903D399",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "endpointE7B9679B"
+              },
+              "/test-invoke-stage/DELETE/notes/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/DELETE/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.DELETE..notes.{id}"
+      }
+    },
+    "endpointnotesidDELETEAD0C5CAD": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "ResourceId": {
+          "Ref": "endpointnotesid284FFD82"
+        },
+        "RestApiId": {
+          "Ref": "endpointE7B9679B"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "deleteNotehandlerC903D399",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/endpoint/Default/notes/{id}/DELETE/Resource"
+      }
+    },
+    "listNoteshandlerServiceRole334A15FF": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/listNotes/handler/ServiceRole/Resource"
+      }
+    },
+    "listNoteshandlerServiceRoleDefaultPolicy247BA603": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "dynamodb:Scan",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "notesAF81B09D",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "listNoteshandlerServiceRoleDefaultPolicy247BA603",
+        "Roles": [
+          {
+            "Ref": "listNoteshandlerServiceRole334A15FF"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/listNotes/handler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "listNoteshandlerDC187D34": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3BucketF2F32BA0"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3VersionKeyA64C4B84"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3VersionKeyA64C4B84"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "app.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "listNoteshandlerServiceRole334A15FF",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Environment": {
+          "Variables": {
+            "NOTES_TABLE_NAME": {
+              "Ref": "notesAF81B09D"
+            }
+          }
+        }
+      },
+      "DependsOn": [
+        "listNoteshandlerServiceRoleDefaultPolicy247BA603",
+        "listNoteshandlerServiceRole334A15FF"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/listNotes/handler/Resource",
+        "aws:asset:path": "asset.3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987",
+        "aws:asset:property": "Code"
+      }
+    },
+    "createNotehandlerServiceRole8AC82B45": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/createNote/handler/ServiceRole/Resource"
+      }
+    },
+    "createNotehandlerServiceRoleDefaultPolicyFCFF3979": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "dynamodb:PutItem",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "notesAF81B09D",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "createNotehandlerServiceRoleDefaultPolicyFCFF3979",
+        "Roles": [
+          {
+            "Ref": "createNotehandlerServiceRole8AC82B45"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/createNote/handler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "createNotehandlerBA768AA5": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3Bucket3879248C"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3VersionKeyA6F7B7FD"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3VersionKeyA6F7B7FD"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "app.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "createNotehandlerServiceRole8AC82B45",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Environment": {
+          "Variables": {
+            "NOTES_TABLE_NAME": {
+              "Ref": "notesAF81B09D"
+            }
+          }
+        }
+      },
+      "DependsOn": [
+        "createNotehandlerServiceRoleDefaultPolicyFCFF3979",
+        "createNotehandlerServiceRole8AC82B45"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/createNote/handler/Resource",
+        "aws:asset:path": "asset.e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b",
+        "aws:asset:property": "Code"
+      }
+    },
+    "getNotehandlerServiceRole08D68F24": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/getNote/handler/ServiceRole/Resource"
+      }
+    },
+    "getNotehandlerServiceRoleDefaultPolicy8920DE10": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "dynamodb:GetItem",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "notesAF81B09D",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "getNotehandlerServiceRoleDefaultPolicy8920DE10",
+        "Roles": [
+          {
+            "Ref": "getNotehandlerServiceRole08D68F24"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/getNote/handler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "getNotehandler167C5FCF": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3BucketA15E0BB2"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3VersionKeyEAC14F85"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3VersionKeyEAC14F85"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "app.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "getNotehandlerServiceRole08D68F24",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Environment": {
+          "Variables": {
+            "NOTES_TABLE_NAME": {
+              "Ref": "notesAF81B09D"
+            }
+          }
+        }
+      },
+      "DependsOn": [
+        "getNotehandlerServiceRoleDefaultPolicy8920DE10",
+        "getNotehandlerServiceRole08D68F24"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/getNote/handler/Resource",
+        "aws:asset:path": "asset.3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba",
+        "aws:asset:property": "Code"
+      }
+    },
+    "updateNotehandlerServiceRole9959F133": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/updateNote/handler/ServiceRole/Resource"
+      }
+    },
+    "updateNotehandlerServiceRoleDefaultPolicyD405276B": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "dynamodb:UpdateItem",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "notesAF81B09D",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "updateNotehandlerServiceRoleDefaultPolicyD405276B",
+        "Roles": [
+          {
+            "Ref": "updateNotehandlerServiceRole9959F133"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/updateNote/handler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "updateNotehandler6A5A41DF": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3Bucket0A82214A"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3VersionKey761BEF17"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3VersionKey761BEF17"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "app.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "updateNotehandlerServiceRole9959F133",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Environment": {
+          "Variables": {
+            "NOTES_TABLE_NAME": {
+              "Ref": "notesAF81B09D"
+            }
+          }
+        }
+      },
+      "DependsOn": [
+        "updateNotehandlerServiceRoleDefaultPolicyD405276B",
+        "updateNotehandlerServiceRole9959F133"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/updateNote/handler/Resource",
+        "aws:asset:path": "asset.779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a",
+        "aws:asset:property": "Code"
+      }
+    },
+    "deleteNotehandlerServiceRoleAD0655B4": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/deleteNote/handler/ServiceRole/Resource"
+      }
+    },
+    "deleteNotehandlerServiceRoleDefaultPolicy82C8BF80": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "dynamodb:DeleteItem",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "notesAF81B09D",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "deleteNotehandlerServiceRoleDefaultPolicy82C8BF80",
+        "Roles": [
+          {
+            "Ref": "deleteNotehandlerServiceRoleAD0655B4"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/deleteNote/handler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "deleteNotehandlerC903D399": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3Bucket48BED74E"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3VersionKeyE9B4EE08"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3VersionKeyE9B4EE08"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "app.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "deleteNotehandlerServiceRoleAD0655B4",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs12.x",
+        "Environment": {
+          "Variables": {
+            "NOTES_TABLE_NAME": {
+              "Ref": "notesAF81B09D"
+            }
+          }
+        }
+      },
+      "DependsOn": [
+        "deleteNotehandlerServiceRoleDefaultPolicy82C8BF80",
+        "deleteNotehandlerServiceRoleAD0655B4"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/deleteNote/handler/Resource",
+        "aws:asset:path": "asset.66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d",
+        "aws:asset:property": "Code"
+      }
+    },
+    "filesbucket2B30D8E0": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "CorsConfiguration": {
+          "CorsRules": [
+            {
+              "AllowedHeaders": [
+                "*"
+              ],
+              "AllowedMethods": [
+                "PUT",
+                "GET",
+                "DELETE"
+              ],
+              "AllowedOrigins": [
+                "*"
+              ]
+            }
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/files-bucket/Resource"
+      }
+    },
+    "identitypool": {
+      "Type": "AWS::Cognito::IdentityPool",
+      "Properties": {
+        "AllowUnauthenticatedIdentities": true
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/identity-pool"
+      }
+    },
+    "unauthenticatedroleEE7E3E0D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRoleWithWebIdentity",
+              "Condition": {
+                "StringEquals": {
+                  "cognito-identity.amazonaws.com:aud": {
+                    "Ref": "identitypool"
+                  }
+                },
+                "ForAnyValue:StringLike": {
+                  "cognito-identity.amazonaws.com:amr": "unauthenticated"
+                }
+              },
+              "Effect": "Allow",
+              "Principal": {
+                "Federated": "cognito-identity.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/unauthenticated-role/Resource"
+      }
+    },
+    "unauthenticatedroleDefaultPolicy2436F037": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "filesbucket2B30D8E0",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "filesbucket2B30D8E0",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "filesbucket2B30D8E0",
+                        "Arn"
+                      ]
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": "s3:DeleteObject*",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "filesbucket2B30D8E0",
+                        "Arn"
+                      ]
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "unauthenticatedroleDefaultPolicy2436F037",
+        "Roles": [
+          {
+            "Ref": "unauthenticatedroleEE7E3E0D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/unauthenticated-role/DefaultPolicy/Resource"
+      }
+    },
+    "roleattachment": {
+      "Type": "AWS::Cognito::IdentityPoolRoleAttachment",
+      "Properties": {
+        "IdentityPoolId": {
+          "Ref": "identitypool"
+        },
+        "Roles": {
+          "unauthenticated": {
+            "Fn::GetAtt": [
+              "unauthenticatedroleEE7E3E0D",
+              "Arn"
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "aws-js-sdk-workshop/role-attachment"
+      }
+    }
+  },
+  "Outputs": {
+    "endpointEndpoint5E1E9134": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "endpointE7B9679B"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "endpointDeploymentStageprod2CD5F9C4"
+            },
+            "/"
+          ]
+        ]
+      }
+    },
+    "GatewayUrl": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "endpointE7B9679B"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "endpointDeploymentStageprod2CD5F9C4"
+            },
+            "/"
+          ]
+        ]
+      }
+    },
+    "IdentityPoolId": {
+      "Value": {
+        "Ref": "identitypool"
+      }
+    },
+    "FilesBucket": {
+      "Value": {
+        "Ref": "filesbucket2B30D8E0"
+      }
+    }
+  },
+  "Parameters": {
+    "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3BucketF2F32BA0": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987\""
+    },
+    "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3VersionKeyA64C4B84": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987\""
+    },
+    "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987ArtifactHashED05B0C8": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987\""
+    },
+    "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3Bucket3879248C": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b\""
+    },
+    "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3VersionKeyA6F7B7FD": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b\""
+    },
+    "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bArtifactHash6085112B": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b\""
+    },
+    "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3BucketA15E0BB2": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba\""
+    },
+    "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3VersionKeyEAC14F85": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba\""
+    },
+    "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baArtifactHash67A4821A": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba\""
+    },
+    "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3Bucket0A82214A": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a\""
+    },
+    "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3VersionKey761BEF17": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a\""
+    },
+    "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aArtifactHashE96A4549": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a\""
+    },
+    "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3Bucket48BED74E": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d\""
+    },
+    "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3VersionKeyE9B4EE08": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d\""
+    },
+    "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dArtifactHashBD9A7A21": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d\""
+    }
+  }
+}
