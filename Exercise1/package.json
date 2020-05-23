@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "workspaces": [
+    "infra",
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
