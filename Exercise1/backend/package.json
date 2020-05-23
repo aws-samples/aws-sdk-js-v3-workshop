@@ -7,13 +7,7 @@
     "aws-sdk": "^2.603.0"
   },
   "scripts": {
-    "build": "webpack",
-    "mb": "aws s3 mb s3://$AWS_JS_SDK_ID",
-    "package": "sam package --output-template-file packaged.yaml --s3-bucket $AWS_JS_SDK_ID",
-    "deploy": "sam deploy --template-file packaged.yaml --stack-name $AWS_JS_SDK_ID --capabilities CAPABILITY_IAM",
-    "bpd": "npm run build && npm run package && npm run deploy",
-    "describe": "aws cloudformation describe-stacks --stack-name $AWS_JS_SDK_ID --query 'Stacks[].Outputs[?OutputKey==`NotesApi`][OutputValue]'",
-    "clean": "aws s3 rb s3://$AWS_JS_SDK_ID --force && aws cloudformation delete-stack --stack-name $AWS_JS_SDK_ID"
+    "build": "webpack"
   },
   "keywords": [
     "aws",
@@ -31,8 +25,7 @@
     "@types/node": "^12.12.24",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
-    "aws-sam-webpack-plugin": "^0.6.0",
-    "css-loader": "^3.4.2",
+    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-loader": "^3.0.0",
