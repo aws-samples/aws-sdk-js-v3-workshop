@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "cdk": "cd infra && cdk",
+    "cdk": "cd infra && yarn cdk",
     "build:backend": "cd backend && yarn build",
     "build:frontend": "cd frontend && yarn build"
   }
