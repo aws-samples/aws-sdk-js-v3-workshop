@@ -1,6 +1,8 @@
 import * as cdk from "@aws-cdk/core";
 import * as dynamodb from "@aws-cdk/aws-dynamodb";
 import * as apigw from "@aws-cdk/aws-apigateway";
+import * as s3 from "@aws-cdk/aws-s3";
+import * as s3deploy from "@aws-cdk/aws-s3-deployment";
 import { NotesApi } from "./notes-api";
 
 export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
@@ -64,5 +66,17 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
         }).handler
       )
     );
+
+    const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
+      websiteIndexDocument: "index.html",
+      websiteErrorDocument: "error.html",
+      publicReadAccess: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
+    });
+    new s3deploy.BucketDeployment(this, "DeployWebsite", {
+      sources: [s3deploy.Source.asset("../frontend/build")],
+      destinationBucket: websiteBucket,
+      destinationKeyPrefix: "web/static",
+    });
   }
 }
