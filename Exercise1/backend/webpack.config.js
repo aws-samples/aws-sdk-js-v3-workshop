@@ -1,25 +1,25 @@
 /* eslint-disable */
 
-const AwsSamPlugin = require("aws-sam-webpack-plugin");
-const path = require("path");
+const glob = require("glob");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const awsSamPlugin = new AwsSamPlugin({ vscodeDebug: false });
+const entryArray = glob.sync("./src/*.ts");
 
 module.exports = {
-  // Loads the entry object from the AWS::Serverless::Function resources in your
-  // template.yaml or template.yml
-  entry: awsSamPlugin.entry(),
+  entry: entryArray.reduce((acc, item) => {
+    const name = item.replace("./src/", "").replace(".ts", "");
+    acc[name] = item;
+    return acc;
+  }, {}),
 
-  // Write the output to the .aws-sam/build folder
   output: {
-    filename: "[name]/app.js",
-    libraryTarget: "commonjs2",
-    path: path.resolve(__dirname, ".aws-sam/build/")
+    filename: "[name].js",
+    libraryTarget: "commonjs",
   },
 
   // Resolve .ts and .js extensions
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
   },
 
   // Target node
@@ -36,16 +36,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: "eslint-loader",
         options: {
-          failOnError: true
-        }
+          failOnError: true,
+        },
       },
       {
         test: /\.ts$/,
-        loader: "ts-loader"
-      }
-    ]
+        loader: "ts-loader",
+      },
+    ],
   },
 
-  // Add the AWS SAM Webpack plugin
-  plugins: [awsSamPlugin]
+  plugins: [new CleanWebpackPlugin()],
 };

@@ -1,9 +1,9 @@
 import dynamoDB from "./libs/dynamoDB";
 import { success, failure } from "./libs/response";
 
-export async function main() {
+export const handler = async () => {
   const params = {
-    TableName: process.env.tableName
+    TableName: process.env.NOTES_TABLE_NAME || "",
   };
 
   try {
@@ -11,6 +11,7 @@ export async function main() {
     // Return the matching list of items in response body
     return success(result.Items);
   } catch (e) {
+    console.log(e);
     return failure({ status: false });
   }
-}
+};

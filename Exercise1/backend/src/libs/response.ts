@@ -1,18 +1,16 @@
-export function success(body) {
+export const success = (body: any) => {
   return buildResponse(200, body);
-}
+};
 
-export function failure(body) {
+export const failure = (body: any) => {
   return buildResponse(500, body);
-}
+};
 
-function buildResponse(statusCode, body) {
-  return {
-    statusCode: statusCode,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": true
-    },
-    body: JSON.stringify(body)
-  };
-}
+const buildResponse = (statusCode: number, body: any) => ({
+  statusCode: statusCode,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": true,
+  },
+  body: JSON.stringify(body),
+});
