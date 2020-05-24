@@ -72,7 +72,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
     });
     filesBucket.addCorsRule({
-      allowedOrigins: apigw.Cors.ALL_ORIGINS,
+      allowedOrigins: apigw.Cors.ALL_ORIGINS, // NOT recommended for production code
       allowedMethods: [
         s3.HttpMethods.PUT,
         s3.HttpMethods.GET,
@@ -100,6 +100,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       ),
     });
 
+    // NOT recommended for production code - only give read permissions for unauthenticated resources
     filesBucket.grantRead(unauthenticated);
     filesBucket.grantPut(unauthenticated);
     filesBucket.grantDelete(unauthenticated);
