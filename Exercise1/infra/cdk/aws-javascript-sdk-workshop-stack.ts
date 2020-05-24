@@ -100,11 +100,9 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       ),
     });
 
-    filesBucket.grantReadWrite(unauthenticated, [
-      "s3:PutObject",
-      "s3:GetObject",
-      "s3:DeleteObject",
-    ]);
+    filesBucket.grantRead(unauthenticated);
+    filesBucket.grantPut(unauthenticated);
+    filesBucket.grantDelete(unauthenticated);
 
     new cognito.CfnIdentityPoolRoleAttachment(this, "role-attachment", {
       identityPoolId: identityPool.ref,
