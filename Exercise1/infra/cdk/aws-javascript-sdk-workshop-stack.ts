@@ -113,8 +113,8 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       },
     });
 
-    new cdk.CfnOutput(this, "GATEWAY_URL", { value: api.url });
-    new cdk.CfnOutput(this, "IDENTITY_POOL_ID", { value: identityPool.ref });
-    new cdk.CfnOutput(this, "S3_BUCKET", { value: filesBucket.bucketName });
+    new cdk.CfnOutput(this, "GatewayUrl", { value: api.url });
+    new cdk.CfnOutput(this, "IdentityPoolId", { value: identityPool.ref });
+    new cdk.CfnOutput(this, "FilesBucket", { value: filesBucket.bucketName });
   }
 }
