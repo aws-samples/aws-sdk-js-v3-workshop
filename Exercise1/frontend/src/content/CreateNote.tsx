@@ -22,7 +22,7 @@ const CreateNote = (props: RouteComponentProps) => {
 
     setIsLoading(true);
 
-    const createNoteURL = `${GATEWAY_URL}/notes`;
+    const createNoteURL = `${GATEWAY_URL}notes`;
 
     try {
       // @ts-ignore Argument of type 'undefined' is not assignable to parameter of type 'File'
