@@ -9,24 +9,35 @@ const { readFileSync, writeFileSync, unlinkSync } = require("fs");
   );
   const configFile = join(__dirname, "frontend", "src", "config.json");
 
-  const execProcess = exec(`yarn cdk deploy --outputs-file ${cdkOutputsFile}`, {
-    cwd: join(__dirname, "infra"),
-  });
-  execProcess.stdout.pipe(process.stdout);
-  execProcess.stderr.pipe(process.stderr);
-  await new Promise((resolve) => {
-    execProcess.on("exit", resolve);
-  });
+  try {
+    const execProcess = exec(
+      `yarn cdk deploy --outputs-file ${cdkOutputsFile}`,
+      {
+        cwd: join(__dirname, "infra"),
+      }
+    );
+    execProcess.stdout.pipe(process.stdout);
+    execProcess.stderr.pipe(process.stderr);
+    await new Promise((resolve) => {
+      execProcess.on("exit", resolve);
+    });
+  } catch (error) {
+    console.log(`cdk command failed: ${error}`);
+  }
 
   // Populate frontend config with data from outputsFile
-  const configContents = JSON.parse(readFileSync(configFile));
-  const cdkOutput = JSON.parse(readFileSync(cdkOutputsFile))[
-    "aws-js-sdk-workshop"
-  ];
-  configContents.GATEWAY_URL = cdkOutput.GatewayUrl;
-  configContents.IDENTITY_POOL_ID = cdkOutput.IdentityPoolId;
-  configContents.FILES_BUCKET = cdkOutput.FilesBucket;
-  writeFileSync(configFile, JSON.stringify(configContents, null, 2));
+  try {
+    const configContents = JSON.parse(readFileSync(configFile));
+    const cdkOutput = JSON.parse(readFileSync(cdkOutputsFile))[
+      "aws-js-sdk-workshop"
+    ];
+    configContents.GATEWAY_URL = cdkOutput.GatewayUrl;
+    configContents.IDENTITY_POOL_ID = cdkOutput.IdentityPoolId;
+    configContents.FILES_BUCKET = cdkOutput.FilesBucket;
+    writeFileSync(configFile, JSON.stringify(configContents, null, 2));
+  } catch (error) {
+    console.log(`Error while updating config.json: ${error}`);
+  }
 
   // Delete outputsFile
   unlinkSync(cdkOutputsFile);
