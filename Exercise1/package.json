@@ -3,6 +3,7 @@
   "scripts": {
     "cdk": "cd infra && yarn cdk",
     "build:backend": "cd backend && yarn build",
-    "build:frontend": "cd frontend && yarn build"
+    "build:frontend": "cd frontend && yarn build",
+    "start:frontend": "cd frontend && yarn start"
   }
 }
