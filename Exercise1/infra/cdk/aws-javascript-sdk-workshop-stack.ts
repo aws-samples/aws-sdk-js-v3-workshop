@@ -2,7 +2,8 @@ import * as cdk from "@aws-cdk/core";
 import * as dynamodb from "@aws-cdk/aws-dynamodb";
 import * as apigw from "@aws-cdk/aws-apigateway";
 import * as s3 from "@aws-cdk/aws-s3";
-import * as s3deploy from "@aws-cdk/aws-s3-deployment";
+import * as cognito from "@aws-cdk/aws-cognito";
+import * as iam from "@aws-cdk/aws-iam";
 import { NotesApi } from "./notes-api";
 
 export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
@@ -67,16 +68,61 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       )
     );
 
-    const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
-      websiteIndexDocument: "index.html",
-      websiteErrorDocument: "error.html",
-      // publicReadAccess: true,
+    const filesBucket = new s3.Bucket(this, "FilesBucket", {
       removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
     });
-    new s3deploy.BucketDeployment(this, "DeployWebsite", {
-      sources: [s3deploy.Source.asset("../frontend/build")],
-      destinationBucket: websiteBucket,
-      destinationKeyPrefix: "web/static",
+    filesBucket.addCorsRule({
+      allowedOrigins: apigw.Cors.ALL_ORIGINS,
+      allowedMethods: [
+        s3.HttpMethods.PUT,
+        s3.HttpMethods.GET,
+        s3.HttpMethods.DELETE,
+      ],
+      allowedHeaders: apigw.Cors.DEFAULT_HEADERS,
     });
+
+    const identityPool = new cognito.CfnIdentityPool(this, "IdentityPool", {
+      allowUnauthenticatedIdentities: true,
+    });
+
+    const unauthenticated = new iam.Role(
+      this,
+      "IdentityPoolUnauthenticatedRole",
+      {
+        assumedBy: new iam.FederatedPrincipal(
+          "cognito-identity.amazonaws.com",
+          {
+            StringEquals: {
+              "cognito-identity.amazonaws.com:aud": identityPool.ref,
+            },
+            "ForAnyValue:StringLike": {
+              "cognito-identity.amazonaws.com:amr": "unauthenticated",
+            },
+          },
+          "sts:AssumeRoleWithWebIdentity"
+        ),
+      }
+    );
+
+    filesBucket.grantReadWrite(unauthenticated, [
+      "s3:PutObject",
+      "s3:GetObject",
+      "s3:DeleteObject",
+    ]);
+
+    new cognito.CfnIdentityPoolRoleAttachment(
+      this,
+      "IdentityPoolRoleAttachment",
+      {
+        identityPoolId: identityPool.ref,
+        roles: {
+          unauthenticated: unauthenticated.roleArn,
+        },
+      }
+    );
+
+    new cdk.CfnOutput(this, "GATEWAY_URL", { value: api.url });
+    new cdk.CfnOutput(this, "IDENTITY_POOL_ID", { value: identityPool.ref });
+    new cdk.CfnOutput(this, "S3_BUCKET", { value: filesBucket.bucketName });
   }
 }

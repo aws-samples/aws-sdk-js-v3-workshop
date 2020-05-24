@@ -84,19 +84,6 @@
     "@aws-cdk/cx-api" "1.41.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-cloudfront@1.41.0":
-  version "1.41.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudfront/-/aws-cloudfront-1.41.0.tgz#171262f992fbb91e04566122452030b67add22c1"
-  integrity sha512-T+26stl2M4EjDyE6AqqjdM+0FWrofZlhklgYOjt+TOEgFDAE/OYbCJAR+MFZaC2OFEikq28MW4Qma+JpKelKsw==
-  dependencies:
-    "@aws-cdk/aws-certificatemanager" "1.41.0"
-    "@aws-cdk/aws-iam" "1.41.0"
-    "@aws-cdk/aws-kms" "1.41.0"
-    "@aws-cdk/aws-lambda" "1.41.0"
-    "@aws-cdk/aws-s3" "1.41.0"
-    "@aws-cdk/core" "1.41.0"
-    constructs "^3.0.2"
-
 "@aws-cdk/aws-cloudwatch@1.41.0":
   version "1.41.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudwatch/-/aws-cloudwatch-1.41.0.tgz#a8068bfd80bc0bed19d52314c1c2cc2fdb2b0cb8"
@@ -104,6 +91,18 @@
   dependencies:
     "@aws-cdk/aws-iam" "1.41.0"
     "@aws-cdk/core" "1.41.0"
+    constructs "^3.0.2"
+
+"@aws-cdk/aws-cognito@1.41.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cognito/-/aws-cognito-1.41.0.tgz#edb2b894ab139d08fe1e7ff5982b66499c7f6af6"
+  integrity sha512-EIHtMw8mD2sAVdnq8i4ckTHz2g0RHVPiTO7S0Fe+ThDv1MqgGy0JOnZfVgwA+GF4IcsjNDj4qf4+tGZS+40E/Q==
+  dependencies:
+    "@aws-cdk/aws-certificatemanager" "1.41.0"
+    "@aws-cdk/aws-iam" "1.41.0"
+    "@aws-cdk/aws-lambda" "1.41.0"
+    "@aws-cdk/core" "1.41.0"
+    "@aws-cdk/custom-resources" "1.41.0"
     constructs "^3.0.2"
 
 "@aws-cdk/aws-dynamodb@1.41.0":
@@ -225,19 +224,6 @@
     "@aws-cdk/aws-s3" "1.41.0"
     "@aws-cdk/core" "1.41.0"
     "@aws-cdk/cx-api" "1.41.0"
-    constructs "^3.0.2"
-
-"@aws-cdk/aws-s3-deployment@1.41.0":
-  version "1.41.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3-deployment/-/aws-s3-deployment-1.41.0.tgz#f739b48be5277f2ec0bb8d087f10a393136be7a1"
-  integrity sha512-YcurMrLMqhwf/fPeyAwCO/kCbetpriN+ny9QvSIEWrzdPVc+eN1q7I7Jf67fVjIy2Calv7eRhsAAAe4s8OYHrw==
-  dependencies:
-    "@aws-cdk/aws-cloudfront" "1.41.0"
-    "@aws-cdk/aws-iam" "1.41.0"
-    "@aws-cdk/aws-lambda" "1.41.0"
-    "@aws-cdk/aws-s3" "1.41.0"
-    "@aws-cdk/aws-s3-assets" "1.41.0"
-    "@aws-cdk/core" "1.41.0"
     constructs "^3.0.2"
 
 "@aws-cdk/aws-s3@1.41.0":
