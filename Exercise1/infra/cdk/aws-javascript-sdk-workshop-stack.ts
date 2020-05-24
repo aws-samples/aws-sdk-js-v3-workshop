@@ -78,7 +78,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
         s3.HttpMethods.GET,
         s3.HttpMethods.DELETE,
       ],
-      allowedHeaders: apigw.Cors.DEFAULT_HEADERS,
+      allowedHeaders: ["*"],
     });
 
     const identityPool = new cognito.CfnIdentityPool(this, "identity-pool", {
