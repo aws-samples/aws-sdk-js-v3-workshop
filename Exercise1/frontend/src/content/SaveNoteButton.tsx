@@ -13,7 +13,7 @@ const SaveNoteButton = (props: { noteId: string; noteContent: string }) => {
     setIsSaving(true);
 
     const { noteId, noteContent } = props;
-    const updateNoteURL = `${GATEWAY_URL}/notes/${noteId}`;
+    const updateNoteURL = `${GATEWAY_URL}notes/${noteId}`;
 
     try {
       await fetch(updateNoteURL, {

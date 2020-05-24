@@ -18,7 +18,7 @@ const ListNotes = (props: RouteComponentProps) => {
   useEffect(() => {
     const fetchNotes = async () => {
       setIsLoading(true);
-      const fetchURL = `${GATEWAY_URL}/notes`;
+      const fetchURL = `${GATEWAY_URL}notes`;
 
       try {
         const response = await fetch(fetchURL);

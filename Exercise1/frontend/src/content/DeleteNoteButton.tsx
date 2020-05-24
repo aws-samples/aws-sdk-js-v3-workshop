@@ -14,7 +14,7 @@ const DeleteNoteButton = (props: { noteId: string; attachment?: string }) => {
     event.preventDefault();
     setIsDeleting(true);
 
-    const deleteNoteURL = `${GATEWAY_URL}/notes/${noteId}`;
+    const deleteNoteURL = `${GATEWAY_URL}notes/${noteId}`;
 
     try {
       if (attachment) {
