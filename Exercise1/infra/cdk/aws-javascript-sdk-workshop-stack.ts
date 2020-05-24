@@ -10,11 +10,11 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const table = new dynamodb.Table(this, "Notes", {
+    const table = new dynamodb.Table(this, "notes", {
       partitionKey: { name: "noteId", type: dynamodb.AttributeType.STRING },
     });
 
-    const api = new apigw.RestApi(this, "AwsJavaScriptSdkWorkshopEndpoint");
+    const api = new apigw.RestApi(this, "endpoint");
     const notes = api.root.addResource("notes");
     notes.addMethod(
       "GET",
@@ -68,7 +68,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       )
     );
 
-    const filesBucket = new s3.Bucket(this, "FilesBucket", {
+    const filesBucket = new s3.Bucket(this, "files-bucket", {
       removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
     });
     filesBucket.addCorsRule({
@@ -81,28 +81,24 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       allowedHeaders: apigw.Cors.DEFAULT_HEADERS,
     });
 
-    const identityPool = new cognito.CfnIdentityPool(this, "IdentityPool", {
+    const identityPool = new cognito.CfnIdentityPool(this, "identity-pool", {
       allowUnauthenticatedIdentities: true,
     });
 
-    const unauthenticated = new iam.Role(
-      this,
-      "IdentityPoolUnauthenticatedRole",
-      {
-        assumedBy: new iam.FederatedPrincipal(
-          "cognito-identity.amazonaws.com",
-          {
-            StringEquals: {
-              "cognito-identity.amazonaws.com:aud": identityPool.ref,
-            },
-            "ForAnyValue:StringLike": {
-              "cognito-identity.amazonaws.com:amr": "unauthenticated",
-            },
+    const unauthenticated = new iam.Role(this, "unauthenticated-role", {
+      assumedBy: new iam.FederatedPrincipal(
+        "cognito-identity.amazonaws.com",
+        {
+          StringEquals: {
+            "cognito-identity.amazonaws.com:aud": identityPool.ref,
           },
-          "sts:AssumeRoleWithWebIdentity"
-        ),
-      }
-    );
+          "ForAnyValue:StringLike": {
+            "cognito-identity.amazonaws.com:amr": "unauthenticated",
+          },
+        },
+        "sts:AssumeRoleWithWebIdentity"
+      ),
+    });
 
     filesBucket.grantReadWrite(unauthenticated, [
       "s3:PutObject",
@@ -110,16 +106,12 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
       "s3:DeleteObject",
     ]);
 
-    new cognito.CfnIdentityPoolRoleAttachment(
-      this,
-      "IdentityPoolRoleAttachment",
-      {
-        identityPoolId: identityPool.ref,
-        roles: {
-          unauthenticated: unauthenticated.roleArn,
-        },
-      }
-    );
+    new cognito.CfnIdentityPoolRoleAttachment(this, "role-attachment", {
+      identityPoolId: identityPool.ref,
+      roles: {
+        unauthenticated: unauthenticated.roleArn,
+      },
+    });
 
     new cdk.CfnOutput(this, "GATEWAY_URL", { value: api.url });
     new cdk.CfnOutput(this, "IDENTITY_POOL_ID", { value: identityPool.ref });
