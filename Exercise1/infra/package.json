@@ -17,6 +17,6 @@
     "@types/node": "12.12.29",
     "aws-cdk": "1.41.0",
     "ts-node": "^8.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.9.3"
   }
 }
