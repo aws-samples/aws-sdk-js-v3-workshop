@@ -1,6 +1,6 @@
 {
   "GATEWAY_URL": "https://6uuwv2h7id.execute-api.us-west-2.amazonaws.com/prod/",
-  "IDENTITY_POOL_ID": "us-west-2:00bf09bc-333c-48df-97cc-c6a52aef9e1c",
-  "FILES_BUCKET": "trivikr-aws-js-sdk-v3-workshop-files",
+  "IDENTITY_POOL_ID": "us-west-2:53d5a035-644f-4ef4-9e73-402c63d3844e",
+  "FILES_BUCKET": "aws-js-sdk-workshop-filesbucket2b30d8e0-1i76mr7u0mo1n",
   "MAX_FILE_SIZE": 2000000
 }
