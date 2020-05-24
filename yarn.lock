@@ -3691,7 +3691,7 @@ aws-cdk@1.41.0:
     yaml "^1.10.0"
     yargs "^15.3.1"
 
-aws-sdk@^2.603.0, aws-sdk@^2.681.0:
+aws-sdk@2.683.0, aws-sdk@^2.681.0:
   version "2.683.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.683.0.tgz#c374374a443790a9520b1b00a3f0d42085c42891"
   integrity sha512-mi1175pJMbQhCWhBEQ5ccQ3SDE+SJzbapuAQtcb7tdLLV7dPKf4zQXhpqK1uG0dysm8NhsNtgxwA2diYOKWlTg==
