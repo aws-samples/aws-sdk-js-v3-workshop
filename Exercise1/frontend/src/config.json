@@ -1,6 +1,6 @@
 {
-  "GATEWAY_URL": "https://6uuwv2h7id.execute-api.us-west-2.amazonaws.com/prod/",
-  "IDENTITY_POOL_ID": "us-west-2:53d5a035-644f-4ef4-9e73-402c63d3844e",
-  "FILES_BUCKET": "aws-js-sdk-workshop-filesbucket2b30d8e0-1i76mr7u0mo1n",
+  "GATEWAY_URL": "<output-GatewayUrl-from-cdk-deploy>",
+  "IDENTITY_POOL_ID": "<output-IdentityPoolId-from-cdk-deploy>",
+  "FILES_BUCKET": "<output-FilesBucket-from-cdk-deploy>",
   "MAX_FILE_SIZE": 2000000
 }
