@@ -25,7 +25,7 @@ To set up this workshop package, complete the following tasks:
 
 - Install **Node.js** by following these steps:
   1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update)
-  1. Install node v10.0.0 by running `nvm install 10` and `nvm use 10` in a terminal window
+  1. Use node v10.x.x by running `nvm use` or `nvm use 10` in a terminal window
   1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v10`, such as `v10.16.3`)
 - Install [yarn](https://yarnpkg.com/en/docs/install)
   - We recommend using **yarn** for its simplicity, speed and yarn workspaces.
