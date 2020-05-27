@@ -1,9 +1,9 @@
 {
   "private": true,
   "workspaces": [
-    "Exercise1/infra",
-    "Exercise1/backend",
-    "Exercise1/frontend"
+    "packages/infra",
+    "packages/backend",
+    "packages/frontend"
   ],
   "devDependencies": {
     "husky": "^4.2.3",
