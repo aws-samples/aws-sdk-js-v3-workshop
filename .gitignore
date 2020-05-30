@@ -130,5 +130,10 @@ $RECYCLE.BIN/
 dist/
 build/
 react-app-env.d.ts
-.aws-sam/
-packaged.yaml
+
+### CDK-specific ignores ###
+*.swp
+cdk.context.json
+package-lock.json
+.cdk.staging
+cdk.out
