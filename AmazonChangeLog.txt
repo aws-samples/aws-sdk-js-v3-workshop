@@ -3,7 +3,7 @@ The Open Source MIT licensed project is at:
 - [serverless-stack-demo-client](https://github.com/AnomalyInnovations/serverless-stack-demo-client)
 
 High level modifications:
-- Used [SAM CLI](https://github.com/awslabs/aws-sam-cli) instead of [Serverless](https://serverless.com/)
+- Used [AWS Cloud Development Kit](https://aws.amazon.com/cdk/) instead of [Serverless](https://serverless.com/)
 - Removed tests which were done using serverless-bundle
 - Switched to [yarn](https://yarnpkg.com) over [npm](https://npmjs.com)
 - Introduced [TypeScript](https://www.typescriptlang.org/) and [ESLint](https://eslint.org/)
