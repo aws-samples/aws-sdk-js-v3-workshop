@@ -7,13 +7,13 @@ const { readFileSync, writeFileSync, unlinkSync } = require("fs");
     __dirname,
     `tmp.${Math.ceil(Math.random() * 10 ** 10)}.json`
   );
-  const configFile = join(__dirname, "frontend", "src", "config.json");
+  const configFile = join(__dirname, "..", "frontend", "src", "config.json");
 
   try {
     const execProcess = exec(
       `yarn cdk deploy --outputs-file ${cdkOutputsFile}`,
       {
-        cwd: join(__dirname, "infra"),
+        cwd: join(__dirname, "..", "infra"),
       }
     );
     execProcess.stdout.pipe(process.stdout);
