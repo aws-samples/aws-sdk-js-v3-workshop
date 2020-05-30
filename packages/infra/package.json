@@ -1,5 +1,5 @@
 {
-  "name": "@aws-sdk-workshop-exercise1/infra",
+  "name": "@aws-sdk-workshop/infra",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
