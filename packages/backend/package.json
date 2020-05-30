@@ -7,7 +7,9 @@
     "aws-sdk": "2.683.0"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "build:backend": "cd .. && yarn build:backend",
+    "cdk": "cd .. && yarn cdk"
   },
   "keywords": [
     "aws",

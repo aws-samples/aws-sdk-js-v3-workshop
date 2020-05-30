@@ -1,7 +1,7 @@
 # DynamodDB client in v2 vs v3
 
 - This package contains backend code which performs create, delete, get, list and update operations on DynamoDB
-- It uses webpack to build single minimized bundle for each operation, and SAM CLI to package and deploy those bundles
+- It uses webpack to build single minimized bundle for each operation, and AWS CDK to deploy those bundles
 
 ## Table of Contents
 
@@ -25,27 +25,22 @@ Ensure that you've followed pre-requisites from main [README](../../README.md)
 
 ### Create backend API
 
-- Run `export AWS_JS_SDK_ID=<unique>-aws-js-sdk-v3-workshop`
-  - the value in `<unique>` could be your name, for example
-  - this value in `AWS_JS_SDK_ID` will be used for your S3 bucket and Cloud formation stack
-- [Optional] Rename TableName in [template.yaml](./template.yaml#L22) if table already exists in DynamoDB
-- `yarn mb` to make S3 bucket
-- `yarn build` to build the package (runs ESLint and TypeScript)
-- `yarn package` to [package](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-package.html) your application
-- `yarn deploy` to [deploy](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html) your application (this takes time)
-- `yarn bpd` to run build, package and deploy! (during development)
+- `yarn build:backend` to build the package (runs ESLint and TypeScript)
+- `yarn cdk deploy` to deploy your application (this operation might take time based on the state of your Cloudformation stack)
 
 ### Test backend API
 
-- `yarn describe` to get API Gateway endpoint
-- Visit the endpoint `<ENDPOINT>/Prod/notes` in the browser
-- The contents of DynamoDB table in [template.yml](./template.yaml#L22) would be returned as JSON
+- Open the GatewayUrl link from CDK output from the console:
+  - It'll be like https://randomstring.execute-api.us-west-2.amazonaws.com/prod/
+- Append `notes` in the URL
+  - It'll be like https://randomstring.execute-api.us-west-2.amazonaws.com/prod/notes
+- The contents of the notes DynamoDB table would be returned as JSON
 - If you don't see anything, that's because your table is likely empty! Add data manually or wait until you run the frontend.
 
 ### Clean resources
 
 - Note: Clean resources after you're done with all activities below, and you want to delete your cloudformation stack.
-- `yarn clean` to delete resources
+- `yarn cdk destroy` to delete your CloudFormation stack
 
 ## Activities
 
@@ -54,7 +49,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 ### Examine initial bundle size of lambda functions
 
 - Login to [AWS Lambda Console](https://console.aws.amazon.com/lambda/home)
-- The size of each lambda functions will be ~470KB
+- The size of each lambda functions will be ~790kB
 
   <details><summary>Click to view image</summary>
   <p>
@@ -68,6 +63,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
   ```typescript
   import AWS from "aws-sdk";
+
   export default new AWS.DynamoDB();
   ```
 
@@ -84,7 +80,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
   +export default new DynamoDB();
   ```
 
-- Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~76KB!
+- Run `yarn build:backend` and `yarn cdk deploy` to build+deploy new code, and the size of lambda functions will reduce to ~90kB!
 
   <details><summary>Click to view image</summary>
   <p>
@@ -99,19 +95,19 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 - Uninstall v2 by running the following command:
   - `yarn remove aws-sdk`
 - Install dynamodb in v3 by running the following command:
-  - `yarn add @aws-sdk/client-dynamodb-node@preview`.
+  - `yarn add @aws-sdk/client-dynamodb@gamma`.
 - Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDB from v3
 
   ```diff
   -import DynamoDB from "aws-sdk/clients/dynamodb";
-  +import { DynamoDB } from "@aws-sdk/client-dynamodb-node";
+  +import { DynamoDB } from "@aws-sdk/client-dynamodb";
 
   -export default new DynamoDB();
   +export default new DynamoDB({});
   ```
 
 - The function calls v3 client return promises by default, so you've to remove `.promise()` from individual functions.
-- For example, here's a diff for [`create.ts`](./src/create.ts)
+- For example, here's a diff for [`createNote.ts`](./src/createNote.ts)
 
   ```diff
    try {
@@ -123,7 +119,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
      return failure({ status: false });
   ```
 
-- Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~26KB!
+- Run `yarn build:backend` and `yarn cdk deploy` to build+deploy new code, and the size of lambda functions will reduce to ~46kB!
 
   <details><summary>Click to view image</summary>
   <p>
@@ -135,24 +131,25 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 
 ### Reduce bundle size even more by just importing specific commands in v3
 
+- TODO: Needs debugging on why bundle size doesn't reduce in `1.0.0-gamma` prerelease.
 - AWS JS SDK v3 has an option to import specific commands, thus reducing bundle size further!
 - Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDBClient from v3
 
   ```diff
-  -import { DynamoDB } from "@aws-sdk/client-dynamodb-node";
-  +import { DynamoDBClient } from "@aws-sdk/client-dynamodb-node";
+  -import { DynamoDB } from "@aws-sdk/client-dynamodb";
+  +import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 
   -export default new DynamoDB({});
   +export default new DynamoDBClient({});
   ```
 
-- Import and call just the `PutCommand` in [`create.ts`](./src/create.ts) for example:
+- Import and call just the `PutCommand` in [`createNote.ts`](./src/createNote.ts) for example:
 
   ```diff
   import crypto from "crypto";
   -import dynamoDB from "./libs/dynamoDB";
   +import dynamoDBClient from "./libs/dynamoDB";
-  +import { PutItemCommand } from "@aws-sdk/client-dynamodb-node";
+  +import { PutItemCommand } from "@aws-sdk/client-dynamodb";
   import { success, failure } from "./libs/response";
   ```
 
@@ -165,7 +162,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
       return failure({ status: false });
   ```
 
-- Run `yarn bpd` to build+package+deploy new code, and the size of lambda functions will reduce to ~18KB!
+- Run `yarn build:backend` and `yarn cdk deploy` to build+deploy new code, and the size of lambda functions will reduce to ~ <X> kB!
 
   <details><summary>Click to view image</summary>
   <p>
