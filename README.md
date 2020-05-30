@@ -10,11 +10,10 @@ The note taking application is the modified version from the original Open Sourc
 ## Table of Contents
 
 - [Pre-requisites](#pre-requisites)
-- [Exercise1](#exercise1)
-  - [Backend](#backend)
-  - [FrontEnd](#frontend)
-- [Exercise2](#exercise2)
-- [Exercise3](#exercise3)
+- [Activities](#activities)
+  - [Exercise1](#exercise1)
+  - [Exercise2](#exercise2)
+  - [Exercise3](#exercise3)
 - [Contributing](#contributing)
 - [License Summary](#license-summary)
 
@@ -46,32 +45,18 @@ To set up this workshop package, complete the following tasks:
     region = us-west-2
     ```
 
-## Exercise1
+## Activities
+
+### Exercise1
 
 This exercise code uses AWS SDK JS v2 as follows:
 
 - backend performs create, delete, get, list and update operations on DynamoDB
 - frontend does put, get, delete operations using an S3 browser client
 
-The README files have instructions on how to move both to v3. The backend and frontend can be worked on independently as long as the APIs don't change. Follow [README](./packages/README.md) to set up backend, frontend and infrastructure.
+The README files have instructions on how to move both to v3. The backend and frontend can be worked on independently as long as the APIs don't change. Follow [README](./packages/README.md) to set up and update backend, frontend and infrastructure.
 
-### Backend
-
-Perform the following steps to update the backend API:
-
-- `cd packages/backend`
-- Follow [backend README](./packages/backend/README.md)
-
-Remember to test your backend code before the next step.
-
-### FrontEnd
-
-Perform the following steps to update the frontend API:
-
-- `cd packages/frontend`
-- Follow [frontend README](./packages/frontend/README.md)
-
-## Exercise2
+### Exercise2
 
 This exercise has the code which uses AWS JS SDK v3, which you would have got after finishing Exercise1:
 
@@ -89,7 +74,7 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 - Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation
 - Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images
 
-# Exercise3
+### Exercise3
 
 Inspect the differences of stack trace if call `DynamoDB.putItem` with invalid resources in V2 and V3 SDK.
 
@@ -191,8 +176,6 @@ ResourceNotFoundException: Requested resource not found
 ```
 
 </details>
-
-# License Summary
 
 ## Contributing
 
