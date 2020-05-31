@@ -12,6 +12,7 @@ export class AwsJavaScriptSdkWorkshopStack extends cdk.Stack {
 
     const table = new dynamodb.Table(this, "notes", {
       partitionKey: { name: "noteId", type: dynamodb.AttributeType.STRING },
+      removalPolicy: cdk.RemovalPolicy.DESTROY, // NOT recommended for production code
     });
 
     const api = new apigw.RestApi(this, "endpoint");
