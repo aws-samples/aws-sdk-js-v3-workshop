@@ -11,9 +11,14 @@
     "react-dom": "16.13.1"
   },
   "scripts": {
+    "prepare:frontend": "cd .. && yarn prepare:frontend",
     "build": "react-scripts build",
+    "build:frontend": "cd .. && yarn build:frontend",
     "start": "react-scripts start",
-    "serve": "http-server build -o"
+    "start:frontend": "cd .. && yarn start:frontend",
+    "serve": "http-server build -o",
+    "serve:frontend": "cd .. && yarn serve:frontend",
+    "cdk": "cd .. && yarn cdk"
   },
   "keywords": [
     "aws",

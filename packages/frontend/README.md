@@ -1,7 +1,7 @@
 # S3 browser client in v2 vs v3
 
 - This package contains frontend code which does put, get, delete operations using S3 browser client
-- This is a create-react-app which creates minimized bundle on running `build`
+- This is a create-react-app which creates minimized bundle on running `build`, and debugs it on running `start`
 
   <details><summary>Click to view screen recording</summary>
   <p>
@@ -29,32 +29,21 @@ Ensure that you've followed pre-requisites from main [README](../../README.md), 
 
 ### Steps to run frontend locally
 
-- Ensure that environment variable `AWS_JS_SDK_ID` has the value saved from backend README
-  - You can print the value by running `echo $AWS_JS_SDK_ID`
-  - If it's not defined, please set it by running `export AWS_JS_SDK_ID=<unique>-aws-js-sdk-v3-workshop`
-  - this value in `AWS_JS_SDK_ID` will be used for Cloud formation stack frontend
-- Edit [`template.yaml`](./template.yaml#L12) to save unique name for your S3 Bucket
-  - It could be `<unique>-aws-js-sdk-workshop-files` where unique is your name/username
-  - This bucket will store attachments linked with notes
-  - The step `yarn deploy` will fail, if the S3 BucketName is not unique
-- `yarn deploy` to create/update CloudFormation resources
-- Edit [`src/config.ts`](./src/config.ts)
-  - Add `<ENDPOINT>/Prod` for your `GatewayURL`
-    - You would have received `<ENDPOINT>` from running `yarn describe` in packages/backend
-    - Example GatewayURL: `https://randomstring.execute-api.us-west-2.amazonaws.com/Prod`
-  - Add S3 bucket name saved in [`template.yaml`](./template.yaml#L12)
-  - Add `IdentityPoolId` from newly created IdentityPool in Cognito
-    - You can find the `IdentityPoolId` corresponding to name `AwsJsSdkWorkshopIdentityPool` by running `yarn identity-pools`
+- `yarn prepare:frontend` to populate Cloudformation resources in frontend config.
+- The resources can also be manually added in [`src/config.json`](./src/config.json)
+  - Add `aws-js-sdk-workshop.GatewayUrl` from CDK output for `GATEWAY_URL`
+    - Example GatewayURL: `https://randomstring.execute-api.us-west-2.amazonaws.com/prod/`
+  - Add `aws-js-sdk-workshop.IdentityPoolId` from CDK output for `IDENTITY_POOL_ID`
     - Example IdentityPoolId: `us-west-2:random-strc-4ce1-84ee-9a429f9b557e`
-- `yarn start` to run the server
+  - Add `aws-js-sdk-workshop.FilesBucket` from CDK output for `FILES_BUCKET`
+- `yarn start:frontend` to run the server
   - This will open the website in the browser, and enable HMR
   - Just edit and save the files in `packages/frontend/src`, and the browser page will auto-refresh!
-- `yarn build` to create optimized production build (to get file sizes)
+- `yarn build:frontend` to create optimized production build (to get file sizes)
 
 ### Clean resources
 
-- Note: Clean resources after you're done with all activities below, and you want to delete your cloudformation stack.
-- `yarn clean` to delete resources
+- Run `yarn cdk destroy` to delete Cloudformation Stack
 
 ## Activities
 
@@ -62,14 +51,14 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 ### Examine initial bundle size of the app
 
-- `yarn build` to generate bundle size
+- `yarn build:frontend` to generate bundle, which will create bundle of size ~380kB
 
   ```console
   File sizes after gzip:
 
-    344.77 KB  build/static/js/2.0191bd07.chunk.js
-    2.94 KB    build/static/js/main.f878258f.chunk.js
-    790 B      build/static/js/runtime~main.e82a7b61.js
+    377.24 KB  build/static/js/2.9a29a7df.chunk.js
+    2.85 KB    build/static/js/main.91dd2537.chunk.js
+    793 B      build/static/js/runtime-main.3071ec60.js
   ```
 
 - This happens because entire aws-sdk is bundled in the app in file [`s3Client.ts`](./src/libs/s3Client.ts)
@@ -87,7 +76,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   -import AWS from "aws-sdk";
   +import AWS from "aws-sdk/global";
   +import s3 from "aws-sdk/clients/s3";
-   import { config } from "../config";
+   import { IDENTITY_POOL_ID } from "../config.json";
 
   -const s3Client = new AWS.S3({
   +const s3Client = new s3({
@@ -96,14 +85,14 @@ In this section, we're going to update the code to import S3 browser Client in d
       {
   ```
 
-- Run `yarn build` to generate bundle, and it's size will reduce to ~134KB!
+- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~138KB!
 
   ```console
   File sizes after gzip:
 
-    134.24 KB (-210.54 KB)  build/static/js/2.357d9417.chunk.js
-    2.95 KB (+10 B)         build/static/js/main.68ab09f8.chunk.js
-    790 B                   build/static/js/runtime~main.e82a7b61.js
+    138.5 KB  build/static/js/2.9b877756.chunk.js
+    2.85 KB   build/static/js/main.4a276c3b.chunk.js
+    793 B     build/static/js/runtime-main.3071ec60.js
   ```
 
 ### Reduce bundle size further by using client from v3
@@ -111,40 +100,32 @@ In this section, we're going to update the code to import S3 browser Client in d
 - Uninstall v2 by running the following command:
   - `yarn remove aws-sdk`
 - Install s3 dependencies by running the following command:
-  - `yarn add @aws-sdk/client-s3-browser@preview @aws-sdk/credential-provider-cognito-identity@preview @aws-sdk/client-cognito-identity-browser@preview`
+  - `yarn add @aws-sdk/client-s3@gamma @aws-sdk/credential-provider-cognito-identity@gamma @aws-sdk/client-cognito-identity@gamma`
 - Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts)
 
   ```diff
   -import AWS from "aws-sdk";
-  +import { S3 } from "@aws-sdk/client-s3-browser";
+  +import { S3 } from "@aws-sdk/client-s3";
   +import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity";
-  +import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser";
-   import { config } from "../config";
+  +import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity";
+  import { IDENTITY_POOL_ID } from "../config.json";
 
   -const s3Client = new AWS.S3({
-  +// Customization pending https://github.com/aws/aws-sdk-js-v3/issues/185
-  +const cognitoIdentityClient = new CognitoIdentityClient({
+  +const s3Client = new S3({
     region: "us-west-2",
   -  credentials: new AWS.CognitoIdentityCredentials(
   -    {
-  -      IdentityPoolId: config.IdentityPoolId
+  -      IdentityPoolId: IDENTITY_POOL_ID,
   -    },
   -    {
-  -      region: "us-west-2"
-  -    }
-  -  )
-  +  credentials: () => Promise.resolve({} as any),
-  +  signer: {} as any //this is required
-  +});
-  +cognitoIdentityClient.middlewareStack.remove("SIGNATURE");
-  +
-  +const s3Client = new S3({
-  +  region: "us-west-2",
   +  credentials: fromCognitoIdentityPool({
-  +    // @ts-ignore
-  +    client: cognitoIdentityClient,
-  +    identityPoolId: config.IdentityPoolId
-  +  })
+  +    client: new CognitoIdentityClient({
+        region: "us-west-2",
+  -    }
+  -  ),
+  +    }),
+  +    identityPoolId: IDENTITY_POOL_ID,
+  +  }),
   });
   ```
 
@@ -159,7 +140,6 @@ In this section, we're going to update the code to import S3 browser Client in d
         Key,
         Body: file,
         Bucket: config.s3Bucket,
-        ACL: "public-read"
   -    })
   -    .promise();
   +    });
@@ -168,53 +148,49 @@ In this section, we're going to update the code to import S3 browser Client in d
   ```
 
 - To create and presign getObject URLs, you'll have to add more dependencies by running the following command:
-  - `yarn add @aws-sdk/util-create-request@preview @aws-sdk/s3-request-presigner@preview @aws-crypto/sha256-browser @aws-sdk/util-format-url@preview`
-- Make the following change in `getObjectURL.ts`
+  - `yarn add @aws-sdk/util-create-request@gamma @aws-sdk/s3-request-presigner@gamma @aws-sdk/util-format-url@gamma`
+- Make the following change in [`getObjectURL.ts`](./src/libs/getObjectURL.ts)
 
   ```diff
   +import { createRequest } from "@aws-sdk/util-create-request";
-  +import { GetObjectCommand } from "@aws-sdk/client-s3-browser";
+  +import { GetObjectCommand } from "@aws-sdk/client-s3";
   +import { S3RequestPresigner } from "@aws-sdk/s3-request-presigner";
   +import { formatUrl } from "@aws-sdk/util-format-url";
-   import s3Client from "./s3Client";
-   import { config } from "../config";
+  import { s3Client } from "./s3Client";
+  import { FILES_BUCKET } from "../config.json";
 
   -const getObjectUrl = async (fileName: string) =>
   -  s3Client.getSignedUrlPromise("getObject", {
   -    Key: fileName,
-  -    Bucket: config.s3Bucket
+  -    Bucket: FILES_BUCKET,
   +const getObjectUrl = async (fileName: string) => {
   +  const request = await createRequest(
   +    s3Client,
   +    new GetObjectCommand({
   +      Key: fileName,
-  +      Bucket: config.s3Bucket
+  +      Bucket: FILES_BUCKET,
   +    })
   +  );
   +
   +  const signer = new S3RequestPresigner({
-  +    ...s3Client.config
+  +    ...s3Client.config,
     });
 
-  +  const url = await signer.presignRequest(
-  +    request,
-  +    new Date(Date.now() + 60 * 60 * 1000)
-  +  );
-  +  // @ts-ignore
+  +  const url = await signer.presign(request);
   +  return formatUrl(url);
   +};
   +
-   export { getObjectUrl };
+  export { getObjectUrl };
   ```
 
-- Run `yarn build` to generate bundle, and it's size will reduce to ~107KB!
+- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~114KB!
 
   ```console
   File sizes after gzip:
 
-    106.81 KB (-27.42 KB)  build/static/js/2.00e02e76.chunk.js
-    3.32 KB (+378 B)       build/static/js/main.8fb985d5.chunk.js
-    790 B                  build/static/js/runtime~main.e82a7b61.js
+    114.18 KB  build/static/js/2.02bb71a2.chunk.js
+    2.91 KB    build/static/js/main.c57973a9.chunk.js
+    793 B      build/static/js/runtime-main.3071ec60.js
   ```
 
 ### Reduce bundle size further by just importing specific commands in v3
@@ -223,10 +199,10 @@ In this section, we're going to update the code to import S3 browser Client in d
 - Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts) to import S3Client from v3
 
   ```diff
-  -import { S3 } from "@aws-sdk/client-s3-browser";
-  +import { S3Client } from "@aws-sdk/client-s3-browser";
+  -import { S3 } from "@aws-sdk/client-s3";
+  +import { S3Client } from "@aws-sdk/client-s3";
    import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity";
-   import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity-browser";
+   import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity";
   ```
 
   ```diff
@@ -239,9 +215,9 @@ In this section, we're going to update the code to import S3 browser Client in d
 - Import and call just the `PutObjectCommand` in [`putObject.ts`](./src/libs/putObject.ts) for example:
 
   ```diff
-  +import { PutObjectCommand } from "@aws-sdk/client-s3-browser";
+  +import { PutObjectCommand } from "@aws-sdk/client-s3";
    import s3Client from "./s3Client";
-   import { config } from "../config";
+   import { FILES_BUCKET } from "../config";
 
    const putObject = async (file: File) => {
     const Key = `${Date.now()}-${file.name}`;
@@ -251,24 +227,23 @@ In this section, we're going to update the code to import S3 browser Client in d
   +    new PutObjectCommand({
         Key,
         Body: file,
-        Bucket: config.s3Bucket,
-        ACL: "public-read"
+        Bucket: FILES_BUCKET,
   -    });
   +    }));
     return Key;
    };
   ```
 
-- Edit [`deleteObject.ts`](./src/libs/deleteObject.ts) and [`getObjectUrl.ts`](./src/libs/getObjectUrl.ts) using the changes your made to [`putObject.ts`](./src/libs/putObject.ts) as a template.
+- Edit [`deleteObject.ts`](./src/libs/deleteObject.ts) using the changes your made to [`putObject.ts`](./src/libs/putObject.ts) as a template.
 
-* Run `yarn build` to generate bundle, and it's size will reduce to ~90KB!
+* Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~93KB!
 
   ```console
   File sizes after gzip:
 
-    90.07 KB (-16.75 KB)  build/static/js/2.988f5386.chunk.js
-    3.34 KB (+25 B)       build/static/js/main.e64e6df1.chunk.js
-    790 B                 build/static/js/runtime~main.e82a7b61.js
+    92.86 KB  build/static/js/2.52e6a12e.chunk.js
+    2.92 KB   build/static/js/main.0694af7b.chunk.js
+    793 B     build/static/js/runtime-main.3071ec60.js
   ```
 
 ### Separate chunks using code splitting with React.lazy
@@ -321,19 +296,18 @@ In this section, we're going to update the code to import S3 browser Client in d
    export { Routes };
   ```
 
-- Run `yarn build` to generate bundle, and it's going to be split into multiple chunks of even smaller sizes!
+- Run `yarn build:frontend` to generate bundle, and it's going to be split into multiple chunks of even smaller sizes!
 
   ```console
   File sizes after gzip:
 
-    45.72 KB  build/static/js/4.76a075be.chunk.js
-    35.33 KB  build/static/js/1.9ecab0dd.chunk.js
-    6.41 KB   build/static/js/0.214c92a2.chunk.js
-    5.78 KB   build/static/js/5.d006f9d4.chunk.js
-    2.56 KB   build/static/js/6.9bdcbc25.chunk.js
-    2.21 KB   build/static/js/7.e5abe528.chunk.js
-    1.25 KB   build/static/js/runtime~main.74dd0176.js
-    1.08 KB   build/static/js/8.5a7642bb.chunk.js
-    719 B     build/static/js/main.5cb3a9cd.chunk.js
-    307 B     build/static/js/9.4bd2580a.chunk.js
+    45.01 KB          build/static/js/4.0e7c1804.chunk.js
+    40.58 KB          build/static/js/1.95c3e3e4.chunk.js
+    7.95 KB           build/static/js/0.3380864c.chunk.js
+    3.01 KB           build/static/js/6.8952b6ba.chunk.js
+    2.59 KB           build/static/js/5.a316a3cf.chunk.js
+    1.74 KB           build/static/js/7.a6525004.chunk.js
+    1.3 KB            build/static/js/8.dbc6450e.chunk.js
+    1.24 KB (+474 B)  build/static/js/runtime-main.ad613d04.js
+    530 B (-2.4 KB)   build/static/js/main.f1c0b49d.chunk.js
   ```
