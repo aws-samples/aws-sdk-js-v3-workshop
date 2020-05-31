@@ -1,0 +1,2102 @@
+{
+  "version": "4.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "aws-js-sdk-workshop": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "aws-js-sdk-workshop.template.json"
+      },
+      "metadata": {
+        "/aws-js-sdk-workshop": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987",
+              "id": "3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987",
+              "packaging": "zip",
+              "sourceHash": "3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987",
+              "s3BucketParameter": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3BucketF2F32BA0",
+              "s3KeyParameter": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3VersionKeyA64C4B84",
+              "artifactHashParameter": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987ArtifactHashED05B0C8"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/construct-compat.ts:400:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:152:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b",
+              "id": "e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b",
+              "packaging": "zip",
+              "sourceHash": "e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b",
+              "s3BucketParameter": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3Bucket3879248C",
+              "s3KeyParameter": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3VersionKeyA6F7B7FD",
+              "artifactHashParameter": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bArtifactHash6085112B"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/construct-compat.ts:400:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:152:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba",
+              "id": "3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba",
+              "packaging": "zip",
+              "sourceHash": "3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba",
+              "s3BucketParameter": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3BucketA15E0BB2",
+              "s3KeyParameter": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3VersionKeyEAC14F85",
+              "artifactHashParameter": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baArtifactHash67A4821A"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/construct-compat.ts:400:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:152:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a",
+              "id": "779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a",
+              "packaging": "zip",
+              "sourceHash": "779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a",
+              "s3BucketParameter": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3Bucket0A82214A",
+              "s3KeyParameter": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3VersionKey761BEF17",
+              "artifactHashParameter": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aArtifactHashE96A4549"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/construct-compat.ts:400:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:152:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d",
+              "id": "66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d",
+              "packaging": "zip",
+              "sourceHash": "66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d",
+              "s3BucketParameter": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3Bucket48BED74E",
+              "s3KeyParameter": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3VersionKeyE9B4EE08",
+              "artifactHashParameter": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dArtifactHashBD9A7A21"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/construct-compat.ts:400:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:152:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/notes/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "notesAF81B09D",
+            "trace": [
+              "new Table (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:873:18)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:13:19)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointE7B9679B",
+            "trace": [
+              "new RestApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:460:22)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:17:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointCloudWatchRole52213BC3",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "RestApi.configureCloudWatchRole (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:320:18)",
+              "new RestApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:477:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:17:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointAccount6DA1D142",
+            "trace": [
+              "RestApi.configureCloudWatchRole (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:325:22)",
+              "new RestApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:477:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:17:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointDeployment457D977D66c87b84445d3a20ad93fd7670a16636",
+            "trace": [
+              "new Deployment (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:69:21)",
+              "RestApi.configureDeployment (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:336:32)",
+              "new RestApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:480:10)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:17:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointDeploymentStageprod2CD5F9C4",
+            "trace": [
+              "new Stage (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:236:22)",
+              "RestApi.configureDeployment (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:346:30)",
+              "new RestApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:480:10)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:17:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointEndpoint5E1E9134",
+            "trace": [
+              "RestApi.configureDeployment (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:351:7)",
+              "new RestApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:480:10)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:17:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesF7F33EB6",
+            "trace": [
+              "new Resource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:387:22)",
+              "RootResource.addResource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:171:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:18:28)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/GET/ApiPermission.awsjssdkworkshopendpoint2B5E516A.GET..notes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesGETApiPermissionawsjssdkworkshopendpoint2B5E516AGETnotes692801DD",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:61:18)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:19:11)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/GET/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.GET..notes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesGETApiPermissionTestawsjssdkworkshopendpoint2B5E516AGETnotes2AF7DA71",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:69:20)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:19:11)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesGETFA0BD3D8",
+            "trace": [
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:208:22)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:19:11)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/POST/ApiPermission.awsjssdkworkshopendpoint2B5E516A.POST..notes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesPOSTApiPermissionawsjssdkworkshopendpoint2B5E516APOSTnotes356FD16B",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:61:18)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:28:11)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/POST/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.POST..notes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesPOSTApiPermissionTestawsjssdkworkshopendpoint2B5E516APOSTnotes5A97D7C1",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:69:20)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:28:11)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesPOST22F9725C",
+            "trace": [
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:208:22)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:28:11)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesid284FFD82",
+            "trace": [
+              "new Resource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:387:22)",
+              "Resource.addResource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:171:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:38:24)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidOPTIONS6939D830",
+            "trace": [
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:208:22)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "Resource.addCorsPreflight (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:281:17)",
+              "new Resource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:413:12)",
+              "Resource.addResource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:171:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:38:24)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/GET/ApiPermission.awsjssdkworkshopendpoint2B5E516A.GET..notes.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidGETApiPermissionawsjssdkworkshopendpoint2B5E516AGETnotesidBBD93E2C",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:61:18)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:43:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/GET/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.GET..notes.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidGETApiPermissionTestawsjssdkworkshopendpoint2B5E516AGETnotesidBFB15D2D",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:69:20)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:43:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidGETDA67C376",
+            "trace": [
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:208:22)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:43:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/PUT/ApiPermission.awsjssdkworkshopendpoint2B5E516A.PUT..notes.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidPUTApiPermissionawsjssdkworkshopendpoint2B5E516APUTnotesidA3CB6144",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:61:18)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:52:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/PUT/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.PUT..notes.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidPUTApiPermissionTestawsjssdkworkshopendpoint2B5E516APUTnotesid5869E259",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:69:20)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:52:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/PUT/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidPUTA29F9F3F",
+            "trace": [
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:208:22)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:52:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/DELETE/ApiPermission.awsjssdkworkshopendpoint2B5E516A.DELETE..notes.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidDELETEApiPermissionawsjssdkworkshopendpoint2B5E516ADELETEnotesidC20FE85E",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:61:18)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:61:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/DELETE/ApiPermission.Test.awsjssdkworkshopendpoint2B5E516A.DELETE..notes.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidDELETEApiPermissionTestawsjssdkworkshopendpoint2B5E516ADELETEnotesidC5BCC756",
+            "trace": [
+              "Function.addPermission (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:212:5)",
+              "LambdaIntegration.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:69:20)",
+              "Method.renderIntegration (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:261:17)",
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:201:25)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:61:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/endpoint/Default/notes/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointnotesidDELETEAD0C5CAD",
+            "trace": [
+              "new Method (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:208:22)",
+              "Resource.addMethod (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:61:10)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/listNotes/handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "listNoteshandlerServiceRole334A15FF",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/listNotes/handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "listNoteshandlerServiceRoleDefaultPolicy247BA603",
+            "trace": [
+              "new Policy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
+              "Role.addToPrincipalPolicy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:360:28)",
+              "Function.addToPrincipal (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:153:61)",
+              "Table.grant (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:478:22)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:32:11)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/listNotes/handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "listNoteshandlerDC187D34",
+            "trace": [
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3BucketF2F32BA0",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987S3VersionKeyA64C4B84",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3c2617ac4969f967e9cbc57a6788c63e8b53e1406749d7dbbd1ce14ab8bf8987ArtifactHashED05B0C8",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:22:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3Bucket3879248C",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bS3VersionKeyA6F7B7FD",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/e0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94b/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse0ce02ffe85fd4f62c4fd3395b4f2f9379cc1df5e34f4889196710140e05e94bArtifactHash6085112B",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3BucketA15E0BB2",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baS3VersionKeyEAC14F85",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4ba/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters3a3fd655dfb71e55834673c055db5f6bb396a61840d7e666b6e2c6c5265fc4baArtifactHash67A4821A",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3Bucket0A82214A",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aS3VersionKey761BEF17",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8a/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters779cf07de160439df5107cdd51efd0c41ec8c09ec8ccd206d5c1a3a9cfb2dc8aArtifactHashE96A4549",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3Bucket48BED74E",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dS3VersionKeyE9B4EE08",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/AssetParameters/66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207d/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters66d9e68dfa89d6ef4beecf9ec3e1a4d4cec60d141696c1ef3d12ff411968207dArtifactHashBD9A7A21",
+            "trace": [
+              "new FileAssetParameters (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:139:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:69:19)",
+              "AwsJavaScriptSdkWorkshopStack.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack.ts:537:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:73:25)",
+              "new Asset (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:125:40)",
+              "AssetCode.bind (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:488:29)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/createNote/handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "createNotehandlerServiceRole8AC82B45",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/createNote/handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "createNotehandlerServiceRoleDefaultPolicyFCFF3979",
+            "trace": [
+              "new Policy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
+              "Role.addToPrincipalPolicy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:360:28)",
+              "Function.addToPrincipal (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:153:61)",
+              "Table.grant (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:478:22)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:32:11)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/createNote/handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "createNotehandlerBA768AA5",
+            "trace": [
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:31:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/getNote/handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getNotehandlerServiceRole08D68F24",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/getNote/handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getNotehandlerServiceRoleDefaultPolicy8920DE10",
+            "trace": [
+              "new Policy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
+              "Role.addToPrincipalPolicy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:360:28)",
+              "Function.addToPrincipal (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:153:61)",
+              "Table.grant (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:478:22)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:32:11)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/getNote/handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getNotehandler167C5FCF",
+            "trace": [
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:46:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/updateNote/handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "updateNotehandlerServiceRole9959F133",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/updateNote/handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "updateNotehandlerServiceRoleDefaultPolicyD405276B",
+            "trace": [
+              "new Policy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
+              "Role.addToPrincipalPolicy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:360:28)",
+              "Function.addToPrincipal (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:153:61)",
+              "Table.grant (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:478:22)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:32:11)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/updateNote/handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "updateNotehandler6A5A41DF",
+            "trace": [
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:55:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/deleteNote/handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deleteNotehandlerServiceRoleAD0655B4",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/deleteNote/handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deleteNotehandlerServiceRoleDefaultPolicy82C8BF80",
+            "trace": [
+              "new Policy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
+              "Role.addToPrincipalPolicy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:360:28)",
+              "Function.addToPrincipal (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:153:61)",
+              "Table.grant (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:478:22)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:32:11)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/deleteNote/handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deleteNotehandlerC903D399",
+            "trace": [
+              "new Function (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
+              "new NotesApi (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/notes-api.ts:21:20)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:64:9)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/files-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "filesbucket2B30D8E0",
+            "trace": [
+              "new Bucket (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1049:22)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:71:25)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/identity-pool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "identitypool",
+            "trace": [
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:84:26)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/unauthenticated-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "unauthenticatedroleEE7E3E0D",
+            "trace": [
+              "new Role (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:319:18)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:88:29)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/unauthenticated-role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "unauthenticatedroleDefaultPolicy2436F037",
+            "trace": [
+              "new Policy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
+              "Role.addToPrincipalPolicy (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/role.ts:360:28)",
+              "Function.addToPrincipal (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:153:61)",
+              "Function.addToPrincipalOrResource (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-iam/lib/grant.ts:119:26)",
+              "Bucket.grant (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:625:23)",
+              "Bucket.grantRead (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:485:17)",
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:104:17)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/role-attachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "roleattachment",
+            "trace": [
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:108:5)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/GatewayUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GatewayUrl",
+            "trace": [
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:115:5)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/IdentityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IdentityPoolId",
+            "trace": [
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:116:5)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/aws-js-sdk-workshop/FilesBucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FilesBucket",
+            "trace": [
+              "new AwsJavaScriptSdkWorkshopStack (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop-stack.ts:117:5)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/packages/infra/cdk/aws-javascript-sdk-workshop.ts:5:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/trivikr/workspace/aws-sdk-js-v3-workshop/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "/Users/trivikr/.nvm/versions/node/v12.16.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.41.0",
+      "@aws-cdk/cx-api": "1.41.0",
+      "@aws-cdk/cloud-assembly-schema": "1.41.0",
+      "@aws-cdk/cdk-assets-schema": "1.41.0",
+      "@aws-cdk/aws-dynamodb": "1.41.0",
+      "@aws-cdk/aws-applicationautoscaling": "1.41.0",
+      "@aws-cdk/aws-iam": "1.41.0",
+      "@aws-cdk/region-info": "1.41.0",
+      "@aws-cdk/aws-autoscaling-common": "1.41.0",
+      "@aws-cdk/aws-cloudwatch": "1.41.0",
+      "@aws-cdk/aws-kms": "1.41.0",
+      "@aws-cdk/aws-lambda": "1.41.0",
+      "@aws-cdk/aws-ec2": "1.41.0",
+      "@aws-cdk/aws-ssm": "1.41.0",
+      "@aws-cdk/aws-logs": "1.41.0",
+      "@aws-cdk/aws-s3": "1.41.0",
+      "@aws-cdk/aws-events": "1.41.0",
+      "@aws-cdk/aws-sqs": "1.41.0",
+      "@aws-cdk/aws-s3-assets": "1.41.0",
+      "@aws-cdk/assets": "1.41.0",
+      "@aws-cdk/custom-resources": "1.41.0",
+      "@aws-cdk/aws-apigateway": "1.41.0",
+      "@aws-cdk/aws-cognito": "1.41.0",
+      "jsii-runtime": "node.js/v12.16.1"
+    }
+  }
+}

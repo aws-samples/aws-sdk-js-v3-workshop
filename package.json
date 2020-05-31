@@ -1,9 +1,22 @@
 {
   "private": true,
   "workspaces": [
-    "Exercise1/backend",
-    "Exercise1/frontend",
-    "Exercise2/backend",
-    "Exercise2/frontend"
-  ]
+    "packages/infra",
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.1.2",
+    "prettier": "2.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,md}": "prettier --write"
+  }
 }

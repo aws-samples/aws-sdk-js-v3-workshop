@@ -1,0 +1,22 @@
+{
+  "name": "@aws-sdk-workshop/infra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-apigateway": "1.41.0",
+    "@aws-cdk/aws-cognito": "1.41.0",
+    "@aws-cdk/aws-dynamodb": "1.41.0",
+    "@aws-cdk/aws-iam": "1.41.0",
+    "@aws-cdk/aws-lambda": "1.41.0",
+    "@aws-cdk/aws-s3": "1.41.0",
+    "@aws-cdk/core": "1.41.0",
+    "@types/node": "12.12.29",
+    "aws-cdk": "1.41.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.9.3"
+  }
+}

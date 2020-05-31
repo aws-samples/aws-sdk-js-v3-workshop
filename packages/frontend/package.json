@@ -1,0 +1,58 @@
+{
+  "name": "@aws-sdk-workshop/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Frontend for the AWS JS SDK v3 workshop",
+  "dependencies": {
+    "@reach/router": "1.3.3",
+    "aws-sdk": "2.683.0",
+    "react": "16.13.1",
+    "react-bootstrap": "1.0.1",
+    "react-dom": "16.13.1"
+  },
+  "scripts": {
+    "prepare:frontend": "cd .. && yarn prepare:frontend",
+    "build": "react-scripts build",
+    "build:frontend": "cd .. && yarn build:frontend",
+    "start": "react-scripts start",
+    "start:frontend": "cd .. && yarn start:frontend",
+    "serve": "http-server build -o",
+    "serve:frontend": "cd .. && yarn serve:frontend",
+    "cdk": "cd .. && yarn cdk"
+  },
+  "keywords": [
+    "aws",
+    "JavaScript",
+    "TypeScript",
+    "SDK",
+    "v3",
+    "workshop",
+    "Node.js"
+  ],
+  "author": "Kamat, Trivikram",
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.24",
+    "@types/reach__router": "1.3.5",
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "http-server": "0.12.3",
+    "react-scripts": "3.4.0",
+    "typescript": "~3.9.3"
+  }
+}

@@ -6,16 +6,9 @@
   "configurations": [{
       "type": "chrome",
       "request": "launch",
-      "name": "launch exercise1",
+      "name": "launch frontend",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/Exercise1/frontend"
-    },
-    {
-      "type": "chrome",
-      "request": "launch",
-      "name": "launch exercise2",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/Exercise2/frontend"
+      "webRoot": "${workspaceFolder}/packages/frontend"
     }
   ]
 }

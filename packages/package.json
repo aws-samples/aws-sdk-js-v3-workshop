@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "cdk": "cd infra && yarn cdk",
+    "build:backend": "cd backend && yarn build",
+    "prepare:frontend": "node scripts/populate-frontend-config.js",
+    "build:frontend": "cd frontend && yarn build",
+    "start:frontend": "cd frontend && yarn start",
+    "serve:frontend": "cd frontend && yarn build && yarn serve"
+  }
+}
