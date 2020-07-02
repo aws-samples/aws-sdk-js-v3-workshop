@@ -16,7 +16,7 @@
     "build:frontend": "cd .. && yarn build:frontend",
     "start": "react-scripts start",
     "start:frontend": "cd .. && yarn start:frontend",
-    "serve": "http-server build -o",
+    "serve": "ws -d build -o",
     "serve:frontend": "cd .. && yarn serve:frontend",
     "cdk": "cd .. && yarn cdk"
   },
