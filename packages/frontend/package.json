@@ -16,7 +16,7 @@
     "build:frontend": "cd .. && yarn build:frontend",
     "start": "react-scripts start",
     "start:frontend": "cd .. && yarn start:frontend",
-    "serve": "http-server build -o",
+    "serve": "ws -d build -o",
     "serve:frontend": "cd .. && yarn serve:frontend",
     "cdk": "cd .. && yarn cdk"
   },
@@ -51,7 +51,7 @@
     "@types/reach__router": "1.3.5",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
-    "http-server": "0.12.3",
+    "local-web-server": "^4.2.1",
     "react-scripts": "3.4.0",
     "typescript": "~3.9.3"
   }
