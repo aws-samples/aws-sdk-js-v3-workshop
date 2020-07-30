@@ -33,14 +33,6 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-        options: {
-          failOnError: true,
-        },
-      },
-      {
-        test: /\.ts$/,
         loader: "ts-loader",
       },
     ],
