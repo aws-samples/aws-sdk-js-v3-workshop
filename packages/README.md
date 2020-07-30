@@ -47,3 +47,7 @@ Follow [backend README.md](./backend/README.md)
 ### Migrate frontend from v2 to v3
 
 Follow [frontend README.md](./frontend/README.md)
+
+## Clean up
+
+The Cloudformation stack can be deleted by running `yarn cdk destroy`
