@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 const glob = require("glob");
+const ESLintPlugin = require("eslint-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const entry = glob.sync("./src/*.ts").reduce((acc, item) => {
@@ -38,5 +39,5 @@ module.exports = {
     ],
   },
 
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [new ESLintPlugin({ extensions: ["ts"] }), new CleanWebpackPlugin()],
 };
