@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "3.7.1",
     "clean-webpack-plugin": "3.0.0",
     "eslint": "7.5.0",
-    "eslint-config-prettier": "6.11.0",
+    "eslint-config-prettier": "6.14.0",
     "eslint-webpack-plugin": "2.0.0",
     "ts-loader": "8.0.1",
     "typescript": "~4.0.3",
