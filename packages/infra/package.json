@@ -7,15 +7,15 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/aws-apigateway": "1.55.0",
-    "@aws-cdk/aws-cognito": "1.55.0",
-    "@aws-cdk/aws-dynamodb": "1.55.0",
-    "@aws-cdk/aws-iam": "1.55.0",
-    "@aws-cdk/aws-lambda": "1.55.0",
-    "@aws-cdk/aws-s3": "1.55.0",
-    "@aws-cdk/core": "1.55.0",
+    "@aws-cdk/aws-apigateway": "1.69.0",
+    "@aws-cdk/aws-cognito": "1.69.0",
+    "@aws-cdk/aws-dynamodb": "1.69.0",
+    "@aws-cdk/aws-iam": "1.69.0",
+    "@aws-cdk/aws-lambda": "1.69.0",
+    "@aws-cdk/aws-s3": "1.69.0",
+    "@aws-cdk/core": "1.69.0",
     "@types/node": "12.12.29",
-    "aws-cdk": "1.55.0",
+    "aws-cdk": "1.69.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.9.3"
   }
