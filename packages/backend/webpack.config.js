@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+const { resolve } = require("path");
 const glob = require("glob");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -14,6 +15,7 @@ module.exports = {
   entry,
 
   output: {
+    path: resolve(__dirname, "dist/"),
     filename: "[name]/app.js",
     libraryTarget: "commonjs",
   },
