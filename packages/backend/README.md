@@ -49,7 +49,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 ### Examine initial bundle size of lambda functions
 
 - Login to [AWS Lambda Console](https://console.aws.amazon.com/lambda/home)
-- The size of each lambda functions will be ~790kB
+- The size of each lambda functions will be ~820kB
 
   <details><summary>Click to view image</summary>
   <p>
