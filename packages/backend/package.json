@@ -4,7 +4,7 @@
   "private": true,
   "description": "Backend for the AWS JS SDK v3 workshop",
   "dependencies": {
-    "aws-sdk": "2.683.0"
+    "aws-sdk": "2.778.0"
   },
   "scripts": {
     "build": "webpack",
