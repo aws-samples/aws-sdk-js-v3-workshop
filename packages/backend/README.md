@@ -95,7 +95,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
 - Uninstall v2 by running the following command:
   - `yarn remove aws-sdk`
 - Install dynamodb in v3 by running the following command:
-  - `yarn add @aws-sdk/client-dynamodb@gamma`.
+  - `yarn add @aws-sdk/client-dynamodb`.
 - Make the following change in [`dynamoDB.ts`](./src/libs/dynamoDB.ts) to import DynamoDB from v3
 
   ```diff
@@ -119,7 +119,7 @@ In this section, we're going to update the code to import DynamoDB Client in dif
      return failure({ status: false });
   ```
 
-- Run `yarn build:backend` and `yarn cdk deploy` to build+deploy new code, and the size of lambda functions will reduce to ~46kB!
+- Run `yarn build:backend` and `yarn cdk deploy` to build+deploy new code, and the size of lambda functions will reduce to ~42kB!
 
   <details><summary>Click to view image</summary>
   <p>
