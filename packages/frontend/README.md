@@ -51,14 +51,14 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 ### Examine initial bundle size of the app
 
-- `yarn build:frontend` to generate bundle, which will create bundle of size ~380kB
+- `yarn build:frontend` to generate bundle, which will create bundle of size ~395kB
 
   ```console
   File sizes after gzip:
 
-    377.24 KB  build/static/js/2.9a29a7df.chunk.js
-    2.85 KB    build/static/js/main.91dd2537.chunk.js
-    793 B      build/static/js/runtime-main.3071ec60.js
+    395.2 KB  build/static/js/2.9a081e7a.chunk.js
+    2.88 KB   build/static/js/main.9af70d78.chunk.js
+    792 B     build/static/js/runtime-main.64ddd279.js
   ```
 
 - This happens because entire aws-sdk is bundled in the app in file [`s3Client.ts`](./src/libs/s3Client.ts)
@@ -85,14 +85,14 @@ In this section, we're going to update the code to import S3 browser Client in d
       {
   ```
 
-- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~138KB!
+- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~142KB!
 
   ```console
   File sizes after gzip:
 
-    138.5 KB  build/static/js/2.9b877756.chunk.js
-    2.85 KB   build/static/js/main.4a276c3b.chunk.js
-    793 B     build/static/js/runtime-main.3071ec60.js
+    141.77 KB  build/static/js/2.ec2b6b97.chunk.js
+    2.88 KB    build/static/js/main.642e235c.chunk.js
+    792 B      build/static/js/runtime-main.64ddd279.js
   ```
 
 ### Reduce bundle size further by using client from v3
@@ -100,11 +100,12 @@ In this section, we're going to update the code to import S3 browser Client in d
 - Uninstall v2 by running the following command:
   - `yarn remove aws-sdk`
 - Install s3 dependencies by running the following command:
-  - `yarn add @aws-sdk/client-s3@gamma @aws-sdk/credential-provider-cognito-identity@gamma @aws-sdk/client-cognito-identity@gamma`
+  - `yarn add @aws-sdk/client-s3 @aws-sdk/credential-provider-cognito-identity @aws-sdk/client-cognito-identity`
 - Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts)
 
   ```diff
   -import AWS from "aws-sdk";
+  -import s3 from "aws-sdk/clients/s3";
   +import { S3 } from "@aws-sdk/client-s3";
   +import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-identity";
   +import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity";
@@ -148,7 +149,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   ```
 
 - To create and presign getObject URLs, you'll have to add more dependencies by running the following command:
-  - `yarn add @aws-sdk/util-create-request@gamma @aws-sdk/s3-request-presigner@gamma @aws-sdk/util-format-url@gamma`
+  - `yarn add @aws-sdk/util-create-request @aws-sdk/s3-request-presigner @aws-sdk/util-format-url`
 - Make the following change in [`getObjectURL.ts`](./src/libs/getObjectURL.ts)
 
   ```diff
@@ -183,14 +184,14 @@ In this section, we're going to update the code to import S3 browser Client in d
   export { getObjectUrl };
   ```
 
-- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~114KB!
+- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~124KB!
 
   ```console
   File sizes after gzip:
 
-    114.18 KB  build/static/js/2.02bb71a2.chunk.js
-    2.91 KB    build/static/js/main.c57973a9.chunk.js
-    793 B      build/static/js/runtime-main.3071ec60.js
+    123.88 KB  build/static/js/2.d0ab40c6.chunk.js
+    2.93 KB    build/static/js/main.81ee5280.chunk.js
+    792 B      build/static/js/runtime-main.64ddd279.js
   ```
 
 ### Reduce bundle size further by just importing specific commands in v3
@@ -236,14 +237,14 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 - Edit [`deleteObject.ts`](./src/libs/deleteObject.ts) using the changes your made to [`putObject.ts`](./src/libs/putObject.ts) as a template.
 
-* Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~93KB!
+* Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~102KB!
 
   ```console
   File sizes after gzip:
 
-    92.86 KB  build/static/js/2.52e6a12e.chunk.js
-    2.92 KB   build/static/js/main.0694af7b.chunk.js
-    793 B     build/static/js/runtime-main.3071ec60.js
+    101.37 KB  build/static/js/2.01d127d9.chunk.js
+    2.93 KB    build/static/js/main.1a8958f8.chunk.js
+    792 B      build/static/js/runtime-main.64ddd279.js
   ```
 
 ### Separate chunks using code splitting with React.lazy
@@ -301,13 +302,13 @@ In this section, we're going to update the code to import S3 browser Client in d
   ```console
   File sizes after gzip:
 
-    45.01 KB          build/static/js/4.0e7c1804.chunk.js
-    40.58 KB          build/static/js/1.95c3e3e4.chunk.js
-    7.95 KB           build/static/js/0.3380864c.chunk.js
-    3.01 KB           build/static/js/6.8952b6ba.chunk.js
-    2.59 KB           build/static/js/5.a316a3cf.chunk.js
-    1.74 KB           build/static/js/7.a6525004.chunk.js
-    1.3 KB            build/static/js/8.dbc6450e.chunk.js
-    1.24 KB (+474 B)  build/static/js/runtime-main.ad613d04.js
-    530 B (-2.4 KB)   build/static/js/main.f1c0b49d.chunk.js
+    47.81 KB  build/static/js/1.7e51cbd2.chunk.js
+    46.96 KB  build/static/js/4.818586d4.chunk.js
+    7.85 KB   build/static/js/0.6a9c1fc3.chunk.js
+    3.02 KB   build/static/js/6.c7a500e3.chunk.js
+    2.5 KB    build/static/js/5.12e58bc3.chunk.js
+    1.72 KB   build/static/js/7.3d0fbc81.chunk.js
+    1.33 KB   build/static/js/8.074d72d1.chunk.js
+    1.24 KB   build/static/js/runtime-main.fb721bd4.js
+    525 B     build/static/js/main.ad4e136c.chunk.js
   ```
