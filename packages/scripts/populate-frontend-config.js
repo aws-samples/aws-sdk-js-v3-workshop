@@ -29,7 +29,7 @@ const { readFileSync, writeFileSync, unlinkSync } = require("fs");
   try {
     const configContents = JSON.parse(readFileSync(configFile));
     const cdkOutput = JSON.parse(readFileSync(cdkOutputsFile))[
-      "aws-js-sdk-workshop"
+      "aws-sdk-js-workshop"
     ];
     configContents.GATEWAY_URL = cdkOutput.GatewayUrl;
     configContents.IDENTITY_POOL_ID = cdkOutput.IdentityPoolId;
