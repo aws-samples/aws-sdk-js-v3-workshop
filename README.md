@@ -2,8 +2,8 @@
 
 In this workshop, we're going to:
 
-- Build a simple note taking application
-- Identify the benefits of using AWS JS SDK v3 over v2
+- Build a simple note taking application.
+- Identify the benefits of using AWS SDK for JavaScript v3 over v2.
 
 The note taking application is the modified version from the original Open Source MIT licensed project shared in the tutorials on [serverless-stack](http://serverless-stack.com).
 
@@ -22,17 +22,17 @@ The note taking application is the modified version from the original Open Sourc
 To set up this workshop package, complete the following tasks:
 
 - Install **Node.js** by following these steps:
-  1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update)
-  1. Use node v12.x.x by running `nvm use` or `nvm use 12` in a terminal window
-  1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v10`, such as `v12.17.0`)
-- Install [yarn](https://yarnpkg.com/en/docs/install)
+  1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
+  1. Use node v12.x.x by running `nvm use` or `nvm use 12` in a terminal window.
+  1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v10`, such as `v12.17.0`).
+- Install [yarn](https://yarnpkg.com/en/docs/install).
   - We recommend using **yarn** for its simplicity, speed and yarn workspaces.
-- Install dependencies by running `yarn`
-- If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-  - If you're an Amazon employee, see the internal wiki for creating an AWS account
-- Install the [AWS CLI](https://aws.amazon.com/cli/)
-  - Verify that the AWS CLI is installed by running `aws` in a terminal window
-- Set up [AWS Shared Credential File](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+- Install dependencies by running `yarn`.
+- If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+  - If you're an Amazon employee, see the internal wiki for creating an AWS account.
+- Install the [AWS CLI](https://aws.amazon.com/cli/).
+  - Verify that the AWS CLI is installed by running `aws` in a terminal window.
+- Set up [AWS Shared Credential File](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
   - Your `~/.aws/credentials` (`%UserProfile%\.aws\credentials` on Windows) should look like the following:
     ```
     [default]
@@ -49,36 +49,36 @@ To set up this workshop package, complete the following tasks:
 
 ### Exercise1
 
-This exercise code uses AWS SDK JS v2 as follows:
+This exercise code uses AWS SDK for JavaScript v2 as follows:
 
-- backend performs create, delete, get, list and update operations on DynamoDB
-- frontend does put, get, delete operations using an S3 browser client
+- backend performs create, delete, get, list and update operations on DynamoDB.
+- frontend does put, get, delete operations using an S3 browser client.
 
 The README files have instructions on how to move both to v3. The backend and frontend can be worked on independently as long as the APIs don't change. Follow [README](./packages/README.md) to set up and update backend, frontend and infrastructure.
 
 ### Exercise2
 
-This exercise has the code which uses AWS JS SDK v3, which you would have got after finishing Exercise1:
+This exercise has the code which uses AWS SDK for JavaScript v3, which you would have got after finishing Exercise1:
 
-- backend performs create, delete, get, list and update operations on DynamoDB
-- frontend does put, get, delete operations using an S3 browser client
+- backend performs create, delete, get, list and update operations on DynamoDB.
+- frontend does put, get, delete operations using an S3 browser client.
 
 Edit existing APIs or create new ones to use AWS Services you're familiar with in the backend. For example:
 
-- Allow user to set reminder by using Amazon [SES](https://aws.amazon.com/ses/)/[SNS](https://aws.amazon.com/sns/)/[SQS](https://aws.amazon.com/sqs/)
-  - This can be done by storing new attribute (say remindAt) in DynamoDB
-- [Amazon Cognito](https://aws.amazon.com/cognito/) can be used for sign-up, sign-in and access control
-- [Amazon Polly](https://aws.amazon.com/polly/) can be used for reading content of notes
+- Allow user to set reminder by using Amazon [SES](https://aws.amazon.com/ses/)/[SNS](https://aws.amazon.com/sns/)/[SQS](https://aws.amazon.com/sqs/).
+  - This can be done by storing new attribute (say remindAt) in DynamoDB.
+- [Amazon Cognito](https://aws.amazon.com/cognito/) can be used for sign-up, sign-in and access control.
+- [Amazon Polly](https://aws.amazon.com/polly/) can be used for reading content of notes.
 - [Amazon Transcribe](https://aws.amazon.com/transcribe/) can be used to allow adding notes via speech
-  - You can refer example code from [amazon-transcribe-websocket-static](https://github.com/aws-samples/amazon-transcribe-websocket-static)
-- Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation
-- Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images
+  - You can refer example code from [amazon-transcribe-websocket-static](https://github.com/aws-samples/amazon-transcribe-websocket-static).
+- Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation.
+- Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images.
 
 ### Exercise3
 
 Inspect the differences of stack trace if call `DynamoDB.putItem` with invalid resources in V2 and V3 SDK.
 
-Using v2, call a service with invalid parameters as shown below
+Using v2, call a service with invalid parameters as shown below:
 
 <details>
 <summary>Code</summary>
@@ -160,7 +160,7 @@ const command = new PutItemCommand({
 
 </details>
 
-The stack trace would be much smaller
+The stack trace would be much smaller:
 
 <details>
 <summary>Stack trace</summary>

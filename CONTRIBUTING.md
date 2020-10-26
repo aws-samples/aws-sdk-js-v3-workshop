@@ -13,10 +13,10 @@ We welcome you to use the GitHub issue tracker to report bugs or suggest feature
 When filing an issue, please check [existing open](https://github.com/aws-samples/aws-sdk-js-v3-workshop/issues), or [recently closed](https://github.com/aws-samples/aws-sdk-js-v3-workshop/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aclosed%20), issues to make sure somebody else hasn't already
 reported the issue. Please try to include as much information as you can. Details like these are incredibly useful:
 
-- A reproducible test case or series of steps
-- The version of our code being used
-- Any modifications you've made relevant to the bug
-- Anything unusual about your environment or deployment
+- A reproducible test case or series of steps.
+- The version of our code being used.
+- Any modifications you've made relevant to the bug.
+- Anything unusual about your environment or deployment.
 
 ## Contributing via Pull Requests
 

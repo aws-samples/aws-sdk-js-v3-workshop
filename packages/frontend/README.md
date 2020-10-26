@@ -1,7 +1,7 @@
 # S3 browser client in v2 vs v3
 
-- This package contains frontend code which does put, get, delete operations using S3 browser client
-- This is a create-react-app which creates minimized bundle on running `build`, and debugs it on running `start`
+- This package contains frontend code which does put, get, delete operations using S3 browser client.
+- This is a create-react-app which creates minimized bundle on running `build`, and debugs it on running `start`.
 
   <details><summary>Click to view screen recording</summary>
   <p>
@@ -25,25 +25,25 @@
 
 ## Set up
 
-Ensure that you've followed pre-requisites from main [README](../../README.md), and created [backend](../backend/README.md)
+Ensure that you've followed pre-requisites from main [README](../../README.md), and created [backend](../backend/README.md).
 
 ### Steps to run frontend locally
 
 - `yarn prepare:frontend` to populate Cloudformation resources in frontend config.
-- The resources can also be manually added in [`src/config.json`](./src/config.json)
-  - Add `aws-js-sdk-workshop.GatewayUrl` from CDK output for `GATEWAY_URL`
+- The resources can also be manually added in [`src/config.json`](./src/config.json).
+  - Add `aws-js-sdk-workshop.GatewayUrl` from CDK output for `GATEWAY_URL`.
     - Example GatewayURL: `https://randomstring.execute-api.us-west-2.amazonaws.com/prod/`
-  - Add `aws-js-sdk-workshop.IdentityPoolId` from CDK output for `IDENTITY_POOL_ID`
+  - Add `aws-js-sdk-workshop.IdentityPoolId` from CDK output for `IDENTITY_POOL_ID`.
     - Example IdentityPoolId: `us-west-2:random-strc-4ce1-84ee-9a429f9b557e`
-  - Add `aws-js-sdk-workshop.FilesBucket` from CDK output for `FILES_BUCKET`
-- `yarn start:frontend` to run the server
-  - This will open the website in the browser, and enable HMR
+  - Add `aws-js-sdk-workshop.FilesBucket` from CDK output for `FILES_BUCKET`.
+- `yarn start:frontend` to run the server.
+  - This will open the website in the browser, and enable HMR.
   - Just edit and save the files in `packages/frontend/src`, and the browser page will auto-refresh!
-- `yarn build:frontend` to create optimized production build (to get file sizes)
+- `yarn build:frontend` to create optimized production build (to get file sizes).
 
 ### Clean resources
 
-- Run `yarn cdk destroy` to delete Cloudformation Stack
+- Run `yarn cdk destroy` to delete Cloudformation Stack.
 
 ## Activities
 
@@ -51,7 +51,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 ### Examine initial bundle size of the app
 
-- `yarn build:frontend` to generate bundle, which will create bundle of size ~395kB
+- `yarn build:frontend` to generate bundle, which will create bundle of size ~395 KB.
 
   ```console
   File sizes after gzip:
@@ -61,7 +61,7 @@ In this section, we're going to update the code to import S3 browser Client in d
     792 B     build/static/js/runtime-main.64ddd279.js
   ```
 
-- This happens because entire aws-sdk is bundled in the app in file [`s3Client.ts`](./src/libs/s3Client.ts)
+- This happens because entire aws-sdk is bundled in the app in file [`s3Client.ts`](./src/libs/s3Client.ts).
 
   ```typescript
   import AWS from "aws-sdk";
@@ -69,7 +69,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 ### Reduce bundle size by just importing s3
 
-- In v2, you can reduce the bundle size by doing dead-code elimination using tree shaking with a bundler like webpack ([details](https://webpack.js.org/guides/tree-shaking/))
+- In v2, you can reduce the bundle size by doing dead-code elimination using [tree shaking with a bundler like webpack](https://webpack.js.org/guides/tree-shaking/).
 - Just import the `"aws-sdk/clients/s3"` in [`s3Client.ts`](./src/libs/s3Client.ts), as shown in the diff below:
 
   ```diff
@@ -85,7 +85,7 @@ In this section, we're going to update the code to import S3 browser Client in d
       {
   ```
 
-- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~142KB!
+- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~142 KB!
 
   ```console
   File sizes after gzip:
@@ -101,7 +101,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   - `yarn remove aws-sdk`
 - Install s3 dependencies by running the following command:
   - `yarn add @aws-sdk/client-s3 @aws-sdk/credential-provider-cognito-identity @aws-sdk/client-cognito-identity`
-- Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts)
+- Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts):
 
   ```diff
   -import AWS from "aws-sdk";
@@ -150,7 +150,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 - To create and presign getObject URLs, you'll have to add more dependencies by running the following command:
   - `yarn add @aws-sdk/util-create-request @aws-sdk/s3-request-presigner @aws-sdk/util-format-url`
-- Make the following change in [`getObjectURL.ts`](./src/libs/getObjectURL.ts)
+- Make the following change in [`getObjectURL.ts`](./src/libs/getObjectURL.ts):
 
   ```diff
   +import { createRequest } from "@aws-sdk/util-create-request";
@@ -184,7 +184,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   export { getObjectUrl };
   ```
 
-- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~124KB!
+- Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~124 KB!
 
   ```console
   File sizes after gzip:
@@ -197,7 +197,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 ### Reduce bundle size further by just importing specific commands in v3
 
 - AWS JS SDK v3 has an option to import specific commands, thus reducing bundle size further!
-- Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts) to import S3Client from v3
+- Make the following change in [`s3Client.ts`](./src/libs/s3Client.ts) to import S3Client from v3:
 
   ```diff
   -import { S3 } from "@aws-sdk/client-s3";
@@ -237,7 +237,7 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 - Edit [`deleteObject.ts`](./src/libs/deleteObject.ts) using the changes your made to [`putObject.ts`](./src/libs/putObject.ts) as a template.
 
-* Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~102KB!
+* Run `yarn build:frontend` to generate bundle, and it's size will reduce to ~102 KB!
 
   ```console
   File sizes after gzip:
@@ -249,10 +249,10 @@ In this section, we're going to update the code to import S3 browser Client in d
 
 ### Separate chunks using code splitting with React.lazy
 
-- We now import client and specific commands in v3, and can make use of code splitting with React.lazy
-- React.lazy currently doesn't support named exports ([docs](https://reactjs.org/docs/code-splitting.html#named-exports)). So, we'll have to do default export on components being lazily loaded.
+- We now import client and specific commands in v3, and can make use of code splitting with React.lazy().
+- React.lazy currently [doesn't support named exports](https://reactjs.org/docs/code-splitting.html#named-exports). So, we need to default export components being lazily loaded.
 
-  - For example, make the following change in [CreateNote.tsx](./src/content/CreateNote.tsx)
+  - For example, make the following change in [CreateNote.tsx](./src/content/CreateNote.tsx):
 
   ```diff
     );
@@ -262,7 +262,7 @@ In this section, we're going to update the code to import S3 browser Client in d
   +export default CreateNote;
   ```
 
-- Then lazily import components in [Routes.tsx](./src/Routes.tsx), and render them inside a Suspense component
+- Then lazily import components in [Routes.tsx](./src/Routes.tsx), and render them inside a Suspense component.
 
   ```diff
   -import React from "react";
