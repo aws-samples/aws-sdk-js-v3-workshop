@@ -10,7 +10,7 @@
     "@aws-cdk/aws-apigateway": "1.69.0",
     "@aws-cdk/aws-cognito": "1.69.0",
     "@aws-cdk/aws-dynamodb": "1.69.0",
-    "@aws-cdk/aws-iam": "1.69.0",
+    "@aws-cdk/aws-iam": "1.71.0",
     "@aws-cdk/aws-lambda": "1.69.0",
     "@aws-cdk/aws-s3": "1.69.0",
     "@aws-cdk/core": "1.69.0",
