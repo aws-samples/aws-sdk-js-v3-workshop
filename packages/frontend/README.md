@@ -22,6 +22,10 @@
   - [Reduce bundle size further by using client from v3](#reduce-bundle-size-further-by-using-client-from-v3)
   - [Reduce bundle size further by just importing specific commands in v3](#reduce-bundle-size-further-by-just-importing-specific-commands-in-v3)
   - [Separate chunks using code splitting with React.lazy](#separate-chunks-using-code-splitting-with-reactlazy)
+- [Correlation between bundle size and load event](#correlation-between-bundle-size-and-load-event)
+  - [Load event for bundle which imports entire v2](#load-event-for-bundle-which-imports-entire-v2)
+  - [Load event for bundle which imports v3 client with commands with code splitting](#load-event-for-bundle-which-imports-v3-client-with-commands-with-code-splitting)
+  - [Conclusion](#conclusion)
 
 ## Set up
 
@@ -312,3 +316,40 @@ In this section, we're going to update the code to import S3 browser Client in d
     1.24 KB   build/static/js/runtime-main.fb721bd4.js
     525 B     build/static/js/main.ad4e136c.chunk.js
   ```
+
+## Correlation between bundle size and load event
+
+Here is how we find out correlation between bundle size and load time:
+
+- We create production bundle by running `yarn build`.
+- We open the bundle in Chrome browser by running `yarn start`.
+- In Chrome Developer Tools, we simulate "Fast 3G" under network tab.
+- We hard reload the page.
+- The comparison is between original bundle which imports entire v2 with final bundle which imports specific command with v3 and uses code splitting with React.lazy().
+
+### Load event for bundle which imports entire v2
+
+  <details><summary>Click to view image</summary>
+  <p>
+
+![AWS v2 entire import load time](./screenshots/aws-sdk-v2-s3.png)
+
+  </p>
+  </details>
+
+### Load event for bundle which imports v3 client with commands with code splitting
+
+  <details><summary>Click to view image</summary>
+  <p>
+
+![AWS v3 and command import load time](./screenshots/aws-sdk-v3-command-s3.png)
+
+  </p>
+  </details>
+
+### Conclusion
+
+As per our experiments:
+
+- The large bundle with v2 takes ~17 seconds to fire load event.
+- The small bundle with v3+command with code splitting fires load event within 3 seconds.
