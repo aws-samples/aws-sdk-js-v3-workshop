@@ -22,6 +22,10 @@
   - [Reduce bundle size further by using client from v3](#reduce-bundle-size-further-by-using-client-from-v3)
   - [Reduce bundle size further by just importing specific commands in v3](#reduce-bundle-size-further-by-just-importing-specific-commands-in-v3)
   - [Separate chunks using code splitting with React.lazy](#separate-chunks-using-code-splitting-with-reactlazy)
+- [Correlation between bundle size and load event](#correlation-between-bundle-size-and-load-event)
+  - [Load event for bundle which imports entire v2](#load-event-for-bundle-which-imports-entire-v2)
+  - [Load event for bundle which imports v3 client with commands with code splitting](#load-event-for-bundle-which-imports-v3-client-with-commands-with-code-splitting)
+  - [Conclusion](#conclusion)
 
 ## Set up
 
