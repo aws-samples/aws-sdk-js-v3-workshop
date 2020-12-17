@@ -10,10 +10,15 @@ The note taking application is the modified version from the original Open Sourc
 ## Table of Contents
 
 - [Pre-requisites](#pre-requisites)
-- [Activities](#activities)
-  - [Exercise1](#exercise1)
-  - [Exercise2](#exercise2)
-  - [Exercise3](#exercise3)
+- [Exercise1](#exercise1)
+  - [Create backend API](#create-backend-api)
+  - [Deploy infrastructure](#deploy-infrastructure)
+  - [Prepare frontend API](#prepare-backend-api)
+  - [Debug frontend](#debug-frontend)
+  - [Migrate backend from v2 to v3](#migrate-backend-from-v2-to-v3)
+  - [Migrate frontend from v2 to v3](#migrate-frontend-from-v2-to-v3)
+- [Exercise2](#exercise2)
+- [Exercise3](#exercise3)
 - [Contributing](#contributing)
 - [License Summary](#license-summary)
 
@@ -45,18 +50,51 @@ To set up this workshop package, complete the following tasks:
     region = us-west-2
     ```
 
-## Activities
-
-### Exercise1
+## Exercise1
 
 This exercise code uses AWS SDK for JavaScript v2 as follows:
 
 - backend performs create, delete, get, list and update operations on DynamoDB.
 - frontend does put, get, delete operations using an S3 browser client.
 
-The README files have instructions on how to move both to v3. The backend and frontend can be worked on independently as long as the APIs don't change. Follow [README](./packages/README.md) to set up and update backend, frontend and infrastructure.
+The README files have instructions on how to move both to v3. The backend and frontend can be worked on independently as long as the APIs don't change.
 
-### Exercise2
+### Create backend API
+
+- Run: `yarn build:backend`
+- This generates bundles to be deployed to lambda.
+
+### Deploy infrastructure
+
+- Run: `yarn cdk deploy`
+- This command:
+  - Creates AWS infrastructure using [AWS Cloud Development Kit](https://aws.amazon.com/cdk/).
+  - Deploys backend bundles to lambda.
+  - Creates resources to be used in the frontend.
+
+### Prepare frontend API
+
+- Run: `yarn prepare:frontend`
+- This command copies AWS resources to the frontend config.
+
+### Debug frontend
+
+- Run: `yarn start:frontend`
+- This command starts ReactApp for testing frontend, and opens the URL in browser.
+
+### Migrate backend from v2 to v3
+
+Follow [backend README.md](./packages/backend/README.md).
+
+### Migrate frontend from v2 to v3
+
+Follow [frontend README.md](./packages/frontend/README.md).
+
+### Clean up
+
+The Cloudformation stack can be deleted by running: `yarn cdk destroy`
+
+## Exercise2
 
 This exercise has the code which uses AWS SDK for JavaScript v3, which you would have got after finishing Exercise1:
 
@@ -74,7 +112,7 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 - Increase the size limit for attachments and use S3 [Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html) instead of existing [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/SOAPPutObject.html) operation.
 - Process images using [Amazon Rekognition](https://aws.amazon.com/rekognition/), to generate and store tags for the images.
 
-### Exercise3
+## Exercise3
 
 Inspect the differences of stack trace if call `DynamoDB.putItem` with invalid resources in V2 and V3 SDK.
 

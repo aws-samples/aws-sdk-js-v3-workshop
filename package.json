@@ -5,6 +5,14 @@
     "packages/backend",
     "packages/frontend"
   ],
+  "scripts": {
+    "cdk": "cd packages/infra && yarn cdk",
+    "build:backend": "cd packages/backend && yarn build",
+    "prepare:frontend": "node packages/scripts/populate-frontend-config.js",
+    "build:frontend": "cd packages/frontend && yarn build",
+    "start:frontend": "cd packages/frontend && yarn start",
+    "serve:frontend": "cd packages/frontend && yarn build && yarn serve"
+  },
   "devDependencies": {
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
