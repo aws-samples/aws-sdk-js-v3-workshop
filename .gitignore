@@ -137,3 +137,11 @@ cdk.context.json
 package-lock.json
 .cdk.staging
 cdk.out
+
+# yarn berry with no zero installs
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
