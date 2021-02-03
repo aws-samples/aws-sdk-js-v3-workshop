@@ -5,7 +5,12 @@ In this workshop, we're going to:
 - Build a simple note taking application.
 - Identify the benefits of using AWS SDK for JavaScript v3 over v2.
 
-The note taking application is the modified version from the original Open Source MIT licensed project shared in the tutorials on [serverless-stack](http://serverless-stack.com).
+The note taking application is the modified version from the original Open Source MIT licensed
+project shared in the tutorials on [serverless-stack](http://serverless-stack.com).
+
+If you are starting a new project with AWS SDK for JavaScript v3, then please refer
+[aws-sdk-js-notes-app](https://github.com/aws-samples/aws-sdk-js-notes-app) which uses more
+services in addition to S3 and DynamoDB.
 
 ## Table of Contents
 
@@ -57,7 +62,8 @@ This exercise code uses AWS SDK for JavaScript v2 as follows:
 - backend performs create, delete, get, list and update operations on DynamoDB.
 - frontend does put, get, delete operations using an S3 browser client.
 
-The README files have instructions on how to move both to v3. The backend and frontend can be worked on independently as long as the APIs don't change.
+The README files have instructions on how to move both to v3. The backend and frontend
+can be worked on independently as long as the APIs don't change.
 
 ### Create backend API
 
@@ -96,12 +102,14 @@ The Cloudformation stack can be deleted by running: `yarn cdk destroy`
 
 ## Exercise2
 
-This exercise has the code which uses AWS SDK for JavaScript v3, which you would have got after finishing Exercise1:
+This exercise has the code which uses AWS SDK for JavaScript v3, which you
+would have got after finishing Exercise1:
 
 - backend performs create, delete, get, list and update operations on DynamoDB.
 - frontend does put, get, delete operations using an S3 browser client.
 
-Edit existing APIs or create new ones to use AWS Services you're familiar with in the backend. For example:
+Edit existing APIs or create new ones to use AWS Services you're familiar with
+in the backend. For example:
 
 - Allow user to set reminder by using Amazon [SES](https://aws.amazon.com/ses/)/[SNS](https://aws.amazon.com/sns/)/[SQS](https://aws.amazon.com/sqs/).
   - This can be done by storing new attribute (say remindAt) in DynamoDB.
@@ -114,7 +122,8 @@ Edit existing APIs or create new ones to use AWS Services you're familiar with i
 
 ## Exercise3
 
-Inspect the differences of stack trace if call `DynamoDB.putItem` with invalid resources in V2 and V3 SDK.
+Inspect the differences of stack trace if call `DynamoDB.putItem` with invalid resources
+in V2 and V3 SDK.
 
 Using v2, call a service with invalid parameters as shown below:
 
@@ -217,7 +226,8 @@ ResourceNotFoundException: Requested resource not found
 
 ## Contributing
 
-Contributions are more than welcome. Please read the [code of conduct](CODE_OF_CONDUCT.md) and the [contributing guidelines](CONTRIBUTING.md).
+Contributions are more than welcome. Please read the [code of conduct](CODE_OF_CONDUCT.md)
+and the [contributing guidelines](CONTRIBUTING.md).
 
 ## License Summary
 
