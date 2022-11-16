@@ -1,5 +1,7 @@
 # aws-sdk-js-v3-workshop
 
+> If you're looking for scripts to upgrade your code from v2 to v3, see [aws-sdk-js-codemod][aws-sdk-js-codemod].
+
 In this workshop, we're going to:
 
 - Build a simple note taking application.
@@ -232,3 +234,5 @@ and the [contributing guidelines](CONTRIBUTING.md).
 ## License Summary
 
 This sample code is made available under the MIT license. See the LICENSE file.
+
+[aws-sdk-js-codemod]: https://www.npmjs.com/package/aws-sdk-js-codemod
